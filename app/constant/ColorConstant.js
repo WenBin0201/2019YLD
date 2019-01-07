@@ -2,8 +2,8 @@
 
 
 //主色调
-export const COLOR_MAIN_COLOR = '#F4D000';
-export const COLOR_SECOND_COLOR = '#2B7888';
+export const COLOR_MAIN_COLOR = '#F4D000';//黄色
+export const COLOR_SECOND_COLOR = '#2B7888';//深蓝色
 export const COLOR_WHITE_COLOR = '#ffffff';
 export const COLOR_GRAY_F3F3F3 = '#F3F3F3';
 export const COLOR_GRAY_FAFAFA = '#FAFAFA';
