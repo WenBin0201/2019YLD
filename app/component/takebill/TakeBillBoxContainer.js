@@ -10,13 +10,12 @@ import {
 
 } from 'react-native';
 
-import BaseBoxView from '../BaseBoxView'
 import TabView from '../../component/TabView/TabView'
 import PulicStyle from '../../style/PublicStyle'
 
 var _contentDataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
-export default class TakeBillBoxCopntainer extends BaseBoxView {
+export default class TakeBillBoxContainer extends Component {
 
     constructor(props) {
         super(props)
@@ -42,13 +41,15 @@ export default class TakeBillBoxCopntainer extends BaseBoxView {
         this.deviceWidth = deviceWidth;
     }
 
-    renderComponent() {
+    render() {
         return (
-            <View style={[PulicStyle.box_main,TakeBiollStyle.view_main]}>
+            <View style={{width:this.deviceWidth-200,height:this.deviceHeight-120,backgroundColor:'#FFFFFF'}}>
                 <View style={TakeBiollStyle.view_top}>
                     <Text style={{ fontSize: 25, color: '#fff' }}>取单</Text>
                     <TouchableOpacity onPress={() => {
-                        this._closeBox();
+                       if(this.props.destroy){
+                           this.props.destroy();
+                       }
                     }} style={TakeBiollStyle.view_top_right}>
                         <Text style={{ fontSize: 20, color: '#fff' }}>关闭</Text>
                     </TouchableOpacity>
@@ -145,12 +146,13 @@ export default class TakeBillBoxCopntainer extends BaseBoxView {
 }
 
 const TakeBiollStyle = StyleSheet.create({
-    view_main: {
-        marginTop: 80,
-        marginBottom: 80,
-        marginLeft: 120,
-        marginRight: 120,
-    },
+    // view_main: {
+    //     marginTop: 60,
+    //     marginBottom: 60,
+    //     marginLeft: 100,
+    //     marginRight: 100,
+    //     backgroundColor:'#FFFFFF'
+    // },
     view_top:{
         height: 50, 
         backgroundColor: '#3e8492', 
@@ -172,7 +174,7 @@ const TakeBiollStyle = StyleSheet.create({
         paddingBottom: 0,
         paddingTop: 0, 
         height: 25, 
-        width: 150,
+        width: 100,
         borderRadius: 3, 
         borderColor: '#2b7888', 
         borderWidth: 1, 

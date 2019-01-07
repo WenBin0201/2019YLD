@@ -12,6 +12,7 @@ import {
 import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import TabView from '../../../component/TabView/TabView'
 import TakeBillBox from '../../../component/takebill/TakeBillBox'
+import DialogBox from '../../../component/dialogbox/DialogBox'
 
 export default class PgReceipts extends Component {
 
@@ -43,10 +44,10 @@ export default class PgReceipts extends Component {
     render() {
         return (
             <View style={ReceiptsStyle.container}>
-                <TabView 
-                    tabHeads={['商品条码','商品名称','原价','折扣','数量','现价','小计']}
-                    tabRowWidth = {[1.5,2,1,1,1,1,1]}
-                    dataSource = {this.state.dataSource}
+                <TabView
+                    tabHeads={['商品条码', '商品名称', '原价', '折扣', '数量', '现价', '小计']}
+                    tabRowWidth={[1.5, 2, 1, 1, 1, 1, 1]}
+                    dataSource={this.state.dataSource}
                     renderRow={this._renderRow.bind(this)}
                 />
                 <View style={{ backgroundColor: "#fff" }}>
@@ -54,10 +55,12 @@ export default class PgReceipts extends Component {
                         <View style={{ width: 25, height: 25, backgroundColor: '#666666', marginLeft: 15, marginRight: 15 }}>
                         </View>
                         <Text style={[ReceiptsStyle.text2, { flex: 1 }]}>共计  x行 x件商品</Text>
-                        <TouchableOpacity style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
+                        <TouchableOpacity onPress={() => {
+                            DialogBox.show('系统通知', ['78789876767','78789876767']);
+                        }} style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
                             <Text style={ReceiptsStyle.text1}>挂单</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity  onPress={()=>{TakeBillBox.show();}}  style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
+                        <TouchableOpacity onPress={() => { TakeBillBox.show() }} style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
                             <Text style={ReceiptsStyle.text1}>取单</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
@@ -80,7 +83,7 @@ export default class PgReceipts extends Component {
                             </TouchableOpacity>
                         </View>
                         <View style={{ flex: 1 }}>
-                            <View style={{width: 200, marginLeft: 15, marginTop: 10, marginBottom: 10, borderRadius: 6, backgroundColor: "#fff" }}>
+                            <View style={{ width: 200, marginLeft: 15, marginTop: 10, marginBottom: 10, borderRadius: 6, backgroundColor: "#fff" }}>
                                 <TextInput
                                     style={ReceiptsStyle.textIput2}
                                     placeholder="请输入会员手机号"
@@ -110,7 +113,7 @@ export default class PgReceipts extends Component {
                                 </View>
                             </View>
                         </View>
-                        <TouchableOpacity style={ReceiptsStyle.btn3} onPress={()=> this.props.navigation.push('Setting')}>
+                        <TouchableOpacity style={ReceiptsStyle.btn3} onPress={() => this.props.navigation.push('Setting')}>
                             <Text style={{ color: '#fff', fontSize: 20, marginLeft: 15 }}>收款{'\n'}<Text style={{ fontSize: 15, }}>[回车键]</Text></Text>
                             <Text style={{ color: '#fff', fontSize: 30 }}>￥0.00</Text>
                         </TouchableOpacity>
