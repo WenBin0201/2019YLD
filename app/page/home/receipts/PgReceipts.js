@@ -13,6 +13,7 @@ import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import TabView from '../../../component/TabView/TabView'
 import TakeBillBox from '../../../component/takebill/TakeBillBox'
 import DialogBox from '../../../component/dialogbox/DialogBox'
+import Button from '../../../component/Button'
 
 export default class PgReceipts extends Component {
 
@@ -55,20 +56,27 @@ export default class PgReceipts extends Component {
                         <View style={{ width: 25, height: 25, backgroundColor: '#666666', marginLeft: 15, marginRight: 15 }}>
                         </View>
                         <Text style={[ReceiptsStyle.text2, { flex: 1 }]}>共计  x行 x件商品</Text>
-                        <TouchableOpacity onPress={() => {
-                            DialogBox.show('系统通知', ['78789876767','78789876767']);
-                        }} style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
-                            <Text style={ReceiptsStyle.text1}>挂单</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { TakeBillBox.show() }} style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
-                            <Text style={ReceiptsStyle.text1}>取单</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
-                            <Text style={ReceiptsStyle.text1}>删除</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[ReceiptsStyle.btn, { marginRight: 15, backgroundColor: '#eb6100' }]}>
-                            <Text style={ReceiptsStyle.text1}>清空</Text>
-                        </TouchableOpacity>
+                        <Button text='挂单' backgroundColor='#2b7889' width={60} height={27}
+                            onPress={() => {
+
+                            }}
+                        />
+                        <Button  text='取单' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={60} height={27}
+                            onPress={() => {
+                                TakeBillBox.show()
+                            }}
+                        />
+
+                        <Button text='删除' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={60} height={27}
+                            onPress={() => {
+
+                            }}
+                        />
+                        <Button  text='清空' style={{ marginLeft: 10, marginRight: 15 }} backgroundColor='#f19149'  width={60} height={27}
+                            onPress={() => {
+
+                            }}
+                        />
                     </View>
 
                     <View style={{ flexDirection: 'row', backgroundColor: '#2b7888', alignItems: 'center' }}>
@@ -113,7 +121,7 @@ export default class PgReceipts extends Component {
                                 </View>
                             </View>
                         </View>
-                        <TouchableOpacity style={ReceiptsStyle.btn3} onPress={() => this.props.navigation.push('Setting')}>
+                        <TouchableOpacity style={ReceiptsStyle.btn3} onPress={() => this.props.navigation.push('PgSettle')}>
                             <Text style={{ color: '#fff', fontSize: 20, marginLeft: 15 }}>收款{'\n'}<Text style={{ fontSize: 15, }}>[回车键]</Text></Text>
                             <Text style={{ color: '#fff', fontSize: 30 }}>￥0.00</Text>
                         </TouchableOpacity>

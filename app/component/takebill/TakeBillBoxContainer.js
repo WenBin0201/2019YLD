@@ -12,6 +12,7 @@ import {
 
 import TabView from '../../component/TabView/TabView'
 import PulicStyle from '../../style/PublicStyle'
+import Button from '../../component/Button'
 
 var _contentDataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
@@ -43,13 +44,13 @@ export default class TakeBillBoxContainer extends Component {
 
     render() {
         return (
-            <View style={{width:this.deviceWidth-200,height:this.deviceHeight-120,backgroundColor:'#FFFFFF'}}>
+            <View style={{ width: this.deviceWidth - 200, height: this.deviceHeight - 120, backgroundColor: '#FFFFFF' }}>
                 <View style={TakeBiollStyle.view_top}>
                     <Text style={{ fontSize: 25, color: '#fff' }}>取单</Text>
                     <TouchableOpacity onPress={() => {
-                       if(this.props.destroy){
-                           this.props.destroy();
-                       }
+                        if (this.props.destroy) {
+                            this.props.destroy();
+                        }
                     }} style={TakeBiollStyle.view_top_right}>
                         <Text style={{ fontSize: 20, color: '#fff' }}>关闭</Text>
                     </TouchableOpacity>
@@ -86,7 +87,23 @@ export default class TakeBillBoxContainer extends Component {
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 35 }}>
                             <Text style={[PulicStyle.text_3E8492_14, { marginLeft: 15 }]}>共计 0行 0件商品</Text>
                             <View style={{ flexDirection: 'row', marginRight: 15 }}>
-                                <TouchableOpacity style={PulicStyle.btn_27}>
+                                <Button text='取单' backgroundColor='#f19149' width={60} height={27}
+                                    onPress={() => {
+
+                                    }}
+                                />
+                                <Button text='清空' style={{ marginLeft: 10 }} backgroundColor='#f19149' width={60} height={27}
+                                    onPress={() => {
+
+                                    }}
+                                />
+                                <Button text='删除' style={{ marginLeft: 10}} backgroundColor='#f19149' width={60} height={27}
+                                    onPress={() => {
+
+                                    }}
+                                />
+
+                                {/* <TouchableOpacity style={PulicStyle.btn_27}>
                                     <Text style={PulicStyle.text_FFF_14}>取单</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity style={[PulicStyle.btn_27,{marginLeft:10}]}>
@@ -94,7 +111,7 @@ export default class TakeBillBoxContainer extends Component {
                                 </TouchableOpacity>
                                 <TouchableOpacity style={[PulicStyle.btn_27,{marginLeft:10}]}>
                                     <Text style={PulicStyle.text_FFF_14}>删除</Text>
-                                </TouchableOpacity>
+                                </TouchableOpacity> */}
                             </View>
                         </View>
                     </View>
@@ -131,13 +148,13 @@ export default class TakeBillBoxContainer extends Component {
     _renderRow(rowD, sectionID, rowID, highlightRow) {
         return (
             <View style={{ flexDirection: 'row', backgroundColor: rowID % 2 == 0 ? '#ffffff' : '#f1f1f1', height: 30 }}>
-                <View style={[PulicStyle.tab_item,{flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0}]}>
+                <View style={[PulicStyle.tab_item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
                     <Text>{rowD.k1}</Text>
                 </View>
-                <View style={[PulicStyle.tab_item,{flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0}]}>
+                <View style={[PulicStyle.tab_item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
                     <Text>{rowD.k2}</Text>
                 </View>
-                <View style={[PulicStyle.tab_item,{flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0}]}>
+                <View style={[PulicStyle.tab_item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
                     <Text>{rowD.k3}</Text>
                 </View>
             </View>
@@ -146,40 +163,34 @@ export default class TakeBillBoxContainer extends Component {
 }
 
 const TakeBiollStyle = StyleSheet.create({
-    // view_main: {
-    //     marginTop: 60,
-    //     marginBottom: 60,
-    //     marginLeft: 100,
-    //     marginRight: 100,
-    //     backgroundColor:'#FFFFFF'
-    // },
-    view_top:{
-        height: 50, 
-        backgroundColor: '#3e8492', 
-        alignItems: 'center', 
-        justifyContent: 'center' 
+
+    view_top: {
+        height: 50,
+        backgroundColor: '#3e8492',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
-    view_top_right :{
-        borderColor: '#FFF', 
-        borderLeftWidth: 2, 
-        height: 50, 
-        width: 60, 
-        position: 'absolute', 
-        right: 0, 
-        alignItems: 'center', 
-        justifyContent: 'center' 
+    view_top_right: {
+        borderColor: '#FFF',
+        borderLeftWidth: 2,
+        height: 50,
+        width: 60,
+        position: 'absolute',
+        right: 0,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
-    inputText:{
-        marginLeft: 5, 
+    inputText: {
+        marginLeft: 5,
         paddingBottom: 0,
-        paddingTop: 0, 
-        height: 25, 
+        paddingTop: 0,
+        height: 25,
         width: 100,
-        borderRadius: 3, 
-        borderColor: '#2b7888', 
-        borderWidth: 1, 
-        backgroundColor: '#FFFFFF' 
+        borderRadius: 3,
+        borderColor: '#2b7888',
+        borderWidth: 1,
+        backgroundColor: '#FFFFFF'
     }
-    
+
 
 });
