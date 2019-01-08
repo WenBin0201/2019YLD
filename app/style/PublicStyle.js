@@ -46,10 +46,7 @@ export const PulicStyle = StyleSheet.create({
     tab_item:{
         justifyContent: 'center',
         alignItems: 'center',
-        borderColor: '#eaeaea',
-        borderLeftWidth: 0.5,
-        borderTopWidth: 0.5,
-        borderRightWidth: 0.5
+        borderColor: '#EAEAEA',
     }
     
 });
