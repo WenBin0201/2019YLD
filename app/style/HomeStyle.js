@@ -17,7 +17,7 @@ export const HomeStyle = StyleSheet.create({
         width: 65,
         borderColor:'#FFF',
         height:58,
-        borderRightWidth:2,
+        borderRightWidth:1,
         marginLeft: 15, 
         marginRight: 5 
     },
