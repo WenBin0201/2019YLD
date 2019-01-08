@@ -55,9 +55,7 @@ export default class PgReceipts extends Component {
                         <View style={{ width: 25, height: 25, backgroundColor: '#666666', marginLeft: 15, marginRight: 15 }}>
                         </View>
                         <Text style={[ReceiptsStyle.text2, { flex: 1 }]}>共计  x行 x件商品</Text>
-                        <TouchableOpacity onPress={() => {
-                            DialogBox.show('系统通知', ['78789876767','78789876767']);
-                        }} style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
+                        <TouchableOpacity style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
                             <Text style={ReceiptsStyle.text1}>挂单</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => { TakeBillBox.show() }} style={[ReceiptsStyle.btn, { backgroundColor: '#2b7888' }]}>
