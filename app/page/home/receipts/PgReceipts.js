@@ -48,8 +48,8 @@ export default class PgReceipts extends Component {
                 <TabView
                     tabHeads={['商品条码', '商品名称', '原价', '折扣', '数量', '现价', '小计']}
                     tabRowWidth={[1.5, 2, 1, 1, 1, 1, 1]}
-                    dataSource={this.state.dataSource}
-                    renderRow={this._renderRow.bind(this)}
+                    data={this.state.dataSource}
+                    renderItem={this._renderRow}
                 />
                 <View style={{ backgroundColor: "#fff" }}>
                     <View style={{ flexDirection: 'row', backgroundColor: '#f1f1f1', height: 35, alignItems: 'center', justifyContent: 'center', }}>
@@ -58,7 +58,7 @@ export default class PgReceipts extends Component {
                         <Text style={[ReceiptsStyle.text2, { flex: 1 }]}>共计  x行 x件商品</Text>
                         <Button text='挂单' backgroundColor='#2b7889' width={60} height={27}
                             onPress={() => {
-
+                                DialogBox.show('asdsakdjlsak','alskdalskd')
                             }}
                         />
                         <Button  text='取单' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={60} height={27}
@@ -139,29 +139,29 @@ export default class PgReceipts extends Component {
      * @param {*} rowID 
      * @param {*} highlightRow 
      */
-    _renderRow(rowD, sectionID, rowID, highlightRow) {
+    _renderRow = ({item,index}) => {
         return (
-            <View style={{ flexDirection: 'row', backgroundColor: '#ffffff', height: 30, width: this.deviceWidth }}>
-                <View style={[ReceiptsStyle.item, { flex: 1.5, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
-                    <Text>{rowD.k1}</Text>
+            <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
+                <View style={[ReceiptsStyle.item, { flex: 1.5}]}>
+                    <Text>{item.k1}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 2, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
-                    <Text>{rowD.k2}</Text>
+                <View style={[ReceiptsStyle.item, { flex: 2,borderLeftWidth:1}]}>
+                    <Text>{item.k2}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
-                    <Text>{rowD.k3}</Text>
+                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                    <Text>{item.k3}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
-                    <Text>{rowD.k4}</Text>
+                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                    <Text>{item.k4}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
-                    <Text>{rowD.k5}</Text>
+                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                    <Text>{item.k5}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
-                    <Text>{rowD.k6}</Text>
+                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                    <Text>{item.k6}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1, borderBottomWidth: rowID == this.state.dataSource.length - 1 ? 0.5 : 0 }]}>
-                    <Text>{rowD.k7}</Text>
+                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                    <Text>{item.k7}</Text>
                 </View>
             </View>
         )

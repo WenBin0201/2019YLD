@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import Button from '../../../component/Button'
+import SelectList from '../../../component/SelectList'
 /**
  * 结算
  */
@@ -74,6 +75,7 @@ export default class PgSettle extends Component {
 
                     }}
                 />
+                <SelectList />
             </View>
         )
     }

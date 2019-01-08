@@ -7,7 +7,6 @@ import {
     TouchableOpacity,
     ScrollView,
     TextInput,
-    ListView,
     StyleSheet
 
 } from 'react-native';

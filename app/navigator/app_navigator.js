@@ -10,6 +10,7 @@ import PgHome from '../page/home/PgHome'
 import Setting from '../page/test/Setting'
 import Detail from '../page/test/Detail'
 import PgSettle from '../page/home/receipts/PgSettle' //结算页面
+import TakeBillBoxContainer from '../component/takebill/TakeBillBoxContainer'
 
 /**
  * 登录模块
@@ -33,7 +34,8 @@ const HomeStack = createStackNavigator(
         PgHome: PgHome,
         PgSettle:PgSettle,
         Detail: Detail,
-        Setting: Setting
+        Setting: Setting,
+        TakeBillBoxContainer:TakeBillBoxContainer,
     },
     {
         navigationOptions: {},
