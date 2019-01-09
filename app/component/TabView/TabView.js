@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import {
     Text,
     View,
-    StyleSheet,
-    Animated,
-    TouchableOpacity,
-    Easing,
-    BackHandler,
+    ActivityIndicator,
     FlatList
 } from 'react-native';
 
@@ -16,7 +12,7 @@ export default class TabView extends Component {
     static defaultProps = {
         tabHeadBg: '#2b7888',//列表背景色
         tabHeadHeight: 30, //列表头部高度
-        tabHeadSeparatorLineColor:'#FFFFFF',//列表头部分割线颜色
+        tabHeadSeparatorLineColor: '#FFFFFF',//列表头部分割线颜色
         SeparatorLineColor: '#EAEAEA',//列表分割线颜色
         tabHeadTextColor: '#FFFFFF',//列表头部文字颜色
         tabHeadTextFontSize: 16,//列表头部文字大小
@@ -50,25 +46,29 @@ export default class TabView extends Component {
                 <FlatList
                     style={{ flex: 1 }}
                     data={this.state.data}
-                    keyExtractor= {(item,index)=>{index}}
+                    keyExtractor={(item, index) => { index}}
                     renderItem={this.props.renderItem}
-                    ListEmptyComponent = {()=> <View style={{flex:1}}></View>}
-                    ItemSeparatorComponent={()=>
+                    ListEmptyComponent={() =>
+                        <View style={{ flex: 1,justifyContent:'center',alignItems:'center'}}>
+                            <ActivityIndicator size="small" color="#0000ff" />
+                        </View>
+                    }
+                    ItemSeparatorComponent={() =>
                         //分割线
-                            <View
-                                style={{ height: 1, backgroundColor:this.props.SeparatorLineColor}}>
-                            </View>
+                        <View
+                            style={{ height: 1, backgroundColor: this.props.SeparatorLineColor }}>
+                        </View>
 
                     }
-                    ListHeaderComponent={()=>
-                            <View
-                                style={{ height: 1, backgroundColor: this.props.SeparatorLineColor }}>
-                            </View>
+                    ListHeaderComponent={() =>
+                        <View
+                            style={{ height: 1, backgroundColor: this.props.SeparatorLineColor }}>
+                        </View>
                     }
-                    ListFooterComponent={()=>
-                            <View
-                                style={{ height: 1, backgroundColor:this.props.SeparatorLineColor}}>
-                            </View>
+                    ListFooterComponent={() =>
+                        <View
+                            style={{ height: 1, backgroundColor: this.props.SeparatorLineColor }}>
+                        </View>
                     }
                 />
             </View>
