@@ -12,7 +12,8 @@ import {
 import Button from '../../../component/Button'
 import SettleStyle from '../../../style/SettleStyle'
 import PublicStyle from '../../../style/PublicStyle'
-import { COLOR_F19149,COLOR_SECOND_COLOR,COLOR_8FC31F,COLOR_EC6941 } from '../../../constant/ColorConstant';
+import DiscountView from '../../../component/components/DiscountView'
+import { COLOR_F19149, COLOR_SECOND_COLOR, COLOR_8FC31F, COLOR_EC6941 } from '../../../constant/ColorConstant';
 
 /**
  * 结算
@@ -118,7 +119,7 @@ export default class PgSettle extends Component {
                     </View>
 
                     <Animated.View style={[SettleStyle.settle_view_Ani4, { left: this.state.left, }]}>
-                        <View style={SettleStyle.settle_view_5}></View>
+                        <DiscountView />
                         <TouchableOpacity onPress={() => {
                             this._moveLeft();
                         }}
@@ -127,9 +128,9 @@ export default class PgSettle extends Component {
                         </TouchableOpacity>
                     </Animated.View>
                     <TouchableOpacity
-                        onPress={() => {this.setState({ isXpjz: !this.state.isXpjz })}}
-                        style={[SettleStyle.settle_touchO_jz,{justifyContent: this.state.isXpjz ? 'flex-end' : 'flex-start'}]}>
-                        <View style={[SettleStyle.settle_view_jz,{ backgroundColor: this.state.isXpjz ? COLOR_EC6941 : '#666666'}]}>
+                        onPress={() => { this.setState({ isXpjz: !this.state.isXpjz }) }}
+                        style={[SettleStyle.settle_touchO_jz, { justifyContent: this.state.isXpjz ? 'flex-end' : 'flex-start' }]}>
+                        <View style={[SettleStyle.settle_view_jz, { backgroundColor: this.state.isXpjz ? COLOR_EC6941 : '#666666' }]}>
                             <Text style={PublicStyle.text_FFF_12}>{this.state.isXpjz ? '打小票结账' : '不打小票结账'}</Text>
                         </View>
                     </TouchableOpacity>

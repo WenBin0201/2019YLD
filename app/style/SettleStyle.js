@@ -29,12 +29,12 @@ export const SettleStyle = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    settle_icon:{
-        width: 30, 
-        height: 30, 
-        marginLeft: 10, 
-        marginRight: 10, 
-        backgroundColor: '#666666' 
+    settle_icon: {
+        width: 30,
+        height: 30,
+        marginLeft: 10,
+        marginRight: 10,
+        backgroundColor: '#666666'
     },
     settle_input: {
         flex: 1, marginLeft: 10,
@@ -67,8 +67,9 @@ export const SettleStyle = StyleSheet.create({
     settle_touchO_zk: {
         width: 33,
         height: 80,
-        borderColor:COLOR_SECOND_COLOR,
-        borderRadius: 5,
+        borderColor: COLOR_SECOND_COLOR,
+        borderBottomRightRadius: 5,
+        borderTopRightRadius: 5,
         backgroundColor: '#f4d000',
         justifyContent: 'center',
         alignItems: 'center'
@@ -76,7 +77,7 @@ export const SettleStyle = StyleSheet.create({
     settle_touchO_jz: {
         width: 160,
         height: 48,
-        borderColor:COLOR_SECOND_COLOR,
+        borderColor: COLOR_SECOND_COLOR,
         position: 'absolute',
         right: 35,
         top: 40,
@@ -92,10 +93,10 @@ export const SettleStyle = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    settle_view_5:{
-        flex: 1, 
-        backgroundColor: '#999999', 
-        borderRadius: 5 
+    settle_view_5: {
+        flex: 1,
+        backgroundColor: '#999999',
+        borderRadius: 5
     }
 })
 module.exports = SettleStyle;
