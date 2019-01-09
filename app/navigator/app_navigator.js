@@ -11,6 +11,7 @@ import Setting from '../page/test/Setting'
 import Detail from '../page/test/Detail'
 import PgSettle from '../page/home/receipts/PgSettle' //结算页面
 import TakeBillBoxContainer from '../component/takebill/TakeBillBoxContainer'
+import ShiftRecord from '../page/login/ShiftRecord'
 
 /**
  * 登录模块
@@ -18,6 +19,7 @@ import TakeBillBoxContainer from '../component/takebill/TakeBillBoxContainer'
 const LoginStack = createStackNavigator(
     {
         Login: Login,
+        ShiftRecord: ShiftRecord,
     },
     {
         navigationOptions: {},
@@ -32,10 +34,10 @@ const LoginStack = createStackNavigator(
 const HomeStack = createStackNavigator(
     {
         PgHome: PgHome,
-        PgSettle:PgSettle,
+        PgSettle: PgSettle,
         Detail: Detail,
         Setting: Setting,
-        TakeBillBoxContainer:TakeBillBoxContainer,
+        TakeBillBoxContainer: TakeBillBoxContainer,
     },
     {
         navigationOptions: {},
@@ -45,10 +47,9 @@ const HomeStack = createStackNavigator(
 );
 
 
-
 export const AppNavigator = createSwitchNavigator({
     LoginStack: LoginStack,
-    HomeStack:HomeStack
+    HomeStack: HomeStack
 })
 
 
@@ -59,8 +60,8 @@ export const AppNavigator = createSwitchNavigator({
  */
 const TransitionConfiguration = () => ({
     screenInterpolator: (sceneProps) => {
-        const { scene } = sceneProps;
-        const { route } = scene;
+        const {scene} = sceneProps;
+        const {route} = scene;
         const params = route.params || {};
         const transition = params.transition || 'forHorizontal';
         return StackViewStyleInterpolator[transition](sceneProps);
