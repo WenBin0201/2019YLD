@@ -58,7 +58,7 @@ export default class PgReceipts extends Component {
                         <Text style={[ReceiptsStyle.text2, { flex: 1 }]}>共计  x行 x件商品</Text>
                         <Button text='挂单' backgroundColor='#2b7889' width={60} height={27}
                             onPress={() => {
-                                DialogBox.show('asdsakdjlsak','alskdalskd')
+                                DialogBox.show('系統通知','此处内容可以自定义')
                             }}
                         />
                         <Button  text='取单' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={60} height={27}
