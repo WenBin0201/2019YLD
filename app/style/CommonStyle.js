@@ -100,6 +100,5 @@ export const commonStyle = StyleSheet.create({
         shadowOpacity:0.8,
         shadowRadius:0.5*/
     },
-
 });
 module.exports = commonStyle;
