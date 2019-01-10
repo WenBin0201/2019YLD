@@ -1,10 +1,23 @@
-import { PixelRatio, StyleSheet, Dimensions } from 'react-native'
+import {PixelRatio, StyleSheet, Dimensions} from 'react-native'
+import {COLOR_GRAY_F3F3F3, COLOR_SECOND_COLOR} from "../constant/ColorConstant";
 
-const { width } = Dimensions.get('window')
-const cashierInputBorderColor = 'black'
-const itemBorderColor = 'black'
+const {width} = Dimensions.get('window')
+const cashierInputBorderColor = COLOR_SECOND_COLOR
+const cashierTextSize = 16
+const cashierPadding = 15
+const listHeadPadding = 5
+const listHeadLeftAndRightMargin = 10
+const listHeadRedius = 8
+const listHeadTextSize = 14
+const listHeadTextColor = 'white'
+const listItemBorderColor = 'gray'
+const listItemPadding = 3
+const listItemTextColor = 'black'
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: COLOR_GRAY_F3F3F3
+    },
     headContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -33,45 +46,85 @@ const styles = StyleSheet.create({
     cashierContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        paddingTop: cashierPadding,
+        paddingBottom: cashierPadding
     },
     cashierAccountContainer: {
         flexDirection: 'row',
         alignItems: 'center'
     },
     cashierLeftText: {
-        fontSize: 42
+        fontSize: cashierTextSize,
+        color: COLOR_SECOND_COLOR
     },
     cashierInput: {
-        fontSize: 42,
-        underlineColorAndroid: 'transparent',
+        color: COLOR_SECOND_COLOR,
+        fontSize: cashierTextSize,
         padding: 0,
+        paddingLeft:3,
+        paddingRight:3,
+        height: 20,
         borderRadius: 4,
         borderWidth: 1 / PixelRatio.get(),
         borderColor: cashierInputBorderColor,
-        width: 200
+        width: 140,
+        marginLeft: 15
     },
     listHeadContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         width,
-        backgroundColor: 'black'
+        paddingLeft: listHeadLeftAndRightMargin,
+        paddingRight: listHeadLeftAndRightMargin,
+
     },
     listItemSeparatorView: {
         width,
         height: 1 / PixelRatio.get(),
-        backgroundColor: itemBorderColor
+        backgroundColor: listItemBorderColor
     },
     listHeadLeftText: {
         flex: 1,
         textAlign: 'center',
-        borderRightWidth: 2 / PixelRatio.get()
+        borderRightWidth: 2 / PixelRatio.get(),
+        color: 'white',
+        borderTopLeftRadius: listHeadRedius,
+        borderBottomLeftRadius: listHeadRedius,
+        paddingTop: listHeadPadding,
+        paddingBottom: listHeadPadding,
+        borderColor: listHeadTextColor,
+        fontSize: listHeadTextSize,
+        backgroundColor: COLOR_SECOND_COLOR
     },
-    listHeadBorderColor: {
-        borderColor: 'black'
+    listHeadMiddleText: {
+        width: width / 3,
+        paddingTop: listHeadPadding,
+        paddingBottom: listHeadPadding,
+        textAlign: 'center',
+        color: listHeadTextColor,
+        fontSize: listHeadTextSize,
+        backgroundColor: COLOR_SECOND_COLOR
     },
-    listItemBorderColor: {
-        borderColor: itemBorderColor
+    listHeadRightText: {
+        flex: 1,
+        textAlign: 'center',
+        borderLeftWidth: 2 / PixelRatio.get(),
+        color: listHeadTextColor,
+        borderTopRightRadius: listHeadRedius,
+        borderBottomRightRadius: listHeadRedius,
+        paddingTop: listHeadPadding,
+        paddingBottom: listHeadPadding,
+        borderColor: 'white',
+        fontSize: listHeadTextSize,
+        backgroundColor: COLOR_SECOND_COLOR
+    },
+    listItemExtraStyle: {
+        borderColor: listItemBorderColor,
+        backgroundColor: 'white',
+        paddingTop: listItemPadding,
+        paddingBottom: listItemPadding,
+        color: listItemTextColor
     }
 })
 
