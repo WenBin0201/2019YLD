@@ -46,7 +46,7 @@ export default class TabView extends Component {
                 <FlatList
                     style={{ flex: 1 }}
                     data={this.state.data}
-                    keyExtractor= {(item,index)=>{`${item}_${index}`}}
+                    keyExtractor= {(item, index) => `${item}_${index}`}
                     renderItem={this.props.renderItem}
                     ListEmptyComponent={() =>
                         <View style={{ flex: 1,justifyContent:'center',alignItems:'center'}}>

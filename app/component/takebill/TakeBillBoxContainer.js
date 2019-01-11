@@ -78,7 +78,7 @@ export default class TakeBillBoxContainer extends Component {
                     <View style={{ backgroundColor: '#a3c6d4' }}>
                         <FlatList
                             style={{ flex: 1, marginTop: 1 }}
-                            keyExtractor={(item, index) => { index }}
+                            keyExtractor={(item, index) => `${item}_${index}`}
                             data={this.state.dataSource1}
                             renderItem={this._renderRow1}
                         >
