@@ -3,6 +3,7 @@ import { DatePickerAndroid,FlatList, Text, View ,TouchableOpacity,TextInput,WebV
 import TabView from '../../../component/TabView/TabView'
 import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import PgPurchaseRecordsStyle from '../../../style/PgPurchaseRecordsStyle'
+import { COLOR_SECOND_COLOR, COLOR_F19149, COLOR_DCDCDC } from '../../../constant/ColorConstant'
 
 /**
  * 采购记录
@@ -14,6 +15,7 @@ export default class PgPurchaseRecords extends Component {
         this.state = { 
             text: '',
             buttonType:2,
+            selectItem:-1,
             dataSource: [
                 { "k1": "69432434324", "k2": "云烟(红)", "k3": "57.34", "k4": "4", "k5": "3", "k6": "5", "k7": "70.00", "k8": "70.00", "k9": "70.00" },
                 { "k1": "69432434324", "k2": "云烟(红)", "k3": "57.34", "k4": "4", "k5": "3", "k6": "5", "k7": "70.00", "k8": "70.00", "k9": "70.00" },
@@ -86,6 +88,11 @@ export default class PgPurchaseRecords extends Component {
                     {this.rightViewList()}
                 </View>
             </View>
+            <View style={{flexDirection:'row',width:'100%',height:50,justifyContent: 'space-between', alignItems: 'center' }}>
+                <View>
+                    <Text style={{color:'#2B7888'}}>采购单共计5单共计1种商品，商品总量18.00，商品总进货额18.00</Text>
+                </View>
+            </View>
             </View>
         );
     }
@@ -125,20 +132,27 @@ export default class PgPurchaseRecords extends Component {
         )
     }
     _renderItem=({item,index}) => {
+        let color='#2B7888'
+        let backgroundColor='#fff'
+        if(index==this.state.selectItem){
+            color='#fff'
+            backgroundColor=COLOR_F19149
+            console.log(color)
+        }
         return (
-            <View style={{backgroundColor: '#2B7888'}}>
-                <View style={{backgroundColor: '#fff', height: 100,borderRadius:8,borderColor:'#2B7888',borderWidth:1}}>
-                <View style={{height:30,alignItems:'center'}}>
-                    <Text>采购单号</Text>
+            <TouchableOpacity style={{backgroundColor: '#2B7888'}} onPress={() => {this.setState({selectItem:index}) }}>
+                <View style={{backgroundColor: backgroundColor, height: 80,borderRadius:8,borderColor:'#2B7888',borderWidth:1}}>
+                <View style={{height:25,alignItems:'center'}}>
+                    <Text style={{color:color}}>采购单号</Text>
                 </View>
-                <View style={{height:30,alignItems:'center'}}>
-                    <Text>{item.k1}</Text>
+                <View style={{height:25,alignItems:'center'}}>
+                    <Text style={{color:color}}>{item.k1}</Text>
                 </View>
-                <View style={{height:30,alignItems:'center'}}>
-                    <Text>时间：{item.k2}</Text>
+                <View style={{height:25,alignItems:'center'}}>
+                    <Text style={{color:color}}>时间：{item.k2}</Text>
                 </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
     rightViewList(){

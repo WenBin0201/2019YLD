@@ -46,6 +46,11 @@ export default class PgNewBN extends Component {
             <View style={{flex:15}}>
                 {this.webViewMethods()}
             </View>
+            <View style={{flexDirection:'row',width:'100%',height:50,justifyContent: 'space-between', alignItems: 'center' }}>
+                <View>
+                    <Text style={{color:'#2B7888'}}>我的档位22位</Text>
+                </View>
+            </View>
             </View>
         );
     }
