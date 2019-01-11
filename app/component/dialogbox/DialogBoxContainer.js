@@ -52,7 +52,7 @@ export default class DialogBoxContainer extends Component {
         return (
             <View style={{ width:350, height:200, backgroundColor: '#FFFFFF' }}>
                 {this.props.title ?
-                    <View style={{ height: 50, backgroundColor: '#3e8492', alignItems: 'center', justifyContent: 'center' }}>
+                    <View style={{ height: 40, backgroundColor: '#3e8492', alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{ color: '#FFF', fontSize: 16 }}>{this.props.title}</Text>
                     </View>
                     : null

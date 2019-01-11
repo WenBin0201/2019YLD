@@ -27,6 +27,10 @@ export const PulicStyle = StyleSheet.create({
         fontSize: 25, 
         color: COLOR_WHITE_COLOR
     },
+    text_FFF_30:{
+        fontSize: 30, 
+        color: COLOR_WHITE_COLOR
+    },
     text_FFF_35:{
         fontSize: 35, 
         color: COLOR_WHITE_COLOR 

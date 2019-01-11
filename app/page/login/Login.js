@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Text,View,Image,ScrollView,TouchableOpacity } from 'react-native';
+import React, {Component} from 'react';
+import {Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
 
-var { GiftedForm, GiftedFormManager } = require('react-native-gifted-form');
+var {GiftedForm, GiftedFormManager} = require('react-native-gifted-form');
 import CheckBox from 'react-native-modest-checkbox'
-import { COLOR_SECOND_COLOR} from '../../constant/ColorConstant';
+import {COLOR_SECOND_COLOR} from '../../constant/ColorConstant';
 
 import commonStyle from '../../style/CommonStyle';
 import loginStyle from '../../style/LoginStyle.js';
@@ -11,18 +11,21 @@ import formStyle from '../../style/FormStyle';
 
 
 export default class Login extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             checked: false,
         };
     }
+
     render() {
         return (
             <ScrollView style={commonStyle.scrollFrame}>
-                <View style={[commonStyle.logoFrame,commonStyle.flexRow,commonStyle.centerRCF,commonStyle.centerRZF]}>
+                <View
+                    style={[commonStyle.logoFrame, commonStyle.flexRow, commonStyle.centerRCF, commonStyle.centerRZF]}>
                     <Image source={require("../../image/login/logo-text.png")} style={[commonStyle.loginText]}></Image>
-                    <Image source={require("../../image/login/logo-icon.png")} style={[commonStyle.loginIcon,commonStyle.positionRight5]}></Image>
+                    <Image source={require("../../image/login/logo-icon.png")}
+                           style={[commonStyle.loginIcon, commonStyle.positionRight5]}></Image>
                 </View>
                 <View>
                     <GiftedForm
@@ -55,39 +58,41 @@ export default class Login extends Component {
                                 clearButtonMode='while-editing'
                                 secureTextEntry={true}
                             />
-                            <View style={[commonStyle.flexRow,commonStyle.paddingTop5]}>
-                                <TouchableOpacity style={[commonStyle.flex1,commonStyle.centerRZF,commonStyle.alignRCF,]}>
-                                    <Text style={[commonStyle.color9e,commonStyle.paddingR20,commonStyle.underline]}>忘记密码 </Text>
+                            <View style={[commonStyle.flexRow, commonStyle.paddingTop5]}>
+                                <TouchableOpacity
+                                    style={[commonStyle.flex1, commonStyle.centerRZF, commonStyle.alignRCF,]}>
+                                    <Text
+                                        style={[commonStyle.color9e, commonStyle.paddingR20, commonStyle.underline]}>忘记密码 </Text>
                                 </TouchableOpacity>
                                 <View style={[commonStyle.flex1]}>
                                     <CheckBox
                                         numberOfLabelLines={2}
                                         checked={this.state.checked}
-                                        labelStyle={{fontSize:14,color: '#9E9E9E'}}
-                                        checkboxStyle={{width:25,height:25}}
+                                        labelStyle={{fontSize: 14, color: '#9E9E9E'}}
+                                        checkboxStyle={{width: 25, height: 25}}
                                         label='记住密码'
                                         onChange={(checked) => this._changeChecked()}
                                     />
                                 </View>
                             </View>
                             <View>
-                                <Text style={[commonStyle.color9e,commonStyle.textAlignR,commonStyle.paddingR10,
-                                    commonStyle.font12,commonStyle.paddingBottom5]}>YLD.2.1.1.V1</Text>
+                                <Text style={[commonStyle.color9e, commonStyle.textAlignR, commonStyle.paddingR10,
+                                    commonStyle.font12, commonStyle.paddingBottom5]}>YLD.2.1.1.V1</Text>
                             </View>
                         </GiftedForm.GroupWidget>
                         <GiftedForm.SubmitWidget
                             title='登录'
                             widgetStyles={{
                                 submitButton: {
-                                    backgroundColor:COLOR_SECOND_COLOR,
-                                    width:286,
-                                    height:40,
-                                    alignSelf:'center',
-                                    borderRadius:14,
-                                    marginTop:20
+                                    backgroundColor: COLOR_SECOND_COLOR,
+                                    width: 286,
+                                    height: 40,
+                                    alignSelf: 'center',
+                                    borderRadius: 14,
+                                    marginTop: 20
                                 }
                             }}
-                            onSubmit={()=>{
+                            onSubmit={() => {
                                 this.props.navigation.navigate('PgHome')
                             }}
                             // onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
@@ -97,11 +102,13 @@ export default class Login extends Component {
                             //     }
                             // }}
                         />
-                        <View style={[commonStyle.flexRow,loginStyle.btnFrame]}>
-                            <View style={loginStyle.btnBg}>
+                        <View style={[commonStyle.flexRow, loginStyle.btnFrame]}>
+                            <TouchableOpacity style={loginStyle.btnBg} onPress={() => {
+                                this.props.navigation.navigate('ShiftRecord')
+                            }}>
                                 <Text style={loginStyle.btnText}>交接班记录</Text>
-                            </View>
-                            <View style={[loginStyle.btnBg,loginStyle.btnMargin]}>
+                            </TouchableOpacity>
+                            <View style={[loginStyle.btnBg, loginStyle.btnMargin]}>
                                 <Text style={loginStyle.btnText}>软件升级</Text>
                             </View>
                             <View style={[loginStyle.btnBg]}>

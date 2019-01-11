@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import HomeStyle from '../../style/HomeStyle'
+import PublicStyle from '../../style/PublicStyle'
 import ScrollableTabView from 'react-native-scrollable-tab-view'
 
 import PgPurchase from './purchase/PgPurchase'
@@ -42,7 +43,6 @@ export default class PgHome extends Component {
     }
 
     componentWillMount() {
-
         BackHandler.addEventListener('hardwareBackPress', this._exitApp)
     }
 
@@ -90,12 +90,11 @@ export default class PgHome extends Component {
                             </TouchableOpacity>)
                     })}
                     <View style={HomeStyle.topcell_zs}>
-                        <View style={{ alignItems: 'center', }}>
+                        <View style={{ alignItems: 'center'}}>
                             <Animated.Text
-                                style={{
-                                    color: '#fff', fontSize: 30, lineHeight: 30,
+                                style={[PublicStyle.text_FFF_30,{lineHeight: 30,
                                     transform: [{ rotateY: this.state.ani.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '360deg'] }) }]
-                                }}>8.8</Animated.Text>
+                                }]}>8.8</Animated.Text>
                             <Text style={[HomeStyle.text]}>昨日使用指数</Text>
                         </View>
                     </View>
