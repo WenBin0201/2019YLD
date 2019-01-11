@@ -14,4 +14,4 @@ export const COLOR_F1F1F1 = '#F1F1F1';
 export const COLOR_F19149 = '#F19149';
 export const COLOR_EAEAEA = '#EAEAEA';
 export const COLOR_8FC31F = '#8FC31F';
-export const COLOR_EC6941 = '#ec6941'
+export const COLOR_EC6941 = '#ec6941'//黄色
