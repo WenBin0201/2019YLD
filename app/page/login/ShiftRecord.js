@@ -4,7 +4,7 @@
 
 import React from 'react'
 import commonStyle from '../../style/CommonStyle'
-import {Image, View, Text, TouchableOpacity, TextInput, FlatList} from 'react-native'
+import { Image, View, Text, TouchableOpacity, TextInput, FlatList } from 'react-native'
 import styles from '../../style/ShiftRecordStyle'
 import Button from '../../component/Button'
 
@@ -29,16 +29,16 @@ class ShiftRecord extends React.Component {
         return (
             <View style={[commonStyle.logoFrame, styles.headContainer]}>
                 <Image source={require('../../image/login/shiftRecord-text.png')} style={styles.headTextImage}
-                       resizeMode={'contain'}/>
+                    resizeMode={'contain'} />
                 <TouchableOpacity
                     onPress={() => {
                         this.props.navigation.pop()
                     }}
                     style={[styles.headRightContainer]}>
-                    <View style={styles.headRightDivision}/>
+                    <View style={styles.headRightDivision} />
                     <Image source={require('../../image/login/shiftRecord-cross.png')}
-                           resizeMode={'contain'}
-                           style={styles.headRightCrossImage}/>
+                        resizeMode={'contain'}
+                        style={styles.headRightCrossImage} />
                 </TouchableOpacity>
             </View>
         )
@@ -57,7 +57,7 @@ class ShiftRecord extends React.Component {
                     <TextInput
                         style={styles.cashierInput}
                         value={this.state.cashierAccount}
-                        onChangeText={text => this.setState({cashierAccount: text})}/>
+                        onChangeText={text => this.setState({ cashierAccount: text })} />
                 </View>
                 <View style={styles.cashierAccountContainer}>
                     <Text style={styles.cashierLeftText}>收银员密码</Text>
@@ -66,9 +66,9 @@ class ShiftRecord extends React.Component {
                         underlineColorAndroid={'transparent'}
                         secureTextEntry={true}
                         value={this.state.cashierPassword}
-                        onChangeText={text => this.setState({cashierPassword: text})}/>
+                        onChangeText={text => this.setState({ cashierPassword: text })} />
                 </View>
-                <Button text='查询' fontSize={16} color={'white'} width={50} onPress={this._doQuery}/>
+                <Button text='查询' fontSize={16} color={'white'} width={50} onPress={this._doQuery} />
             </View>
         )
     }
@@ -93,7 +93,7 @@ class ShiftRecord extends React.Component {
      */
     _renderList = () =>
         <FlatList
-            style={{backgroundColor: 'white', marginTop: 15}}
+            style={{ backgroundColor: 'white', marginTop: 15 }}
             data={this.state.cashData}
             renderItem={this._renderListItem}
             keyExtractor={(item, index) => `${item}_${index}`}
@@ -102,12 +102,12 @@ class ShiftRecord extends React.Component {
             ListFooterComponent={this._renderSeparator}
         />
 
-    _renderSeparator = () => (<View style={styles.listItemSeparatorView}/>)
+    _renderSeparator = () => (<View style={styles.listItemSeparatorView} />)
 
-    _renderListItem = ({item = {}}, index) => {
-        const {startTime, endTime, money = 0} = item
+    _renderListItem = ({ item = {} }, index) => {
+        const { startTime, endTime, money = 0 } = item
         return (
-            <View style={[styles.listHeadContainer, {backgroundColor: 'white'}]}>
+            <View style={[styles.listHeadContainer, { backgroundColor: 'white' }]}>
                 <Text
                     style={[styles.listHeadLeftText, styles.listItemExtraStyle]}>{startTime}</Text>
                 <Text

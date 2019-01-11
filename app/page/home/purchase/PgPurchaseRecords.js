@@ -100,7 +100,7 @@ export default class PgPurchaseRecords extends Component {
                 <FlatList
                     style={{ flex: 1 }}
                     data={this.state.dataList}
-                    keyExtractor= {(item,index)=>{index}}
+                    keyExtractor= {(item, index) => `${item}_${index}`}
                     renderItem={this._renderItem}
                     ListEmptyComponent = {()=> <View style={{flex:1}}></View>}
                     ItemSeparatorComponent={()=>
