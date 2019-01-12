@@ -92,15 +92,12 @@ export default class Login extends Component {
                                     marginTop: 20
                                 }
                             }}
-                            onSubmit={() => {
-                                this.props.navigation.navigate('PgHome')
+                            onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
+                                if (isValid === true) {
+                                    // prepare object
+                                   /* values.gender = values.gender[0];*/
+                                }
                             }}
-                            // onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
-                            //     if (isValid === true) {
-                            //         // prepare object
-                            //        /* values.gender = values.gender[0];*/
-                            //     }
-                            // }}
                         />
                         <View style={[commonStyle.flexRow, loginStyle.btnFrame]}>
                             <TouchableOpacity style={loginStyle.btnBg} onPress={() => {

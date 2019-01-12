@@ -4,7 +4,7 @@ import {
     createAppContainer,
     createSwitchNavigator
 } from 'react-navigation'
-
+import Pgtest from '../page/test/Pgtest'
 import Login from '../page/login/Login'
 import PgHome from '../page/home/PgHome'
 import Setting from '../page/test/Setting'
@@ -12,14 +12,19 @@ import Detail from '../page/test/Detail'
 import PgSettle from '../page/home/receipts/PgSettle' //结算页面
 import TakeBillBoxContainer from '../component/takebill/TakeBillBoxContainer'
 import ShiftRecord from '../page/login/ShiftRecord'
+import PgShift from '../page/login/PgShift' //交界班界面
+import PgForgetPwd from '../page/login/PgForgetPwd' //忘记密码界面
 
 /**
  * 登录模块
  */
 const LoginStack = createStackNavigator(
     {
+        Pgtest:Pgtest,
         Login: Login,
+        PgShift:PgShift,
         ShiftRecord: ShiftRecord,
+        PgForgetPwd: PgForgetPwd,
     },
     {
         navigationOptions: {},

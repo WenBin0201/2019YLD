@@ -5,7 +5,7 @@ import {
     View,
     Dimensions,
     TouchableOpacity,
-    ScrollView,
+    Image,
     TextInput,
     StyleSheet
 
@@ -39,34 +39,43 @@ export default class DialogBoxContainer extends Component {
         if (this.props.content && Array.isArray(this.props.content)) {
             _content = this.props.content.map((text, i) => {
                 return (
-                    <Text key={i} style={{ fontSize: 14, color: '#666666',marginTop:i==0?0:10 }}>{text}</Text>
+                    <Text key={i} style={{ fontSize: 16, color: '#2b7888', marginTop: i == 0 ? 0 : 10 }}>{text}</Text>
                 )
             });
         } else if ((typeof this.props.content == 'string') && (this.props.content.constructor == String)) {
-            _content = (<Text style={{ fontSize: 14, color: '#666666' }}>{this.props.content}</Text>);
+            _content = (<Text style={{ fontSize: 16, color: '#2b7888' }}>{this.props.content}</Text>);
         } else {
             _content = this.props.content;
         }
-        
+
 
         return (
-            <View style={{ width:350, height:200, backgroundColor: '#FFFFFF' }}>
-                {this.props.title ?
-                    <View style={{ height: 40, backgroundColor: '#3e8492', alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ width: 350, height: 200, backgroundColor: '#FFFFFF' }}>
+                {this.props.showTitle == true ?
+                    <View style={{ height: 30, backgroundColor: '#2b7888', alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{ color: '#FFF', fontSize: 16 }}>{this.props.title}</Text>
+                        {this.props.showCancelBtn == true ?
+                            <TouchableOpacity onPress={() => {
+                                this.props.destroy();
+                            }} style={{ position: 'absolute', right: 0, height: 30, width: 35, borderColor: '#ffffff', borderLeftWidth: 1, alignItems: 'center', justifyContent: 'center' }}>
+                                <Image source={require('../../image/login/shiftRecord-cross.png')}
+                                    resizeMode={'contain'}
+                                    style={{width:20,height:20}} />
+                            </TouchableOpacity>
+                            : null}
                     </View>
                     : null
                 }
-                <View style={{ flex: 1, paddingTop: 10, paddingBottom: 10, justifyContent: 'center', alignItems: 'center', }}>
+                <View style={{ flex: 1, paddingTop: 10, paddingBottom: 15, justifyContent: 'center', alignItems: 'center', }}>
                     {_content}
                     {this.props.mixedView ? this.props.mixedView : null}
                 </View>
                 {this.props.buttons && Array.isArray(this.props.buttons) && this.props.buttons.length > 0 ?
-                    <View style={{ alignItems: 'center', paddingBottom: 10, flexDirection: 'row', justifyContent: 'space-around' }}>
+                    <View style={{ alignItems: 'center', paddingBottom: 10, flexDirection: 'row', justifyContent: 'center' }}>
                         {this.props.buttons.map((item, i) => {
                             return (
-                                <TouchableOpacity key={i} onPress={item.onPress} style={{ height: 30, width: 75, backgroundColor: '#3e8492', borderRadius: 5, alignItems: 'center', justifyContent: 'center' }}>
-                                    <Text> {item.text} </Text>
+                                <TouchableOpacity key={i} onPress={item.onPress} style={{ height: 30, marginLeft: i == 0 ? 0 : 25, width: 70, backgroundColor: item.backgroundColor ? item.backgroundColor : '#2b788', borderRadius: 3, alignItems: 'center', justifyContent: 'center' }}>
+                                    <Text style={{ fontSize: 14, color: '#ffffff' }}> {item.text} </Text>
                                 </TouchableOpacity>
                             )
                         })}

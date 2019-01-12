@@ -82,7 +82,7 @@ export const SettleStyle = StyleSheet.create({
         right: 35,
         top: 40,
         borderRadius: 5,
-        backgroundColor: '#f1f1f1',
+        backgroundColor: '#a3c6d4',
         borderWidth: 1,
         flexDirection: 'row',
     },

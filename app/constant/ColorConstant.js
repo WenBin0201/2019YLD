@@ -16,3 +16,4 @@ export const COLOR_EAEAEA = '#EAEAEA';
 export const COLOR_8FC31F = '#8FC31F';
 export const COLOR_EC6941 = '#ec6941';
 export const COLOR_DCDCDC = '#DCDCDC'
+export const COLOR_E74C39 = '#e74c39'

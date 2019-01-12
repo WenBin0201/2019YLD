@@ -10,6 +10,7 @@ import {
  * 收银主页
  */
 import ReceiptsStyle from '../../../style/ReceiptsStyle'
+import PublicStyle from '../../../style/PublicStyle'
 import TabView from '../../../component/TabView/TabView'
 import TakeBillBox from '../../../component/takebill/TakeBillBox'
 import DialogBox from '../../../component/dialogbox/DialogBox'
@@ -44,7 +45,7 @@ export default class PgReceipts extends Component {
 
     render() {
         return (
-            <View style={ReceiptsStyle.container}>
+            <View style={PublicStyle.bg}>
                 <TabView
                     tabHeads={['商品条码', '商品名称', '原价', '折扣', '数量', '现价', '小计']}
                     tabRowWidth={[1.5, 2, 1, 1, 1, 1, 1]}
@@ -84,6 +85,7 @@ export default class PgReceipts extends Component {
                             <TextInput
                                 style={ReceiptsStyle.textIput1}
                                 placeholder="请输入条码/拼音码/自编码"
+                                placeholderTextColor="#dbdbdb"
                                 underlineColorAndroid='transparent'
                             />
                             <TouchableOpacity style={ReceiptsStyle.btn2}>
@@ -95,6 +97,7 @@ export default class PgReceipts extends Component {
                                 <TextInput
                                     style={ReceiptsStyle.textIput2}
                                     placeholder="请输入会员手机号"
+                                    placeholderTextColor="#dbdbdb"
                                     underlineColorAndroid='transparent'
                                 />
                                 <View style={{ flexDirection: 'row', height: 25 }}>

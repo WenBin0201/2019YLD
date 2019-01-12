@@ -33,7 +33,7 @@ export default class TabView extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1}}>
                 <View style={{ backgroundColor: this.props.tabHeadBg, flexDirection: 'row', height: this.props.tabHeadHeight, width: this.deviceWidth }}>
                     {this.tabHeads.map((item, i) => {
                         return (
@@ -44,7 +44,7 @@ export default class TabView extends Component {
                     })}
                 </View>
                 <FlatList
-                    style={{ flex: 1 }}
+                    style={{ flex: 1,marginTop:8 }}
                     data={this.state.data}
                     keyExtractor= {(item, index) => `${item}_${index}`}
                     renderItem={this.props.renderItem}
