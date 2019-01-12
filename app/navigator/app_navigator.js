@@ -21,12 +21,11 @@ import PasswordRetrieve from '../page/login/PasswordRetrieve'
  */
 const LoginStack = createStackNavigator(
     {
-        Pgtest:Pgtest,
         Login: Login,
-        PgShift:PgShift,
+        PgShift: PgShift,
         ShiftRecord: ShiftRecord,
         PgForgetPwd: PgForgetPwd,
-        PasswordRetrieve:PasswordRetrieve
+        PasswordRetrieve: PasswordRetrieve
     },
     {
         navigationOptions: {},
@@ -54,8 +53,8 @@ const HomeStack = createStackNavigator(
 )
 
 export const AppNavigator = createSwitchNavigator({
-    LoginStack: LoginStack,
     HomeStack: HomeStack,
+    LoginStack: LoginStack
 })
 
 /**
