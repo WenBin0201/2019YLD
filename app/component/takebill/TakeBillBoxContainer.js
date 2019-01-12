@@ -185,9 +185,9 @@ const TakeBiollStyle = StyleSheet.create({
     },
     view_top_right: {
         borderColor: '#FFF',
-        borderLeftWidth: 2,
+        borderLeftWidth: 1,
         height: 50,
-        width: 45,
+        width: 50,
         position: 'absolute',
         right: 0,
         alignItems: 'center',

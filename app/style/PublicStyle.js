@@ -112,20 +112,20 @@ export const PulicStyle = StyleSheet.create({
     navigator_left: {
         position: 'absolute',
         left: 0,
-        width: 60,
+        width: 65,
         height: 65,
         borderColor: '#165562',
-        borderRightWidth: 2,
+        borderRightWidth: 1,
         justifyContent:'center',
         alignItems:'center'
     },
     navigator_right_cancel: {
         position: 'absolute',
         right: 0,
-        width:60,
+        width:65,
         height: 65,
         borderColor: '#ffffff',
-        borderLeftWidth: 2,
+        borderLeftWidth: 1,
         justifyContent:'center',
         alignItems:'center'
     },
