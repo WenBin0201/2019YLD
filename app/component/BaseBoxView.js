@@ -3,7 +3,7 @@ import {
     View,
     Modal
 } from 'react-native';
-import PulicStyle from '../style/PublicStyle'
+import PublicStyle from '../style/PublicStyle'
 export default class BaseBoxView extends Component {
 
     constructor(props) {

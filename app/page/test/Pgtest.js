@@ -5,6 +5,8 @@ import { View, Text } from 'react-native';
 import Button from '../../component/Button'
 import DialogBox from '../../component/dialogbox/DialogBox'
 import TakeBillBox from '../../component/takebill/TakeBillBox'
+import ComSelectBox from "../../component/comselect/ComSelectBox";
+import AddCommBox from '../../component/addcomm/AddCommBox'
 
 
 
@@ -62,9 +64,19 @@ export default class Pgtest extends Component {
 
                     this._dialog6();
                 }} />
-                <Button width={120} text='网络状态弹窗' style={{ margin: 5 }} onPress={() => {
 
+                <Button width={120} text='网络状态弹窗' style={{ margin: 5 }} onPress={() => {
                     this._dialog7();
+
+                }} />
+                <Button width={140} text='商品选择' style={{ margin: 5 }} onPress={() => {
+                    ComSelectBox.show();
+                }} />
+                 <Button width={140} text='一码多品-商品选择' style={{ margin: 5 }} onPress={() => {
+                    ComSelectBox.show({isMultiple:true});
+                }} />
+                 <Button width={150} text='初次售卖商品资料-新增' style={{ margin: 5 }} onPress={() => {
+                    AddCommBox.show();
                 }} />
             </View>
         )
@@ -163,7 +175,7 @@ export default class Pgtest extends Component {
     }
 
     _dialog7() {
-        let _v = <View style={{flex:1,flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        let _v = <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <View style={{ width: 18, height: 18, backgroundColor: '#666666', marginRight: 3 }}></View>
             <Text style={{ color: '#2b7889', fontSize: 18 }}>您好！当前网络状态为网络通畅</Text>
         </View>
