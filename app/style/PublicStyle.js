@@ -68,6 +68,10 @@ export const PublicStyle = StyleSheet.create({
         fontSize: 10,
         color: COLOR_GRAY_9E9E9E
     },
+    text_9E9E9E_12: {
+        fontSize: 12,
+        color: COLOR_GRAY_9E9E9E
+    },
     text_9E9E9E_14: {
         fontSize: 14,
         color: COLOR_GRAY_9E9E9E

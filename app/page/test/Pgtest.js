@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 
 
 import Button from '../../component/Button'
 import CreateCommodityBox from '../../component/CreateCommodityModal/CreateCommodityBox'
 import DialogBox from '../../component/dialogbox/DialogBox'
-import PurchaseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
+// import PurcahseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
 import TakeBillBox from '../../component/takebill/TakeBillBox'
 import ComSelectBox from "../../component/comselect/ComSelectBox";
 import AddCommBox from '../../component/addcomm/AddCommBox'
@@ -84,8 +84,20 @@ export default class Pgtest extends Component {
                 <Button width={150} text='称重计价弹窗' style={{ margin: 5 }} onPress={() => {
                     WeipriceBox.show();
                 }} />
+                <Button width={150} text='跳转页数提示' style={{ margin: 5 }} onPress={() => {
+                    this._dialog8();
+                }} />
+                <Button width={150} text='商品档案导出' style={{ margin: 5 }} onPress={() => {
+                    this._dialog9();
+                }} />
+                <Button width={150} text='修改权限验证码弹窗' style={{ margin: 5 }} onPress={() => {
+                    this._dialog10();
+                }} />
+                <Button width={150} text='订单生成提示' style={{ margin: 5 }} onPress={() => {
+                    this._dialog11();
+                }} />
                 <Button width={150} text='采购单入库' style={{ margin: 5 }} onPress={() => {
-                    PurchaseInStorageBox.show();
+                    // PurcahseInStorageBox.show();
                 }} />
                 <Button width={150} text='新增商品' style={{ margin: 5 }} onPress={() => {
                     CreateCommodityBox.show();
@@ -201,4 +213,86 @@ export default class Pgtest extends Component {
             ]
         }, _v, true, true)
     }
+
+    _dialog8() {
+        DialogBox.show('系统提示', '您输入的跳转页数超过有效范围!', {
+            buttons: [
+                {
+                    text: '关闭',
+                    backgroundColor: '#eb6100',
+                    onPress: () => { DialogBox.hide() }
+                },
+            ]
+        }, null, true, true)
+    }
+
+    _dialog9() {
+        let _v = <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingBottom: 5 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Text style={{ fontSize: 14, color: '#2b7888' }}>邮箱：</Text>
+                <TextInput style={{ marginLeft: 5, width: 217, height: 30, paddingTop: 0, paddingBottom: 0, borderColor: '#2b7888', borderWidth: 1, borderRadius: 5 }} />
+            </View>
+            <View style={{ flexDirection: 'row', marginTop: 15 }}>
+                <Text style={{ fontSize: 14, color: '#2b7888' }}>提示：</Text>
+                <Text style={{ marginLeft: 5, fontSize: 10, color: '#2b7888' }}>导出的报表将以Excel文件形式发送到您的邮箱，{'\n'}请填写您的常用邮箱，以确保顺利接收邮件</Text>
+            </View>
+        </View>
+        DialogBox.show('商品档案导出', null, {
+            buttons: [
+                {
+                    text: '关闭',
+                    backgroundColor: '#eb6100',
+                    onPress: () => { DialogBox.hide() }
+                },
+                {
+                    text: '发送',
+                    backgroundColor: '#eb6100',
+                    onPress: () => { DialogBox.hide() }
+                }
+            ]
+
+        }, _v, true, true)
+    }
+
+    _dialog10() {
+        let _v = <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', marginLeft: 50, marginRight: 50 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+                <Text>验证码</Text>
+                <TextInput placeholder='请输入图形验证码' placeholderTextColor='#dbdbdb' style={{ fontSize: 12, marginLeft: 5, flex: 1, height: 30, paddingTop: 0, paddingBottom: 0, borderColor: '#2b7888', borderWidth: 1 }} />
+                <View style={{ width: 70, height: 30, marginLeft: 5, justifyContent: 'center', alignItems: 'center', borderColor: '#dbdbdb', borderWidth: 1, borderRadius: 3 }}>
+                </View>
+            </View>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Text>验证码</Text>
+                <TextInput placeholder='请输入手机验证码' placeholderTextColor='#dbdbdb' style={{ fontSize: 12, marginLeft: 5, flex: 1, height: 30, paddingTop: 0, paddingBottom: 0, borderColor: '#2b7888', borderWidth: 1 }} />
+                <View style={{ width: 40, height: 30, marginLeft: 5, justifyContent: 'center', alignItems: 'center', borderColor: '#2b7888', borderWidth: 1, borderRadius: 3 }}>
+                    <Text>60</Text>
+                </View>
+
+            </View>
+            <Text style={{ fontSize: 12, color: '#d63200' }}>您已获取修改权限，修改时效为2个小时！</Text>
+        </View>
+        DialogBox.show('系统提示', null, {
+            buttons: [
+                {
+                    text: '关闭',
+                    backgroundColor: '#eb6100',
+                    onPress: () => { DialogBox.hide() }
+                },
+            ]
+        }, _v, true, true)
+    }
+
+    _dialog11() {
+        DialogBox.show('系统提示', ['恭喜您！', '智能补货采购订单已经生成', '在入库版本中通过采购单入库完成入库操作'], {
+            buttons: [
+                {
+                    text: '关闭',
+                    backgroundColor: '#eb6100',
+                    onPress: () => { DialogBox.hide() }
+                },
+            ]
+        }, null, true, true)
+    }
+
 }
