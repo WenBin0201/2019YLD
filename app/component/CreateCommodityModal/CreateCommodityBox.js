@@ -8,31 +8,32 @@ import BaseBoxView from '../BaseBoxView'
 
 export default class CreateCommodityBox {
 
-    static show() {
-        if (this._manager != null) {
-            this.hide();
+    static show({ title }) {
+        if ( this._manager != null ){
+            this.hide()
         }
         this._manager = new RootSiblings(
             <BaseBoxView
                 renderComponent={
                     <CreateCommodityBoxContainer
+                        title={title}
                         destroy={() => {
-                            this.hide();
+                            this.hide()
                         }}
                     />
                 }
                 destroy={() => {
-                    this.hide();
+                    this.hide()
                 }}
             />
         )
-        return this._manager;
+        return this._manager
     }
 
     static hide() {
-        if (this._manager !== undefined && this._manager instanceof RootSiblings) {
-            this._manager.destroy();
-            this._manager = null;
+        if ( this._manager !== undefined && this._manager instanceof RootSiblings ){
+            this._manager.destroy()
+            this._manager = null
         }
     }
 }
