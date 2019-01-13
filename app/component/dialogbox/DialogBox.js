@@ -15,7 +15,7 @@ import BaseBoxView from '../BaseBoxView'
  */
 export default class DialogBox {
 
-    static show(title, content,  options={buttons: [{text:'知道了',onPress:()=>{this.hide()}}],}, mixedView) {
+    static show(title,content,  options={buttons: [{text:'知道了',backgroundColor:'#2b7888',onPress:()=>{this.hide()}}],}, mixedView, showTitle=true,showCancelBtn=false,) {
         if (this._manager != null) {
             this.hide();
         }
@@ -23,6 +23,8 @@ export default class DialogBox {
             <BaseBoxView
                 renderComponent={
                     <DialogBoxContainer
+                        showTitle={showTitle}
+                        showCancelBtn = {showCancelBtn}
                         title={title}
                         content={content}
                         {...options}

@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    Dimensions,
+    Image,
     TouchableOpacity,
     TextInput,
     Animated,
-    Easing
+    Easing,
+    ToastAndroid
 } from 'react-native';
 
 import Button from '../../../component/Button'
@@ -74,12 +75,12 @@ export default class PgSettle extends Component {
         return (
             <View style={{ flex: 1 }}>
                 {/* 导航栏 可做封装;;;;*/}
-                <View style={SettleStyle.settle_view_top}>
-                    <Text style={PublicStyle.text_FFF_35}>收款</Text>
-                    <TouchableOpacity onPress={() => {
-                        this.props.navigation.goBack();
-                    }} style={SettleStyle.settle_view_top_right}>
-                        <Text style={SettleStyle.text_FFF_20}>关闭</Text>
+                <View style={PublicStyle.navigator}>
+                    <Text style={PublicStyle.text_FFF_30}>收款</Text>
+                    <TouchableOpacity onPress={() => { this.props.navigation.pop() }} style={PublicStyle.navigator_right_cancel}>
+                        <Image source={require('../../../image/login/shiftRecord-cross.png')}
+                            resizeMode={'contain'}
+                            style={{ width: 30, height: 30 }} />
                     </TouchableOpacity>
                 </View>
                 <View style={PublicStyle.ajcjf}>
@@ -105,6 +106,7 @@ export default class PgSettle extends Component {
                         <View style={SettleStyle.settle_view_3}>
                             {this.num.map((item, i) => {
                                 return (<Button
+                                    key={i}
                                     style={{ margin: 5 }}
                                     backgroundColor={COLOR_SECOND_COLOR}
                                     width={350 / 5}
@@ -119,7 +121,14 @@ export default class PgSettle extends Component {
                     </View>
 
                     <Animated.View style={[SettleStyle.settle_view_Ani4, { left: this.state.left, }]}>
-                        <DiscountView />
+                        <DiscountView onPress={(item)=>{
+                            ToastAndroid.showWithGravity(
+                                item,
+                                ToastAndroid.SHORT,
+                                ToastAndroid.CENTER
+                              );
+
+                        }}/>
                         <TouchableOpacity onPress={() => {
                             this._moveLeft();
                         }}

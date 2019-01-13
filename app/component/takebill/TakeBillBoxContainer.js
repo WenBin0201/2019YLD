@@ -6,7 +6,8 @@ import {
     TouchableOpacity,
     TextInput,
     FlatList,
-    StyleSheet
+    StyleSheet,
+    Image
 
 } from 'react-native';
 
@@ -51,7 +52,7 @@ export default class TakeBillBoxContainer extends Component {
                     ],
                 })
             }
-        }, 2000)
+        }, 500)
     }
 
     componentWillUnmount() {
@@ -71,7 +72,9 @@ export default class TakeBillBoxContainer extends Component {
                             this.props.navigation.goBack()
                         }
                     }} style={TakeBiollStyle.view_top_right}>
-                        <Text style={{ fontSize: 20, color: '#fff' }}>关闭</Text>
+                          <Image source={require('../../image/login/shiftRecord-cross.png')}
+                            resizeMode={'contain'}
+                            style={{ width: 30, height: 30 }} />
                     </TouchableOpacity>
                 </View>
                 <View style={{ flexDirection: 'row', flex: 1 }}>
@@ -157,7 +160,7 @@ export default class TakeBillBoxContainer extends Component {
      */
     _renderRow = ({ item, index }) => {
         return (
-            <View style={{ flexDirection: 'row', backgroundColor: index % 2 == 0 ? '#ffffff' : '#f1f1f1', height: 30 }}>
+            <View style={{ flexDirection: 'row', backgroundColor: index % 2 == 0 ? '#ffffff' : '#fafafa', height: 30 }}>
                 <View style={[PulicStyle.tab_item, { flex: 1, }]}>
                     <Text>{item.k1}</Text>
                 </View>
@@ -184,7 +187,7 @@ const TakeBiollStyle = StyleSheet.create({
         borderColor: '#FFF',
         borderLeftWidth: 2,
         height: 50,
-        width: 60,
+        width: 45,
         position: 'absolute',
         right: 0,
         alignItems: 'center',
@@ -195,7 +198,7 @@ const TakeBiollStyle = StyleSheet.create({
         paddingBottom: 0,
         paddingTop: 0,
         height: 25,
-        width: 100,
+        width: 121,
         borderRadius: 3,
         borderColor: '#2b7888',
         borderWidth: 1,

@@ -12,7 +12,7 @@ export default class Button extends Component {
 
     static defaultProps = {
         backgroundColor: COLOR_SECOND_COLOR,
-        borderRadius: 5,
+        borderRadius: 3,
         height:25,
         color: COLOR_WHITE_COLOR,
         fontSize: 14,
