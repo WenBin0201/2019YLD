@@ -93,7 +93,7 @@ export default class Pgtest extends Component {
                     this._dialog11()
                 }}/>
                 <Button width={150} text='采购单入库' style={{ margin: 5 }} onPress={() => {
-                    // PurcahseInStorageBox.show();
+                    PurcahseInStorageBox.show()
                 }}/>
                 <Button width={150} text='新增商品' style={{ margin: 5 }} onPress={() => {
                     CreateCommodityBox.show({ title: '新增商品' })
