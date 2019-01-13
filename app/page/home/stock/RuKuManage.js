@@ -15,6 +15,8 @@ const dataSource: Array = require('../../test/TestData_RuKuManage')  // 测试�
 const headItems: Array = require('./RuKuListHead')
 const widths = headItems.map(({ width }) => width)
 const bottomTextSize = 14
+const radio = 1.3
+const btnRadius = 8
 
 export default class PgRuKuManage extends Component {
     constructor(props) {
@@ -70,11 +72,14 @@ export default class PgRuKuManage extends Component {
                         value={this.state.inputCode}
                         placeholder={'请输入条码/拼音码/自编码'}
                         onChangeText={text => this.setState({ inputCode: text })}
-                        style={styles.codeInput}
+                        style={[ styles.codeInput, { height: 27 * radio, width: 145 * radio } ]}
                         placeholderTextColor={'gray'}
                         underlineColorAndroid={'transparent'}
                     />
                     <Button
+                        borderRadius={btnRadius}
+                        width={85 * radio}
+                        height={27 * radio}
                         text={'无码/称重入库'}
                         onPress={this._doCodelessInStorage}
                         backgroundColor={'rgb(244,208,0)'}
@@ -82,6 +87,9 @@ export default class PgRuKuManage extends Component {
                         style={styles.buttons}
                         color={COLOR_SECOND_COLOR}/>
                     <Button
+                        borderRadius={btnRadius}
+                        width={67 * radio}
+                        height={27 * radio}
                         text={'采购单入库'}
                         style={styles.buttons}
                         onPress={this._doPurchaseInStorage}
@@ -89,6 +97,9 @@ export default class PgRuKuManage extends Component {
                         fontSize={bottomTextSize}
                         color={'white'}/>
                     <Button
+                        borderRadius={btnRadius}
+                        width={68 * radio}
+                        height={27 * radio}
                         text={'新增商品'}
                         style={styles.buttons}
                         onPress={this._doCreateNewCommodity}
@@ -98,6 +109,9 @@ export default class PgRuKuManage extends Component {
                 </View>
                 <View style={styles.bottomRightContainer}>
                     <Button
+                        borderRadius={btnRadius}
+                        width={50 * radio}
+                        height={27 * radio}
                         text={'入库'}
                         style={styles.buttons}
                         onPress={this._doInStorage}
@@ -105,6 +119,9 @@ export default class PgRuKuManage extends Component {
                         fontSize={bottomTextSize}
                         color={'white'}/>
                     <Button
+                        borderRadius={btnRadius}
+                        width={50 * radio}
+                        height={27 * radio}
                         text={'删除'}
                         style={styles.buttons}
                         onPress={this._doDelete}
@@ -112,6 +129,9 @@ export default class PgRuKuManage extends Component {
                         fontSize={bottomTextSize}
                         color={'white'}/>
                     <Button
+                        borderRadius={btnRadius}
+                        width={50 * radio}
+                        height={27 * radio}
                         text={'清空'}
                         style={styles.buttons}
                         onPress={this._doDeleteAll}
