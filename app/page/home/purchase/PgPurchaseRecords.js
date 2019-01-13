@@ -3,6 +3,8 @@ import { DatePickerAndroid,FlatList, Text, View ,TouchableOpacity,TextInput,WebV
 import TabView from '../../../component/TabView/TabView'
 import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import PgPurchaseRecordsStyle from '../../../style/PgPurchaseRecordsStyle'
+import Button from '../../../component/Button'
+import CommManaStyle from '../../../style/CommManaStyle'
 import { COLOR_SECOND_COLOR, COLOR_F19149, COLOR_DCDCDC } from '../../../constant/ColorConstant'
 
 /**
@@ -49,7 +51,7 @@ export default class PgPurchaseRecords extends Component {
       }
     render() {
         return (
-            <View style={[PgPurchaseRecordsStyle.container,{padding:5}]}>
+            <View style={[PgPurchaseRecordsStyle.container,{paddingLeft:5,paddingRight:5}]}>
                 {this.searchHeader()}
                 {this.textHeader()}
             <View style={{flexDirection:'row',flex:1}}>
@@ -69,18 +71,18 @@ export default class PgPurchaseRecords extends Component {
      */
     searchHeader(){
         return(
-            <View style={{flexDirection:'row',height: 35, justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={[PgPurchaseRecordsStyle.headerContainer]}>
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
                     <View><Text style={{color:'#2B7888',fontSize:16}}>入库单查询</Text></View>
                     <TouchableOpacity style={[PgPurchaseRecordsStyle.pickButton]} onPress={() => {this.timeSelect('startPick')}}><Text style={{color:(this.state.startTime)?'#646464':'#bdbdbd',fontSize:13}}>{(this.state.startTime)?this.state.startTime:'年/月/'}</Text></TouchableOpacity> 
                     <TouchableOpacity style={[PgPurchaseRecordsStyle.pickButton]} onPress={() => {this.timeSelect('endPick')}}><Text style={{color:(this.state.endTime)?'#646464':'#bdbdbd',fontSize:13}}>{(this.state.endTime)?this.state.endTime:'年/月/'}</Text></TouchableOpacity> 
                     <TouchableOpacity style={[PgPurchaseRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:14}}>查询</Text></TouchableOpacity> 
                 </View>
-                <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+                <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}>
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
-                        style={{height: 28,fontSize:13, borderColor: '#2b7889',width:150, borderWidth: 1,borderRadius:5,padding: 0,paddingLeft:5}}
+                        style={[PgPurchaseRecordsStyle.searchInput]}
                         onChangeText={(text) => this.setState({text})}
                          value={this.state.text}
                         />
@@ -98,12 +100,12 @@ export default class PgPurchaseRecords extends Component {
     textHeader(){
         return(
             <View style={{backgroundColor:'#f1f1f1',marginLeft:10,flexDirection:'row',justifyContent: 'space-between', alignItems: 'center' }}>
-                <View style={{flexDirection:'row',flex:2,height:35,justifyContent: 'flex-start', alignItems: 'center' }}>
+                <View style={{flexDirection:'row',flex:2,height:30,justifyContent: 'flex-start', alignItems: 'center' }}>
                     {this.itemText('订单编号：','BT16000000000000000')}
                     <View style={{width:50}}></View>
                     {this.itemText('订单时间：','2018-12-10')}
                 </View>
-                <View style={{flexDirection:'row',flex:1,height:35,justifyContent: 'flex-end', alignItems: 'center' }}>
+                <View style={{flexDirection:'row',flex:1,height:30,justifyContent: 'flex-end', alignItems: 'center' }}>
                     {this.itemText('该订单订购卷烟种类：','26种')}
                 </View>
             </View>
@@ -152,18 +154,16 @@ export default class PgPurchaseRecords extends Component {
      */
     footerView(){
         return(
-            <View style={[PgPurchaseRecordsStyle.footerContainer]}>
-                <View style={{flex:1}}>
-                    <Text style={{color:'#2B7888',fontSize:12}}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
-                </View>
-                <View style={{flex:1,flexDirection:'row',justifyContent: 'flex-end', alignItems: 'center',paddingRight:15}}>
-                <Text style={{color:'#2B7888',fontSize:12}}>共100页</Text>
-                    <TouchableOpacity style={[PgPurchaseRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[PgPurchaseRecordsStyle.buttonText]}>首页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[PgPurchaseRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[PgPurchaseRecordsStyle.buttonText]}>上页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[PgPurchaseRecordsStyle.button,{backgroundColor:'#fff',borderColor:'#2B7888',borderWidth:1}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2B7888',fontSize:16}}>0</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[PgPurchaseRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[PgPurchaseRecordsStyle.buttonText]}>下页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[PgPurchaseRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[PgPurchaseRecordsStyle.buttonText]}>尾页</Text></TouchableOpacity> 
-                </View>
+            <View style={CommManaStyle.CommManaStyle_view3}>
+                    <Text style={CommManaStyle.CommManaStyle_text}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
+                    <View style={CommManaStyle.CommManaStyle_view4}>
+                        <Text style={CommManaStyle.CommManaStyle_text}>共100页</Text>
+                        <Button width={60} height={30} text='首页' style={{ marginLeft: 5, }} />
+                        <Button width={60} height={30} text='上页' style={{ marginLeft: 5, }} />
+                        <TextInput underlineColorAndroid='transparent' style={CommManaStyle.CommManaStyle_input1} />
+                        <Button width={60} height={30} text='下页' style={{ marginLeft: 5, }} />
+                        <Button width={60} height={30} backgroundColor='#d63200' text='尾页' style={{ marginLeft: 5, marginRight: 5 }} />
+                    </View>
             </View>
         )
     }
@@ -253,7 +253,7 @@ export default class PgPurchaseRecords extends Component {
                 <View style={[ReceiptsStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
                     <Text>{index+1}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1.5}]}>
+                <View style={[ReceiptsStyle.item, { flex: 1.5,borderLeftWidth:1}]}>
                     <Text>{item.k1}</Text>
                 </View>
                 <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>

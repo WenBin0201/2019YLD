@@ -9,13 +9,22 @@ export const RuKuRecordsStyle = StyleSheet.create({
       flex: 1,
       backgroundColor: '#f1f1f1',
     },
+    headerContainer:{
+      flexDirection:'row',
+      height: 30,
+      marginLeft:11, 
+      justifyContent: 'space-between',
+      alignItems: 'center' 
+    },
     button:{
       justifyContent: 'center',
-      alignItems:'center',
-      height:28,width:50,
-      margin:5,
-      borderRadius:5,
-      backgroundColor:'#2B7888'
+    alignItems:'center',
+    height:25,
+    margin:2,
+    borderRadius:3,
+    backgroundColor:'#2B7888',
+    paddingLeft:15,
+    paddingRight:15
     },
     buttonText:{
       color:'#fff',
@@ -27,12 +36,12 @@ export const RuKuRecordsStyle = StyleSheet.create({
       height:23,
       width:40,
       backgroundColor:'#ec6941',
-      borderRadius:5
+      borderRadius:3
     },
     pickButton:{
       justifyContent: 'center',
       padding:3,
-      height:28,
+      height:25,
       width:80,
       backgroundColor:'#fff',
       borderWidth:1,
@@ -51,6 +60,16 @@ export const RuKuRecordsStyle = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       borderColor: '#EAEAEA',
+    },
+    searchInput:{
+      height: 25,
+      fontSize:13, 
+      borderColor: '#2b7889',
+      width:204, 
+      borderWidth: 1,
+      borderRadius:5,
+      padding: 0,
+      paddingLeft:5
     }
 });
 module.exports = RuKuRecordsStyle;

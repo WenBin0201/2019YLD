@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { DatePickerAndroid,FlatList, Text, View ,TouchableOpacity,TextInput,ScrollView} from 'react-native';
 import TabView from '../../../component/TabView/TabView'
-import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import RuKuRecordsStyle from '../../../style/RuKuRecordsStyle'
+import Button from '../../../component/Button'
+import CommManaStyle from '../../../style/CommManaStyle'
 import { COLOR_SECOND_COLOR, COLOR_F19149, COLOR_DCDCDC } from '../../../constant/ColorConstant'
 
 /**
@@ -72,13 +73,13 @@ export default class PgRuKuRecords extends Component {
      */
     searchHeader(){
         return(
-            <View style={{flexDirection:'row',height: 40,marginLeft:11, justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={RuKuRecordsStyle.headerContainer}>
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
                     <View><Text style={{color:'#2B7888',fontSize:16,marginRight:11,}}>单品查询</Text></View>
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
-                        style={{height: 28,fontSize:13, borderColor: '#2b7889',width:204, borderWidth: 1,borderRadius:5,padding: 0,paddingLeft:5}}
+                        style={[RuKuRecordsStyle.searchInput]}
                         onChangeText={(text) => this.setState({text})}
                          value={this.state.text}
                         />
@@ -95,19 +96,18 @@ export default class PgRuKuRecords extends Component {
      */
     footerView(){
         return(
-            <View style={[RuKuRecordsStyle.footerContainer]}>
-                <View style={{flex:1}}>
-                    <Text style={{color:'#2B7888',fontSize:12}}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
+            <View style={CommManaStyle.CommManaStyle_view3}>
+                    <Text style={CommManaStyle.CommManaStyle_text}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
+                    <View style={CommManaStyle.CommManaStyle_view4}>
+                        <Text style={CommManaStyle.CommManaStyle_text}>共100页</Text>
+                        <Button width={60} height={30} text='首页' style={{ marginLeft: 5, }} />
+                        <Button width={60} height={30} text='上页' style={{ marginLeft: 5, }} />
+                        <TextInput underlineColorAndroid='transparent' style={CommManaStyle.CommManaStyle_input1} />
+                        <Button width={60} height={30} text='下页' style={{ marginLeft: 5, }} />
+                        <Button width={60} height={30} backgroundColor='#d63200' text='尾页' style={{ marginLeft: 5, marginRight: 5 }} />
+
+                    </View>
                 </View>
-                <View style={{flex:1,flexDirection:'row',justifyContent: 'flex-end', alignItems: 'center',paddingRight:15}}>
-                <Text style={{color:'#2B7888',fontSize:12}}>共100页</Text>
-                    <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>首页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>上页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#fff',borderColor:'#2B7888',borderWidth:1}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2B7888',fontSize:16}}>0</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>下页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>尾页</Text></TouchableOpacity> 
-                </View>
-            </View>
         )
     }
     /**
@@ -140,10 +140,10 @@ export default class PgRuKuRecords extends Component {
                             </View>
                     }
                 />
-                <View style={{flexDirection:'row',width:'100%',height:50,justifyContent: 'space-between', alignItems: 'center',backgroundColor:'#a3c6d4' }} >
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:13}}>上一页</Text></TouchableOpacity> 
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton,{backgroundColor:'#fff'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2b7889',fontSize:13}}>1/3</Text></TouchableOpacity> 
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:13}}>下一页</Text></TouchableOpacity> 
+                <View style={{flexDirection:'row',width:'100%',height:35,justifyContent: 'space-between', alignItems: 'center',backgroundColor:'#a3c6d4' }} >
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:12}}>上一页</Text></TouchableOpacity> 
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton,{backgroundColor:'#fff'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2b7889',fontSize:12}}>1/3</Text></TouchableOpacity> 
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:12}}>下一页</Text></TouchableOpacity> 
                 </View>
             </View>
         )
