@@ -4,6 +4,7 @@ import { View, Text, TextInput } from 'react-native';
 
 import Button from '../../component/Button'
 import DialogBox from '../../component/dialogbox/DialogBox'
+import PurcahseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
 import TakeBillBox from '../../component/takebill/TakeBillBox'
 import ComSelectBox from "../../component/comselect/ComSelectBox";
 import AddCommBox from '../../component/addcomm/AddCommBox'
@@ -91,8 +92,11 @@ export default class Pgtest extends Component {
                 <Button width={150} text='修改权限验证码弹窗' style={{ margin: 5 }} onPress={() => {
                     this._dialog10();
                 }} />
-                 <Button width={150} text='订单生成提示' style={{ margin: 5 }} onPress={() => {
+                <Button width={150} text='订单生成提示' style={{ margin: 5 }} onPress={() => {
                     this._dialog11();
+                }} />
+                <Button width={150} text='采购单入库' style={{ margin: 5 }} onPress={() => {
+                    PurcahseInStorageBox.show();
                 }} />
             </View>
         )
@@ -247,17 +251,17 @@ export default class Pgtest extends Component {
     }
 
     _dialog10() {
-        let _v = <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center',marginLeft:50,marginRight:50 }}>
+        let _v = <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', marginLeft: 50, marginRight: 50 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', }}>
                 <Text>验证码</Text>
                 <TextInput placeholder='请输入图形验证码' placeholderTextColor='#dbdbdb' style={{ fontSize: 12, marginLeft: 5, flex: 1, height: 30, paddingTop: 0, paddingBottom: 0, borderColor: '#2b7888', borderWidth: 1 }} />
-                <View style={{ width: 70, height: 30, marginLeft: 5, justifyContent: 'center', alignItems: 'center' ,borderColor: '#dbdbdb', borderWidth: 1, borderRadius:3  }}>
+                <View style={{ width: 70, height: 30, marginLeft: 5, justifyContent: 'center', alignItems: 'center', borderColor: '#dbdbdb', borderWidth: 1, borderRadius: 3 }}>
                 </View>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <Text>验证码</Text>
                 <TextInput placeholder='请输入手机验证码' placeholderTextColor='#dbdbdb' style={{ fontSize: 12, marginLeft: 5, flex: 1, height: 30, paddingTop: 0, paddingBottom: 0, borderColor: '#2b7888', borderWidth: 1 }} />
-                <View style={{ width: 40, height: 30, marginLeft: 5, justifyContent: 'center', alignItems: 'center' ,borderColor: '#2b7888', borderWidth: 1, borderRadius:3  }}>
+                <View style={{ width: 40, height: 30, marginLeft: 5, justifyContent: 'center', alignItems: 'center', borderColor: '#2b7888', borderWidth: 1, borderRadius: 3 }}>
                     <Text>60</Text>
                 </View>
 
@@ -276,7 +280,7 @@ export default class Pgtest extends Component {
     }
 
     _dialog11() {
-        DialogBox.show('系统提示', ['恭喜您！','智能补货采购订单已经生成','在入库版本中通过采购单入库完成入库操作'], {
+        DialogBox.show('系统提示', ['恭喜您！', '智能补货采购订单已经生成', '在入库版本中通过采购单入库完成入库操作'], {
             buttons: [
                 {
                     text: '关闭',
