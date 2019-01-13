@@ -43,16 +43,16 @@ export default class WeipriceBoxContainer extends Component {
                     <View style={WeipriceStyle.WeipriceStyle_left}>
                         <Text style={PublicStyle.text_2B7888_16}>称重计价</Text>
                         <View style={WeipriceStyle.WeipriceStyle_view1}>
-                            <Text style={[PublicStyle.text_2B7888_18,{fontWeight:'bold'}]}>12.35</Text>
+                            <Text style={WeipriceStyle.WeipriceStyle_text}>12.35</Text>
                             <Text style={PublicStyle.text_2B7888_14}>Kg</Text>
                         </View>
                         <View style={WeipriceStyle.WeipriceStyle_view1}>
                             <Text style={PublicStyle.text_2B7888_14}>公斤单元(元)</Text>
-                            <Text style={[PublicStyle.text_2B7888_18,{fontWeight:'bold'}]}>32</Text>
+                            <Text style={WeipriceStyle.WeipriceStyle_text}>32</Text>
                         </View>
                         <View style={WeipriceStyle.WeipriceStyle_view1}>
                             <Text style={PublicStyle.text_2B7888_14}>总计(元)</Text>
-                            <Text style={[PublicStyle.text_2B7888_18,{fontWeight:'bold'}]}>153.52</Text>
+                            <Text style={WeipriceStyle.WeipriceStyle_text}>153.52</Text>
                         </View>
                         <View style={WeipriceStyle.WeipriceStyle_view2}>
                             <Button height={30} width={60} text='抹零' />
@@ -94,4 +94,9 @@ const WeipriceStyle = StyleSheet.create({
         justifyContent: 'space-around'
 
     },
+    WeipriceStyle_text:{
+        fontWeight:'bold',
+        color:'#2b7888',
+        fontSize:18
+    }
 });
