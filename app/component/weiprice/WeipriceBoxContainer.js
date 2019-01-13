@@ -38,7 +38,7 @@ export default class WeipriceBoxContainer extends Component {
 
     render() {
         return (
-            <View style={{ width: this.deviceWidth, height: this.deviceHeight - 150, flexDirection: 'row' }}>
+            <View style={{ width: this.deviceWidth, height: this.deviceHeight - 200, flexDirection: 'row' }}>
                 <View style={{ justifyContent: 'flex-end' }}>
                     <View style={WeipriceStyle.WeipriceStyle_left}>
                         <Text style={PublicStyle.text_2B7888_16}>称重计价</Text>
