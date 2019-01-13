@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 /**
- * 采购单入库弹窗
+ * 取单弹窗
  */
 import RootSiblings from 'react-native-root-siblings'
-import PurcahseInStorageBoxContainer from './PurcahseInStorageBoxContainer'
+import CreateCommodityBoxContainer from './CreateCommodityBoxContainer'
 import BaseBoxView from '../BaseBoxView'
 
-export default class PurcahseInStorageBox {
+export default class CreateCommodityBox {
 
     static show() {
         if (this._manager != null) {
@@ -15,7 +15,7 @@ export default class PurcahseInStorageBox {
         this._manager = new RootSiblings(
             <BaseBoxView
                 renderComponent={
-                    <PurcahseInStorageBoxContainer
+                    <CreateCommodityBoxContainer
                         destroy={() => {
                             this.hide();
                         }}

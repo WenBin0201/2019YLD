@@ -152,7 +152,7 @@ export default class PurcahseInStorageBoxContainer extends Component {
             <View
                 style={{ width: this.deviceWidth - 200, height: this.deviceHeight - 120, backgroundColor: '#f1F1f1' }}>
                 <View style={PublicStyle.view_top}>
-                    <Text style={PublicStyle.text_FFF_20}>取单</Text>
+                    <Text style={PublicStyle.text_FFF_20}>采购单入库</Text>
                     <TouchableOpacity onPress={() => {
                         if ( this.props.destroy ){
                             this.props.destroy()
