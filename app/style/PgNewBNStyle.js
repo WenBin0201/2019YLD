@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import {COLOR_WHITE_COLOR,COLOR_3E8492 } from '../constant/ColorConstant';
 
-export const PgPurchaseRecordsStyle = StyleSheet.create({
+export const RuKuRecordsStyle = StyleSheet.create({
   container: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -35,12 +35,12 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
     justifyContent: 'center',
     padding:3,
     height:28,
-    width:75,
+    width:80,
     backgroundColor:'#fff',
     borderWidth:1,
     borderColor:'#2b7889',
     borderRadius:5,
-    margin:2
+    margin:5
   },
   item: {
     justifyContent: 'center',
@@ -55,4 +55,4 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
      alignItems: 'center' 
   }
 });
-module.exports = PgPurchaseRecordsStyle;
+module.exports = RuKuRecordsStyle;

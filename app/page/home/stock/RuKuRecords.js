@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DatePickerAndroid,FlatList, Text, View ,TouchableOpacity,TextInput,WebView} from 'react-native';
+import { DatePickerAndroid,FlatList, Text, View ,TouchableOpacity,TextInput,ScrollView} from 'react-native';
 import TabView from '../../../component/TabView/TabView'
 import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import RuKuRecordsStyle from '../../../style/RuKuRecordsStyle'
@@ -19,6 +19,10 @@ export default class PgRuKuRecords extends Component {
             buttonType:2,
             selectItem:-1,
             dataSource: [
+                { "k1": "1", "k2": "1", "k3": "10", "k4": "1", "k5": "1", "k6": "1", "k7": "1", "k8": "1", "k9": "1", "k10": "1", "k11": "1", "k12": "1"}, 
+                { "k1": "1", "k2": "1", "k3": "10", "k4": "1", "k5": "1", "k6": "1", "k7": "1", "k8": "1", "k9": "1", "k10": "1", "k11": "1", "k12": "1"}, 
+                { "k1": "1", "k2": "1", "k3": "10", "k4": "1", "k5": "1", "k6": "1", "k7": "1", "k8": "1", "k9": "1", "k10": "1", "k11": "1", "k12": "1"}, 
+                { "k1": "1", "k2": "1", "k3": "10", "k4": "1", "k5": "1", "k6": "1", "k7": "1", "k8": "1", "k9": "1", "k10": "1", "k11": "1", "k12": "1"}, 
                 { "k1": "1", "k2": "1", "k3": "10", "k4": "1", "k5": "1", "k6": "1", "k7": "1", "k8": "1", "k9": "1", "k10": "1", "k11": "1", "k12": "1"}, 
                 { "k1": "1", "k2": "1", "k3": "10", "k4": "1", "k5": "1", "k6": "1", "k7": "1", "k8": "1", "k9": "1", "k10": "1", "k11": "1", "k12": "1"}, 
                 { "k1": "1", "k2": "1", "k3": "10", "k4": "1", "k5": "1", "k6": "1", "k7": "1", "k8": "1", "k9": "1", "k10": "1", "k11": "1", "k12": "1"}, 
@@ -49,10 +53,10 @@ export default class PgRuKuRecords extends Component {
       }
     render() {
         return (
-            <View style={[RuKuRecordsStyle.container,{paddingLeft:10}]}>
+            <View style={[RuKuRecordsStyle.container,{paddingLeft:5}]}>
                 {this.searchHeader()}
             <View style={{flexDirection:'row',flex:1}}>
-                <View style={{width:170,borderColor:'#a3c6d4',borderWidth:1}}>
+                <View style={{width:140,borderColor:'#a3c6d4',borderWidth:1}}>
                     {this.leftViewList()}
                 </View>
                 <View style={{flex:1,backgroundColor:'#fff',marginLeft:5}}>
@@ -68,20 +72,20 @@ export default class PgRuKuRecords extends Component {
      */
     searchHeader(){
         return(
-            <View style={{flexDirection:'row',height: 59,marginLeft:11, justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={{flexDirection:'row',height: 40,marginLeft:11, justifyContent: 'space-between', alignItems: 'center' }}>
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
-                    <View><Text style={{color:'#2B7888',fontSize:20,marginRight:11,}}>单品查询</Text></View>
+                    <View><Text style={{color:'#2B7888',fontSize:16,marginRight:11,}}>单品查询</Text></View>
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
-                        style={{height: 39,fontSize:15, borderColor: '#2b7889',width:204, borderWidth: 1,borderRadius:5}}
+                        style={{height: 28,fontSize:13, borderColor: '#2b7889',width:204, borderWidth: 1,borderRadius:5,padding: 0,paddingLeft:5}}
                         onChangeText={(text) => this.setState({text})}
                          value={this.state.text}
                         />
                     </View>
-                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('startPick')}}><Text style={{color:(this.state.startTime)?'#646464':'#cccccc',fontSize:15}}>{(this.state.startTime)?this.state.startTime:'年/月/'}</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('endPick')}}><Text style={{color:(this.state.endTime)?'#646464':'#cccccc',fontSize:15}}>{(this.state.endTime)?this.state.endTime:'年/月/'}</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:18}}>查询</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('startPick')}}><Text style={{color:(this.state.startTime)?'#646464':'#cccccc',fontSize:13}}>{(this.state.startTime)?this.state.startTime:'年/月/'}</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('endPick')}}><Text style={{color:(this.state.endTime)?'#646464':'#cccccc',fontSize:13}}>{(this.state.endTime)?this.state.endTime:'年/月/'}</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:14}}>查询</Text></TouchableOpacity> 
                 </View>                   
             </View>
         )
@@ -91,15 +95,15 @@ export default class PgRuKuRecords extends Component {
      */
     footerView(){
         return(
-            <View style={{flexDirection:'row',width:'100%',height:72,justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={[RuKuRecordsStyle.footerContainer]}>
                 <View style={{flex:1}}>
-                    <Text style={{color:'#2B7888',fontSize:14}}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
+                    <Text style={{color:'#2B7888',fontSize:12}}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
                 </View>
                 <View style={{flex:1,flexDirection:'row',justifyContent: 'flex-end', alignItems: 'center',paddingRight:15}}>
-                <Text style={{color:'#2B7888',fontSize:14}}>共100页</Text>
+                <Text style={{color:'#2B7888',fontSize:12}}>共100页</Text>
                     <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>首页</Text></TouchableOpacity> 
                     <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>上页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#fff',borderColor:'#2B7888',borderWidth:1}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2B7888',fontSize:18}}>0</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#fff',borderColor:'#2B7888',borderWidth:1}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2B7888',fontSize:16}}>0</Text></TouchableOpacity> 
                     <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>下页</Text></TouchableOpacity> 
                     <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>尾页</Text></TouchableOpacity> 
                 </View>
@@ -136,7 +140,7 @@ export default class PgRuKuRecords extends Component {
                             </View>
                     }
                 />
-                <View style={{flexDirection:'row',width:'100%',height:65,justifyContent: 'space-between', alignItems: 'center',backgroundColor:'#a3c6d4' }} >
+                <View style={{flexDirection:'row',width:'100%',height:50,justifyContent: 'space-between', alignItems: 'center',backgroundColor:'#a3c6d4' }} >
                         <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:13}}>上一页</Text></TouchableOpacity> 
                         <TouchableOpacity style={[RuKuRecordsStyle.miniButton,{backgroundColor:'#fff'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2b7889',fontSize:13}}>1/3</Text></TouchableOpacity> 
                         <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:13}}>下一页</Text></TouchableOpacity> 
@@ -156,13 +160,13 @@ export default class PgRuKuRecords extends Component {
             <TouchableOpacity style={{backgroundColor: '#a3c6d4'}} onPress={() => {this.setState({selectItem:index}) }}>
                 <View style={{backgroundColor: backgroundColor, height: 58,borderRadius:8,borderColor:'#a3c6d4',borderWidth:1}}>
                 <View style={{height:20,alignItems:'center'}}>
-                    <Text style={{color:color}}>采购单号</Text>
+                    <Text style={{color:color,fontSize:13}}>采购单号</Text>
                 </View>
                 <View style={{alignItems:'center'}}>
-                    <Text style={{color:color}}>{item.k1}</Text>
+                    <Text style={{color:color,fontSize:12}}>{item.k1}</Text>
                 </View>
-                <View style={{height:25,alignItems:'center'}}>
-                    <Text style={{color:color,fontSize:12}}>时间:{item.k2}</Text>
+                <View style={{height:20,alignItems:'center',justifyContent:'center'}}>
+                    <Text style={{color:color,fontSize:10}}>时间:{item.k2}</Text>
                 </View>
                 </View>
             </TouchableOpacity>
@@ -173,16 +177,19 @@ export default class PgRuKuRecords extends Component {
      */
     rightViewList(){
             return(
-                <View  style={{flex:1}}> 
+                <ScrollView   horizontal={true} >
+                    <View style={{width:891}}>
                     <TabView
-                    tabHeadHeight={32}
-                    tabHeadTextFontSize={14}
+                    tabHeadHeight={28}
+                    tabHeadTextFontSize={13}
                     tabHeads={['序号', '操作时间', '商品名称', '商品条码', '规格', '进价', '结余存数','入库数','库存数','入库金额','供货商','业务员','联系电话']}
                     tabRowWidth={[1, 2, 2, 2, 1, 1, 1.5,1,1,1.5,2,1,2]}
                     data={this.state.dataSource}
                     renderItem={this._renderRow}
                 />
                 </View>  
+                <View></View>
+                </ScrollView>
              )
     }
     /**

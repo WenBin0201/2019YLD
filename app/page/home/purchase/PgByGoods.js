@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Text, View ,TouchableOpacity,TextInput,WebView} from 'react-native';
+import { Button, Text, View ,TouchableOpacity,TextInput,ScrollView} from 'react-native';
 import TabView from '../../../component/TabView/TabView'
 import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import PgByGoodsStyle from '../../../style/PgByGoodsStyle'
@@ -42,17 +42,17 @@ export default class PgByGoods extends Component {
      */
     searchHeader(){
         return(
-            <View style={{flexDirection:'row',height: 59,marginLeft:11, justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={{flexDirection:'row',height: 40,marginLeft:11, justifyContent: 'space-between', alignItems: 'center' }}>
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
                     <View><TextInput
-                        placeholder='条码/拼音吗/自编码'
+                        placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
-                        style={{height: 39,fontSize:15, borderColor: '#2b7889',width:204, borderWidth: 1,borderRadius:5}}
+                        style={{height: 28,fontSize:13, borderColor: '#2b7889',width:204, borderWidth: 1,borderRadius:5,padding: 0,paddingLeft:5}}
                         onChangeText={(text) => this.setState({text})}
                          value={this.state.text}
                         />
                     </View>
-                    <TouchableOpacity style={[PgByGoodsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:18}}>查询</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[PgByGoodsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:14}}>查询</Text></TouchableOpacity> 
                 </View>  
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}>
                     <TouchableOpacity style={[PgByGoodsStyle.button,{width:124}]} ><Text style={{color:'#fff'}}>生成采购订单</Text></TouchableOpacity> 
@@ -66,15 +66,15 @@ export default class PgByGoods extends Component {
      */
     footerView(){
         return(
-            <View style={{flexDirection:'row',width:'100%',height:72,justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={[PgByGoodsStyle.footerContainer]}>
                 <View style={{flex:1}}>
-                    <Text style={{color:'#2B7888',fontSize:14}}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
+                    <Text style={{color:'#2B7888',fontSize:12}}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
                 </View>
                 <View style={{flex:1,flexDirection:'row',justifyContent: 'flex-end', alignItems: 'center',paddingRight:15}}>
-                <Text style={{color:'#2B7888',fontSize:14}}>共100页</Text>
+                <Text style={{color:'#2B7888',fontSize:12}}>共100页</Text>
                     <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>首页</Text></TouchableOpacity> 
                     <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>上页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#fff',borderColor:'#2B7888',borderWidth:1}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2B7888',fontSize:18}}>0</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#fff',borderColor:'#2B7888',borderWidth:1}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2B7888',fontSize:14}}>0</Text></TouchableOpacity> 
                     <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>下页</Text></TouchableOpacity> 
                     <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>尾页</Text></TouchableOpacity> 
                 </View>
@@ -83,17 +83,18 @@ export default class PgByGoods extends Component {
     }
     webViewMethods(){
             return(
-                <View  style={{flex:1}}>
+                <ScrollView   horizontal={true} >
+                <View  style={{width:1050}}>
                     <TabView
                     tabHeadHeight={30}
                     tabHeadTextFontSize={13}
                     tabHeads={['口','序号', '供货状态', '商品名称', '商品条码', '商品属性', '一级分类', '二级分类','规格','单位','现库存','进价','上限值','下限值','建议采购量','提交状态']}
-                    tabRowWidth={[0.5,0.5, 1, 2, 1.5, 1, 1, 1,0.5,0.5,1,0.5,0.5,0.5,1,1]}
+                    tabRowWidth={[0.5,0.5, 1, 2, 1.5, 1, 1, 1,0.5,0.5,1,0.5,1,1,1,1]}
                     data={this.state.dataSource}
                     renderItem={this._renderRow}
                 />
                 </View>
-                
+                </ScrollView>
              )
     }
     itemText(label,value){
@@ -147,10 +148,10 @@ export default class PgByGoods extends Component {
                 <View style={[PgByGoodsStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
                     <Text>{item.k10}</Text>
                 </View>
-                <View style={[PgByGoodsStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
+                <View style={[PgByGoodsStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k11}</Text>
                 </View>
-                <View style={[PgByGoodsStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
+                <View style={[PgByGoodsStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k12}</Text>
                 </View>
                 <View style={[PgByGoodsStyle.item, { flex: 1,borderLeftWidth:1}]}>

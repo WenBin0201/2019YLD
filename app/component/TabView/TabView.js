@@ -16,6 +16,7 @@ export default class TabView extends Component {
         SeparatorLineColor: '#EAEAEA',//列表分割线颜色
         tabHeadTextColor: '#FFFFFF',//列表头部文字颜色
         tabHeadTextFontSize: 16,//列表头部文字大小
+        tabMarginTop:8
     }
 
     constructor(props) {
@@ -44,7 +45,7 @@ export default class TabView extends Component {
                     })}
                 </View>
                 <FlatList
-                    style={{ flex: 1,marginTop:8 }}
+                    style={{ flex: 1,marginTop:this.props.tabMarginTop}}
                     data={this.state.data}
                     keyExtractor= {(item, index) => `${item}_${index}`}
                     renderItem={this.props.renderItem}
