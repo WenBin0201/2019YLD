@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Text, View ,TouchableOpacity,TextInput,ScrollView} from 'react-native';
+import { Text, View ,TouchableOpacity,TextInput,ScrollView} from 'react-native';
 import TabView from '../../../component/TabView/TabView'
 import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import PgByGoodsStyle from '../../../style/PgByGoodsStyle'
 import RuKuRecordsStyle from '../../../style/RuKuRecordsStyle'
+import Button from '../../../component/Button'
+import CommManaStyle from '../../../style/CommManaStyle'
 /**
  * 智能补货
  */
@@ -42,12 +44,12 @@ export default class PgByGoods extends Component {
      */
     searchHeader(){
         return(
-            <View style={{flexDirection:'row',height: 40,marginLeft:11, justifyContent: 'space-between', alignItems: 'center' }}>
+            <View style={[PgByGoodsStyle.headerContainer]}>
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
-                        style={{height: 28,fontSize:13, borderColor: '#2b7889',width:204, borderWidth: 1,borderRadius:5,padding: 0,paddingLeft:5}}
+                        style={[PgByGoodsStyle.searchInput]}
                         onChangeText={(text) => this.setState({text})}
                          value={this.state.text}
                         />
@@ -56,7 +58,7 @@ export default class PgByGoods extends Component {
                 </View>  
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}>
                     <TouchableOpacity style={[PgByGoodsStyle.button,{width:124}]} ><Text style={{color:'#fff'}}>生成采购订单</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[PgByGoodsStyle.button,{backgroundColor:'#ec6941',width:124}]} ><Text style={{color:'#fff'}}>导出EXCEL至邮箱</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[PgByGoodsStyle.button,{backgroundColor:'#ec6941'}]} ><Text style={{color:'#fff'}}>导出EXCEL至邮箱</Text></TouchableOpacity> 
                 </View>                   
             </View>
         )
@@ -66,18 +68,16 @@ export default class PgByGoods extends Component {
      */
     footerView(){
         return(
-            <View style={[PgByGoodsStyle.footerContainer]}>
-                <View style={{flex:1}}>
-                    <Text style={{color:'#2B7888',fontSize:12}}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
-                </View>
-                <View style={{flex:1,flexDirection:'row',justifyContent: 'flex-end', alignItems: 'center',paddingRight:15}}>
-                <Text style={{color:'#2B7888',fontSize:12}}>共100页</Text>
-                    <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>首页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>上页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#fff',borderColor:'#2B7888',borderWidth:1}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2B7888',fontSize:14}}>0</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>下页</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={[RuKuRecordsStyle.buttonText]}>尾页</Text></TouchableOpacity> 
-                </View>
+            <View style={CommManaStyle.CommManaStyle_view3}>
+                    <Text style={CommManaStyle.CommManaStyle_text}>采购单共计5单   共计1种商品，商品总量18.00，商品总进货额18.00</Text>
+                    <View style={CommManaStyle.CommManaStyle_view4}>
+                        <Text style={CommManaStyle.CommManaStyle_text}>共100页</Text>
+                        <Button width={60} height={30} text='首页' style={{ marginLeft: 5, }} />
+                        <Button width={60} height={30} text='上页' style={{ marginLeft: 5, }} />
+                        <TextInput underlineColorAndroid='transparent' style={CommManaStyle.CommManaStyle_input1} />
+                        <Button width={60} height={30} text='下页' style={{ marginLeft: 5, }} />
+                        <Button width={60} height={30} backgroundColor='#d63200' text='尾页' style={{ marginLeft: 5, marginRight: 5 }} />
+                    </View>
             </View>
         )
     }

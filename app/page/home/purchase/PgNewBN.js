@@ -45,13 +45,13 @@ export default class PgNewBN extends Component {
      */
     searchHeader(){
         return(
-            <View style={{flexDirection:'row',height: 40, justifyContent: 'space-between', alignItems: 'center' }}> 
-                <TouchableOpacity style={[PgNewBNStyle.button,{backgroundColor:'#e4393c',width:80}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff'}}>卷烟发货</Text></TouchableOpacity>                    
+            <View style={[PgNewBNStyle.headerContainer]}> 
+                <TouchableOpacity style={[PgNewBNStyle.button,{backgroundColor:'#e4393c'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff'}}>卷烟发货</Text></TouchableOpacity>                    
                 <View style={{flexDirection:'row',height:50,justifyContent: 'space-between', alignItems: 'center' }}>
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
-                        style={{height: 28,fontSize:13, borderColor: '#2b7889',width:204, borderWidth: 1,borderRadius:5,padding: 0,paddingLeft:5}}
+                        style={[PgNewBNStyle.searchInput]}
                         onChangeText={(text) => this.setState({text})}
                          value={this.state.text}
                         />
@@ -155,34 +155,34 @@ export default class PgNewBN extends Component {
     _renderRow = ({item,index}) => {
         return (
             <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
-                <View style={[ReceiptsStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
                     <Text>{index+1}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1.5}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1.5,borderLeftWidth:1}]}>
                     <Text>{item.k1}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k2}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k3}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k4}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k5}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k6}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k7}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k8}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PgNewBNStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k9}</Text>
                 </View>
             </View>
