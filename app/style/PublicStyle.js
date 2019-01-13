@@ -77,6 +77,11 @@ export const PublicStyle = StyleSheet.create({
         color: '#e74c39' 
 
     },
+    text_2b7888_18:{
+        fontSize: 18, 
+        color: '#2b7888'
+
+    },
 
     box_main: {
         backgroundColor: COLOR_WHITE_COLOR,

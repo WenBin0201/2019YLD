@@ -4,10 +4,11 @@ import { View, Text } from 'react-native';
 
 import Button from '../../component/Button'
 import DialogBox from '../../component/dialogbox/DialogBox'
+import PurchaseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
 import TakeBillBox from '../../component/takebill/TakeBillBox'
 import ComSelectBox from "../../component/comselect/ComSelectBox";
 import AddCommBox from '../../component/addcomm/AddCommBox'
-
+import WeipriceBox from '../../component/weiprice/WeipriceBox'
 
 
 export default class Pgtest extends Component {
@@ -72,11 +73,18 @@ export default class Pgtest extends Component {
                 <Button width={140} text='商品选择' style={{ margin: 5 }} onPress={() => {
                     ComSelectBox.show();
                 }} />
-                 <Button width={140} text='一码多品-商品选择' style={{ margin: 5 }} onPress={() => {
-                    ComSelectBox.show({isMultiple:true});
+                <Button width={140} text='一码多品-商品选择' style={{ margin: 5 }} onPress={() => {
+                    ComSelectBox.show({ isMultiple: true });
                 }} />
-                 <Button width={150} text='初次售卖商品资料-新增' style={{ margin: 5 }} onPress={() => {
+                <Button width={150} text='初次售卖商品资料-新增' style={{ margin: 5 }} onPress={() => {
                     AddCommBox.show();
+                }} />
+
+                <Button width={150} text='称重计价弹窗' style={{ margin: 5 }} onPress={() => {
+                    WeipriceBox.show();
+                }} />
+                <Button width={150} text='采购单入库' style={{ margin: 5 }} onPress={() => {
+                    PurchaseInStorageBox.show();
                 }} />
             </View>
         )
