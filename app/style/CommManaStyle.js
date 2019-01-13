@@ -23,7 +23,7 @@ const CommManaStyle = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingLeft: 5,
-        paddingRight: 15
+        paddingRight: 10
     },
     CommManaStyle_view2:{
         backgroundColor:'#e4e4e4',

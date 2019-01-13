@@ -46,7 +46,7 @@ export default class PgNewBN extends Component {
     searchHeader(){
         return(
             <View style={[PgNewBNStyle.headerContainer]}> 
-                <TouchableOpacity style={[PgNewBNStyle.button,{backgroundColor:'#e4393c',paddingLeft:0}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff'}}>卷烟发货</Text></TouchableOpacity>                    
+                <TouchableOpacity style={[PgNewBNStyle.button,{backgroundColor:'#e4393c'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff'}}>卷烟发货</Text></TouchableOpacity>                    
                 <View style={{flexDirection:'row',height:50,justifyContent: 'space-between', alignItems: 'center' }}>
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'

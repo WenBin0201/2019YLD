@@ -15,6 +15,8 @@ const dataSource: Array = require('../../test/TestData_RuKuManage')  // 测试�
 const headItems: Array = require('./RuKuListHead')
 const widths = headItems.map(({ width }) => width)
 const bottomTextSize = 14
+const radio = 1.3
+const btnRadius = 8
 
 export default class PgRuKuManage extends Component {
     constructor(props) {

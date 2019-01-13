@@ -11,7 +11,6 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
   },
   headerContainer:{
     flexDirection:'row',
-    height: 30,
     marginLeft:11, 
     justifyContent: 'space-between',
     alignItems: 'center' 
