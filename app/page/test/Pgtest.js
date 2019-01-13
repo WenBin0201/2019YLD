@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 
 import Button from '../../component/Button'
 import DialogBox from '../../component/dialogbox/DialogBox'
+import PurchaseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
 import TakeBillBox from '../../component/takebill/TakeBillBox'
 import ComSelectBox from "../../component/comselect/ComSelectBox";
 import AddCommBox from '../../component/addcomm/AddCommBox'
@@ -81,6 +82,9 @@ export default class Pgtest extends Component {
 
                 <Button width={150} text='称重计价弹窗' style={{ margin: 5 }} onPress={() => {
                     WeipriceBox.show();
+                }} />
+                <Button width={150} text='采购单入库' style={{ margin: 5 }} onPress={() => {
+                    PurchaseInStorageBox.show();
                 }} />
             </View>
         )
