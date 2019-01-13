@@ -71,6 +71,7 @@ export default class PgRuKuManage extends Component {
                         placeholder={'请输入条码/拼音码/自编码'}
                         onChangeText={text => this.setState({ inputCode: text })}
                         style={styles.codeInput}
+                        placeholderTextColor={'gray'}
                         underlineColorAndroid={'transparent'}
                     />
                     <Button
