@@ -11,7 +11,7 @@ import {
 
 } from 'react-native';
 
-import PulicStyle from '../../style/PublicStyle'
+import PublicStyle from '../../style/PublicStyle'
 
 export default class DialogBoxContainer extends Component {
 

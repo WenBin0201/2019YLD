@@ -23,10 +23,10 @@ const LoginStack = createStackNavigator(
     {
         Pgtest:Pgtest,
         Login: Login,
-        PgShift:PgShift,
+        PgShift: PgShift,
         ShiftRecord: ShiftRecord,
         PgForgetPwd: PgForgetPwd,
-        PasswordRetrieve:PasswordRetrieve
+        PasswordRetrieve: PasswordRetrieve
     },
     {
         navigationOptions: {},
@@ -40,6 +40,7 @@ const LoginStack = createStackNavigator(
  */
 const HomeStack = createStackNavigator(
     {
+      
         PgHome: PgHome,
         PgSettle: PgSettle,
         Detail: Detail,

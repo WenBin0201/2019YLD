@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import TabView from '../../component/TabView/TabView'
-import PulicStyle from '../../style/PublicStyle'
+import PublicStyle from '../../style/PublicStyle'
 import Button from '../../component/Button'
 
 export default class TakeBillBoxContainer extends Component {
@@ -62,16 +62,16 @@ export default class TakeBillBoxContainer extends Component {
 
     render() {
         return (
-            <View style={{ width: this.deviceWidth - 200, height: this.deviceHeight - 120, backgroundColor: '#FFFFFF' }}>
-                <View style={TakeBiollStyle.view_top}>
-                    <Text style={{ fontSize: 25, color: '#fff' }}>取单</Text>
+            <View style={{ width: this.deviceWidth - 200, height: this.deviceHeight - 120, backgroundColor: '#f1F1f1' }}>
+                <View style={PublicStyle.view_top}>
+                    <Text style={PublicStyle.text_FFF_20}>取单</Text>
                     <TouchableOpacity onPress={() => {
                         if (this.props.destroy) {
                             this.props.destroy();
                         } else {
                             this.props.navigation.goBack()
                         }
-                    }} style={TakeBiollStyle.view_top_right}>
+                    }} style={PublicStyle.view_top_right}>
                           <Image source={require('../../image/login/shiftRecord-cross.png')}
                             resizeMode={'contain'}
                             style={{ width: 30, height: 30 }} />
@@ -89,12 +89,12 @@ export default class TakeBillBoxContainer extends Component {
                     </View>
                     <View style={{ flex: 1, backgroundColor: '#f1f1f1' }}>
                         <View style={{ height: 50, flexDirection: 'row', alignItems: 'center' }}>
-                            <Text style={[PulicStyle.text_3E8492_14, { marginLeft: 30 }]}>收银员:</Text>
+                            <Text style={[PublicStyle.text_3E8492_14, { marginLeft: 30 }]}>收银员:</Text>
                             <TextInput
                                 style={TakeBiollStyle.inputText}
                                 underlineColorAndroid='transparent'
                             />
-                            <Text style={[PulicStyle.text_3E8492_14, { marginLeft: 15 }]}>总金额:(元)</Text>
+                            <Text style={[PublicStyle.text_3E8492_14, { marginLeft: 15 }]}>总金额:(元)</Text>
                             <TextInput
                                 style={TakeBiollStyle.inputText}
                                 underlineColorAndroid='transparent'
@@ -108,7 +108,7 @@ export default class TakeBillBoxContainer extends Component {
                             renderItem={this._renderRow}
                         />
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 35 }}>
-                            <Text style={[PulicStyle.text_3E8492_14, { marginLeft: 15 }]}>共计 0行 0件商品</Text>
+                            <Text style={[PublicStyle.text_3E8492_14, { marginLeft: 15 }]}>共计 0行 0件商品</Text>
                             <View style={{ flexDirection: 'row', marginRight: 15 }}>
                                 <Button text='取单' backgroundColor='#f19149' width={60} height={27}
                                     onPress={() => {
@@ -144,8 +144,8 @@ export default class TakeBillBoxContainer extends Component {
         return (
             <TouchableOpacity>
                 <View style={{ marginLeft: 2, marginRight: 2, marginTop: 1, marginBottom: 1, backgroundColor: '#fff', height: 50, borderRadius: 5, justifyContent: 'center' }}>
-                    <Text style={[PulicStyle.text_3E8492_14, { marginLeft: 5, marginRight: 5 }]}>单号：{item.num}</Text>
-                    <Text style={[PulicStyle.text_3E8492_12, { marginLeft: 5, marginRight: 5 }]}>时间：{item.date}</Text>
+                    <Text style={[PublicStyle.text_3E8492_14, { marginLeft: 5, marginRight: 5 }]}>单号：{item.num}</Text>
+                    <Text style={[PublicStyle.text_3E8492_12, { marginLeft: 5, marginRight: 5 }]}>时间：{item.date}</Text>
                 </View>
             </TouchableOpacity>
         )
@@ -161,13 +161,13 @@ export default class TakeBillBoxContainer extends Component {
     _renderRow = ({ item, index }) => {
         return (
             <View style={{ flexDirection: 'row', backgroundColor: index % 2 == 0 ? '#ffffff' : '#fafafa', height: 30 }}>
-                <View style={[PulicStyle.tab_item, { flex: 1, }]}>
+                <View style={[PublicStyle.tab_item, { flex: 1, }]}>
                     <Text>{item.k1}</Text>
                 </View>
-                <View style={[PulicStyle.tab_item, { flex: 1, borderLeftWidth: 1 }]}>
+                <View style={[PublicStyle.tab_item, { flex: 1, borderLeftWidth: 1 }]}>
                     <Text>{item.k2}</Text>
                 </View>
-                <View style={[PulicStyle.tab_item, { flex: 1, borderLeftWidth: 1 }]}>
+                <View style={[PublicStyle.tab_item, { flex: 1, borderLeftWidth: 1 }]}>
                     <Text>{item.k3}</Text>
                 </View>
             </View>
@@ -177,22 +177,6 @@ export default class TakeBillBoxContainer extends Component {
 
 const TakeBiollStyle = StyleSheet.create({
 
-    view_top: {
-        height: 50,
-        backgroundColor: '#3e8492',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    view_top_right: {
-        borderColor: '#FFF',
-        borderLeftWidth: 2,
-        height: 50,
-        width: 45,
-        position: 'absolute',
-        right: 0,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
     inputText: {
         marginLeft: 5,
         paddingBottom: 0,

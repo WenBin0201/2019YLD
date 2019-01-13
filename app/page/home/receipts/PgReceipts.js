@@ -145,25 +145,25 @@ export default class PgReceipts extends Component {
     _renderRow = ({item,index}) => {
         return (
             <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
-                <View style={[ReceiptsStyle.item, { flex: 1.5}]}>
+                <View style={[PublicStyle.tab_defalut_item, { flex: 1.5}]}>
                     <Text>{item.k1}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 2,borderLeftWidth:1}]}>
+                <View style={[PublicStyle.tab_defalut_item, { flex: 2,borderLeftWidth:1}]}>
                     <Text>{item.k2}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k3}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k4}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k5}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k6}</Text>
                 </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
+                <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{item.k7}</Text>
                 </View>
             </View>
