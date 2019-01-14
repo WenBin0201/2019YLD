@@ -74,7 +74,7 @@ export default class PgCommodityManage extends Component {
                         <Button width={60} height={30} text='上页' style={{ marginLeft: 5, }} />
                         <TextInput underlineColorAndroid='transparent' style={CommManaStyle.CommManaStyle_input1} />
                         <Button width={60} height={30} text='下页' style={{ marginLeft: 5, }} />
-                        <Button width={60} height={30} backgroundColor='#d63200' text='尾页' style={{ marginLeft: 5, marginRight: 5 }} />
+                        <Button width={60} height={30} backgroundColor='#d63200' text='尾页' style={{ marginLeft: 5, marginRight: 10 }} />
 
                     </View>
                 </View>

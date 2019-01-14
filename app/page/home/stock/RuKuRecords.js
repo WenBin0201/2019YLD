@@ -140,10 +140,10 @@ export default class PgRuKuRecords extends Component {
                             </View>
                     }
                 />
-                <View style={{flexDirection:'row',width:'100%',height:45,justifyContent: 'space-between', alignItems: 'center',backgroundColor:'#a3c6d4' }} >
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:13}}>上一页</Text></TouchableOpacity> 
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton,{backgroundColor:'#fff'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2b7889',fontSize:13}}>1/3</Text></TouchableOpacity> 
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:13}}>下一页</Text></TouchableOpacity> 
+                <View style={{flexDirection:'row',width:'100%',height:35,justifyContent: 'space-between', alignItems: 'center',backgroundColor:'#a3c6d4' }} >
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:12}}>上一页</Text></TouchableOpacity> 
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton,{backgroundColor:'#fff'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2b7889',fontSize:12}}>1/3</Text></TouchableOpacity> 
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:12}}>下一页</Text></TouchableOpacity> 
                 </View>
             </View>
         )

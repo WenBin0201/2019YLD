@@ -4,7 +4,7 @@ import { View, Text, TextInput } from 'react-native'
 import Button from '../../component/Button'
 import CreateCommodityBox from '../../component/CreateCommodityModal/CreateCommodityBox'
 import DialogBox from '../../component/dialogbox/DialogBox'
-// import PurcahseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
+import PurcahseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
 import TakeBillBox from '../../component/takebill/TakeBillBox'
 import ComSelectBox from '../../component/comselect/ComSelectBox'
 import AddCommBox from '../../component/addcomm/AddCommBox'
@@ -93,7 +93,7 @@ export default class Pgtest extends Component {
                     this._dialog11()
                 }}/>
                 <Button width={150} text='采购单入库' style={{ margin: 5 }} onPress={() => {
-                    PurcahseInStorageBox.show()
+                    PurcahseInStorageBox.show();
                 }}/>
                 <Button width={150} text='新增商品' style={{ margin: 5 }} onPress={() => {
                     CreateCommodityBox.show({ title: '新增商品' })
@@ -293,7 +293,7 @@ export default class Pgtest extends Component {
         let _v = <View
             style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', marginLeft: 50, marginRight: 50 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text>验证码</Text>
+                <Text style={{fontSize:14,color:'#2b7888'}}>验证码</Text>
                 <TextInput placeholder='请输入图形验证码' placeholderTextColor='#dbdbdb' style={{
                     fontSize: 12,
                     marginLeft: 5,
@@ -317,7 +317,7 @@ export default class Pgtest extends Component {
                 </View>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text>验证码</Text>
+                <Text  style={{fontSize:14,color:'#2b7888'}}>验证码</Text>
                 <TextInput placeholder='请输入手机验证码' placeholderTextColor='#dbdbdb' style={{
                     fontSize: 12,
                     marginLeft: 5,

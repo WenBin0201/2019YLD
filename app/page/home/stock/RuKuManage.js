@@ -43,12 +43,12 @@ export default class PgRuKuManage extends Component {
             no, name, barCode, cuNo, type, unit, attribute, purchasePrice, sellPrice,
             wholesalePrice, vipPrice, originStock, stock, produceDate, expiration, supplier
         } = item
-        const values = [ no, name, barCode, cuNo, type, unit, attribute, purchasePrice, sellPrice,
-            wholesalePrice, vipPrice, originStock, stock, produceDate, expiration, supplier ]
+        const values = [no, name, barCode, cuNo, type, unit, attribute, purchasePrice, sellPrice,
+            wholesalePrice, vipPrice, originStock, stock, produceDate, expiration, supplier]
         return (
-            <View style={[ styles.headContainer, styles.listItemContainer ]}>
+            <View style={[styles.headContainer, styles.listItemContainer]}>
                 {values.map((text, index) =>
-                    <FormCell key={() => text} customStyle={{ width: widths[ index ] * WIDTH_RATIO }}>{text}</FormCell>
+                    <FormCell key={() => text} customStyle={{ width: widths[index] * WIDTH_RATIO }}>{text}</FormCell>
                 )}
             </View>
         )
@@ -66,78 +66,69 @@ export default class PgRuKuManage extends Component {
 
     _renderBottomContent = () => {
         return (
-            <View style={[ styles.bottomContentContainer, { width: this.state.bottomContentWidth } ]}>
+            <View style={[styles.bottomContentContainer, { width: this.state.bottomContentWidth }]}>
                 <View style={styles.bottomLeftContainer}>
                     <TextInput
                         value={this.state.inputCode}
                         placeholder={'请输入条码/拼音码/自编码'}
                         onChangeText={text => this.setState({ inputCode: text })}
-                        style={[ styles.codeInput, { height: 27 * radio, width: 145 * radio } ]}
-                        placeholderTextColor={'gray'}
+                        style={styles.codeInput}
+                        placeholderTextColor='#dbdbdb'
                         underlineColorAndroid={'transparent'}
                     />
                     <Button
-                        borderRadius={btnRadius}
-                        width={85 * radio}
-                        height={27 * radio}
+                        height={30}
                         text={'无码/称重入库'}
                         onPress={this._doCodelessInStorage}
                         backgroundColor={'rgb(244,208,0)'}
                         fontSize={bottomTextSize}
                         style={styles.buttons}
-                        color={COLOR_SECOND_COLOR}/>
+                        color={COLOR_SECOND_COLOR} />
                     <Button
-                        borderRadius={btnRadius}
-                        width={67 * radio}
-                        height={27 * radio}
+                        height={30}
                         text={'采购单入库'}
                         style={styles.buttons}
                         onPress={this._doPurchaseInStorage}
                         backgroundColor={COLOR_SECOND_COLOR}
                         fontSize={bottomTextSize}
-                        color={'white'}/>
+                        color={'white'} />
                     <Button
-                        borderRadius={btnRadius}
-                        width={68 * radio}
-                        height={27 * radio}
+                        height={30}
                         text={'新增商品'}
                         style={styles.buttons}
                         onPress={this._doCreateNewCommodity}
                         backgroundColor={COLOR_SECOND_COLOR}
                         fontSize={bottomTextSize}
-                        color={'white'}/>
+                        color={'white'} />
                 </View>
                 <View style={styles.bottomRightContainer}>
                     <Button
-                        borderRadius={btnRadius}
-                        width={50 * radio}
-                        height={27 * radio}
+                        height={30}
+                        width={60}
                         text={'入库'}
                         style={styles.buttons}
                         onPress={this._doInStorage}
                         backgroundColor={COLOR_SECOND_COLOR}
                         fontSize={bottomTextSize}
-                        color={'white'}/>
+                        color={'white'} />
                     <Button
-                        borderRadius={btnRadius}
-                        width={50 * radio}
-                        height={27 * radio}
+                        height={30}
+                        width={60}
                         text={'删除'}
                         style={styles.buttons}
                         onPress={this._doDelete}
                         backgroundColor={'rgb(235,97,0)'}
                         fontSize={bottomTextSize}
-                        color={'white'}/>
+                        color={'white'} />
                     <Button
-                        borderRadius={btnRadius}
-                        width={50 * radio}
-                        height={27 * radio}
+                        height={30}
+                        width={60}
                         text={'清空'}
                         style={styles.buttons}
                         onPress={this._doDeleteAll}
                         backgroundColor={'rgb(214,50,0)'}
                         fontSize={bottomTextSize}
-                        color={'white'}/>
+                        color={'white'} />
                 </View>
             </View>
         )
