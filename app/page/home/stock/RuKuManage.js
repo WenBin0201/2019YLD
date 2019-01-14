@@ -23,8 +23,7 @@ export default class PgRuKuManage extends Component {
         super(props)
         this.state = {
             commodityList: dataSource,  // 列表数据
-            inputCode: '',              // 输入条码
-            bottomContentWidth: 0       // 底部宽度
+            inputCode: ''              // 输入条码
         }
     }
 
@@ -43,12 +42,12 @@ export default class PgRuKuManage extends Component {
             no, name, barCode, cuNo, type, unit, attribute, purchasePrice, sellPrice,
             wholesalePrice, vipPrice, originStock, stock, produceDate, expiration, supplier
         } = item
-        const values = [no, name, barCode, cuNo, type, unit, attribute, purchasePrice, sellPrice,
-            wholesalePrice, vipPrice, originStock, stock, produceDate, expiration, supplier]
+        const values = [ no, name, barCode, cuNo, type, unit, attribute, purchasePrice, sellPrice,
+            wholesalePrice, vipPrice, originStock, stock, produceDate, expiration, supplier ]
         return (
-            <View style={[styles.headContainer, styles.listItemContainer]}>
+            <View style={[ styles.headContainer, styles.listItemContainer ]}>
                 {values.map((text, index) =>
-                    <FormCell key={() => text} customStyle={{ width: widths[index] * WIDTH_RATIO }}>{text}</FormCell>
+                    <FormCell key={() => text} customStyle={{ width: widths[ index ] * WIDTH_RATIO }}>{text}</FormCell>
                 )}
             </View>
         )
@@ -66,7 +65,7 @@ export default class PgRuKuManage extends Component {
 
     _renderBottomContent = () => {
         return (
-            <View style={[styles.bottomContentContainer, { width: this.state.bottomContentWidth }]}>
+            <View style={styles.bottomContentContainer}>
                 <View style={styles.bottomLeftContainer}>
                     <TextInput
                         value={this.state.inputCode}
@@ -83,7 +82,7 @@ export default class PgRuKuManage extends Component {
                         backgroundColor={'rgb(244,208,0)'}
                         fontSize={bottomTextSize}
                         style={styles.buttons}
-                        color={COLOR_SECOND_COLOR} />
+                        color={COLOR_SECOND_COLOR}/>
                     <Button
                         height={30}
                         text={'采购单入库'}
@@ -91,7 +90,7 @@ export default class PgRuKuManage extends Component {
                         onPress={this._doPurchaseInStorage}
                         backgroundColor={COLOR_SECOND_COLOR}
                         fontSize={bottomTextSize}
-                        color={'white'} />
+                        color={'white'}/>
                     <Button
                         height={30}
                         text={'新增商品'}
@@ -99,7 +98,7 @@ export default class PgRuKuManage extends Component {
                         onPress={this._doCreateNewCommodity}
                         backgroundColor={COLOR_SECOND_COLOR}
                         fontSize={bottomTextSize}
-                        color={'white'} />
+                        color={'white'}/>
                 </View>
                 <View style={styles.bottomRightContainer}>
                     <Button
@@ -110,7 +109,7 @@ export default class PgRuKuManage extends Component {
                         onPress={this._doInStorage}
                         backgroundColor={COLOR_SECOND_COLOR}
                         fontSize={bottomTextSize}
-                        color={'white'} />
+                        color={'white'}/>
                     <Button
                         height={30}
                         width={60}
@@ -119,7 +118,7 @@ export default class PgRuKuManage extends Component {
                         onPress={this._doDelete}
                         backgroundColor={'rgb(235,97,0)'}
                         fontSize={bottomTextSize}
-                        color={'white'} />
+                        color={'white'}/>
                     <Button
                         height={30}
                         width={60}
@@ -128,7 +127,7 @@ export default class PgRuKuManage extends Component {
                         onPress={this._doDeleteAll}
                         backgroundColor={'rgb(214,50,0)'}
                         fontSize={bottomTextSize}
-                        color={'white'} />
+                        color={'white'}/>
                 </View>
             </View>
         )
@@ -176,13 +175,9 @@ export default class PgRuKuManage extends Component {
     _doDeleteAll = () => {
     }
 
-    _onContainerLayoutChanged = ({ nativeEvent: { layout: { width, height } } }) => {
-        this.setState({ bottomContentWidth: width })
-    }
-
     render() {
         return (
-            <View style={styles.container} onLayout={this._onContainerLayoutChanged}>
+            <View style={styles.container}>
                 <ScrollView horizontal={true}>
                     <View style={{ flexDirection: 'column' }}>
                         {this._renderListHead()}

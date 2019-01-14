@@ -1,51 +1,61 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
     Text,
-    TouchableOpacity,
-} from 'react-native';
+    TouchableOpacity
+} from 'react-native'
 
-import { COLOR_SECOND_COLOR,COLOR_WHITE_COLOR,COLOR_F1F1F1} from '../constant/ColorConstant';
+import { COLOR_SECOND_COLOR, COLOR_WHITE_COLOR, COLOR_F1F1F1 } from '../constant/ColorConstant'
+
 /**
  * 按鈕
  */
 export default class Button extends Component {
 
+    static propTypes = {
+        text: PropTypes.string.isRequired,
+        backgroundColor: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number,
+        fontSize: PropTypes.number,
+        onPress: PropTypes.func,
+        style: PropTypes.object
+    }
+
     static defaultProps = {
         backgroundColor: COLOR_SECOND_COLOR,
         borderRadius: 3,
-        height:25,
+        height: 25,
         color: COLOR_WHITE_COLOR,
         fontSize: 14,
         disabled: false
     }
 
-
-
     constructor(props) {
         super(props)
-      
+
     }
 
-    componentWillReceiveProps(nextProps){
-      
+    componentWillReceiveProps(nextProps) {
+
     }
 
     render() {
         return (
             <TouchableOpacity
                 disabled={this.props.disabled}
-                style={[{
+                style={[ {
                     height: this.props.height,
-                    backgroundColor: this.props.disabled?COLOR_F1F1F1:this.props.backgroundColor,
+                    backgroundColor: this.props.disabled ? COLOR_F1F1F1 : this.props.backgroundColor,
                     borderRadius: this.props.borderRadius,
-                    alignItems:'center',
-                    justifyContent:'center',
-                    width:this.props.width
-                   
-                },this.props.style]}
-                onPress = {()=>{
-                    if(this.props.onPress){
-                        this.props.onPress();
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: this.props.width
+
+                }, this.props.style ]}
+                onPress={() => {
+                    if ( this.props.onPress ){
+                        this.props.onPress()
                     }
                 }}
             >
@@ -55,6 +65,6 @@ export default class Button extends Component {
                 }}>
                     {this.props.text}
                 </Text>
-            </TouchableOpacity>)
+            </TouchableOpacity> )
     }
 }
