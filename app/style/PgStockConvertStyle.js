@@ -2,12 +2,12 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import {COLOR_WHITE_COLOR,COLOR_3E8492 } from '../constant/ColorConstant';
 
-export const PgPurchaseRecordsStyle = StyleSheet.create({
+export const PgStockConvertStyle = StyleSheet.create({
   container: {
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    flex: 1,
-    backgroundColor: '#f1f1f1',
+    flex:1,
+    paddingLeft:5,
+    paddingRight:5,
+    backgroundColor:'#f1f1f1'
   },
   headerContainer:{
     flexDirection:'row',
@@ -18,7 +18,7 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
   button:{
     justifyContent: 'center',
     alignItems:'center',
-    height:25,
+    height:30,
     margin:2,
     borderRadius:3,
     backgroundColor:'#2B7888',
@@ -53,6 +53,14 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#EAEAEA',
   },
+  bottomItem:{
+    flexDirection:'row',
+    justifyContent: 'space-around',
+     alignItems: 'center', 
+     flex: 2.5,
+     borderLeftWidth:1,
+     borderColor:'#EAEAEA'
+  },
   footerContainer:{
     flexDirection:'row',
     width:'100%',
@@ -61,14 +69,14 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
      alignItems: 'center' 
   },
   searchInput:{
-    height: 25,
+    height: 30,
     fontSize:13, 
     borderColor: '#2b7889',
-    width:204, 
+    width:100, 
     borderWidth: 1,
     borderRadius:5,
     padding: 0,
     paddingLeft:5
   }
 });
-module.exports = PgPurchaseRecordsStyle;
+module.exports = PgStockConvertStyle;

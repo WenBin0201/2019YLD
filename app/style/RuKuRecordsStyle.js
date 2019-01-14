@@ -51,7 +51,7 @@ export const RuKuRecordsStyle = StyleSheet.create({
     footerContainer:{
       flexDirection:'row',
       width:'100%',
-      height:50,
+      height:40,
       justifyContent: 'space-between',
        alignItems: 'center' 
     },
