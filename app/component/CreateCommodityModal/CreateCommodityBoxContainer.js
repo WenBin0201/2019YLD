@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Image, Text, TouchableOpacity, View, Dimensions, StyleSheet, TextInput, PixelRatio } from 'react-native'
 import { COLOR_SECOND_COLOR } from '../../constant/ColorConstant'
+import { RED_POINT_DISTANCE, RED_POINT_SIZE } from '../../constant/StaticDataDef'
 import PublicStyle from '../../style/PublicStyle'
 import Button from '../Button'
+import TextWithRedPoint from '../TextWithRedPoint'
 
 const { width, height } = Dimensions.get('window')
-const redPointSize = 5
 const radio = 1.5
 const formFontSize = 12
-const redPointDistance = 3
 const containerHeight = height * 3 / 4
 const containerWidth = width * 2 / 3
 
@@ -229,18 +229,7 @@ export default class CreateCommodityBoxContainer extends React.Component {
     }
 }
 
-class TextWithRedPoint extends React.Component {
-    render(): React.ReactNode {
-        return (
-            <View style={[ styles.redPointContainer, { ...this.props.containerStyle } ]}>
-                <View style={styles.redPoint}/>
-                <Text {...this.props} style={[ this.props.style, { marginLeft: 0 } ]}>
-                    {this.props.children}
-                </Text>
-            </View>
-        )
-    }
-}
+
 
 const styles = StyleSheet.create({
     formContainer: {
@@ -266,7 +255,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
         color: COLOR_SECOND_COLOR,
-        marginLeft: redPointSize + redPointDistance
+        marginLeft: RED_POINT_SIZE + RED_POINT_DISTANCE
     },
     fieldInputLong: {
         width: 110 * radio,
@@ -279,16 +268,6 @@ const styles = StyleSheet.create({
         marginLeft: 3 * radio
     },
 
-    redPointContainer: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    redPoint: {
-        width: redPointSize,
-        height: redPointSize,
-        borderRadius: redPointSize,
-        backgroundColor: 'red',
-        marginRight: redPointDistance
-    }
+
 
 })
