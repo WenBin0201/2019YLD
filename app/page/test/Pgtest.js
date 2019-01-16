@@ -10,6 +10,8 @@ import TakeBillBox from '../../component/takebill/TakeBillBox'
 import ComSelectBox from '../../component/comselect/ComSelectBox'
 import AddCommBox from '../../component/addcomm/AddCommBox'
 import WeipriceBox from '../../component/weiprice/WeipriceBox'
+import { COLOR_SECOND_COLOR } from '../../constant/ColorConstant'
+import { WIDTH_RATIO } from '../../constant/StaticDataDef'
 
 export default class Pgtest extends Component {
 
@@ -104,6 +106,27 @@ export default class Pgtest extends Component {
                 }}/>
                 <Button width={150} text='盘点帮助提示' style={{ margin: 5 }} onPress={() => {
                     PanDianHelpBox.show()
+                }}/>
+                <Button width={150} text='盘点备注说明' style={{ margin: 5 }} onPress={() => {
+                    this._dialog12()
+                }}/>
+                <Button width={150} text='库存盘点完成' style={{ margin: 5 }} onPress={() => {
+                    this._dialog13()
+                }}/>
+                <Button width={150} text='库存盘点' style={{ margin: 5 }} onPress={() => {
+                    this._dialog14()
+                }}/>
+                <Button width={150} text='恢复盘点' style={{ margin: 5 }} onPress={() => {
+                    this._dialog15()
+                }}/>
+                <Button width={150} text='没有找到匹配的商品' style={{ margin: 5 }} onPress={() => {
+                    this._dialog16()
+                }}/>
+                <Button width={150} text='抽样盘点' style={{ margin: 5 }} onPress={() => {
+                    this._dialog17()
+                }}/>
+                <Button width={150} text='全库盘点' style={{ margin: 5 }} onPress={() => {
+                    this._dialog18()
                 }}/>
             </View>
         )
@@ -373,6 +396,155 @@ export default class Pgtest extends Component {
                 }
             ]
         }, null, true, true)
+    }
+
+    _dialog12() {
+        const _v = (
+            <View style={{ flex: 1, alignItems: 'stretch', justifyContent: 'space-around', alignSelf: 'stretch' }}>
+                <Text style={{
+                    color: COLOR_SECOND_COLOR,
+                    fontSize: 12,
+                    textAlign: 'center',
+                    marginBottom: 5
+                }}>可为本次盘点进行备注说明</Text>
+                <TextInput
+                    placeholder={'请输入备注说明!'}
+                    placeholderTextColor={'rgb(90,90,90)'}
+                    multiline={true}
+                    style={{
+                        backgroundColor: 'rgb(163,198,212)',
+                        flex: 1,
+                        marginLeft: 10,
+                        marginRight: 10,
+                        textAlignVertical: 'top'
+                    }}
+                />
+            </View>
+        )
+
+        DialogBox.show('系统提示', null, {
+            buttons: [
+                {
+                    text: '确定',
+                    backgroundColor: 'red',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, _v, true, false)
+    }
+
+    _dialog13() {
+        DialogBox.show('系统提示', [ '库存盘点完成' ], {
+            buttons: [
+                {
+                    text: '确定',
+                    backgroundColor: 'rgb(214,50,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, null, true, false)
+    }
+
+    _dialog14() {
+        DialogBox.show('库存盘点', [ '总共盘点1件商品，其余1499件未盘点', '【全盘盘点】未盘点商品库存将被置为0，', '【抽样盘点】未盘点商品库存将保持不变' ], {
+            buttons: [
+                {
+                    text: '重新盘点',
+                    backgroundColor: 'rgb(235,97,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                },
+                {
+                    text: '提交',
+                    backgroundColor: 'rgb(214,50,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, null, true, false)
+    }
+
+    _dialog15() {
+        DialogBox.show('恢复盘点', [ '之前还有尚未提交的盘点记录！', '1.点击[重新盘点],将清空之前的盘点记录重新盘点', '2.点击[继续盘点],将继续之前的盘点操作' ], {
+            buttons: [
+                {
+                    text: '重新盘点',
+                    backgroundColor: 'rgb(235,97,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                },
+                {
+                    text: '继续盘点',
+                    backgroundColor: 'rgb(214,50,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, null, true, false)
+    }
+
+    _dialog16() {
+        DialogBox.show('系统提示', [ '没有找到匹配的商品' ], {
+            buttons: [
+                {
+                    text: '确定',
+                    backgroundColor: 'rgb(214,50,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, null, true, false)
+    }
+
+    _dialog17() {
+        DialogBox.show('系统提示', [ '确定要开始抽样盘点吗？', '【抽样盘点】对部分商品进行盘点', '结束盘点后，仅对盘点商品的库存进行调整', '为盘点商品库存不变' ], {
+            buttons: [
+                {
+                    text: '取消',
+                    backgroundColor: 'rgb(235,97,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                },
+                {
+                    text: '确定',
+                    backgroundColor: 'rgb(214,50,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, null, true, false)
+    }
+
+    _dialog18() {
+        DialogBox.show('系统提示', [ '确定要开始全库盘点吗？', '【全库盘点】是对所有商品进行盘点', '结束盘点后，未盘点商品的库存自动调整为0' ], {
+            buttons: [
+                {
+                    text: '取消',
+                    backgroundColor: 'rgb(235,97,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                },
+                {
+                    text: '确定',
+                    backgroundColor: 'rgb(214,50,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, null, true, false)
     }
 
 }
