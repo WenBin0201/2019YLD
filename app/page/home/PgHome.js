@@ -86,22 +86,22 @@ export default class PgHome extends Component {
                                 style={{ alignItems: 'center', marginLeft: 10 }}>
                                 <View style={HomeStyle.tab_cell}>
                                 </View>
-                                <Text style={[HomeStyle.text, { marginTop: 3 }]}>{item.title}</Text>
+                                <Text style={[PublicStyle.text_FFF_17, { marginTop: 3 }]}>{item.title}</Text>
                             </TouchableOpacity>)
                     })}
                     <View style={HomeStyle.topcell_zs}>
-                        <View style={{ alignItems: 'center'}}>
+                        <View style={{ alignItems: 'center',width:150}}>
                             <Animated.Text
-                                style={[PublicStyle.text_FFF_30,{lineHeight: 30,
+                                style={[PublicStyle.text_FFF_52,{lineHeight:52,
                                     transform: [{ rotateY: this.state.ani.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '360deg'] }) }]
                                 }]}>8.8</Animated.Text>
-                            <Text style={[HomeStyle.text]}>昨日使用指数</Text>
+                            <Text style={[PublicStyle.text_FFF_17]}>昨日使用指数</Text>
                         </View>
                     </View>
                     <View style={{ alignItems: 'center', marginRight: 10 }}>
-                        <Text style={HomeStyle.text}>{this.state.shopName}</Text>
-                        <Text style={HomeStyle.text}>{this.state.shopNum}</Text>
-                        <Text style={HomeStyle.text}>{this.state.shopPerson}</Text>
+                        <Text style={PublicStyle.text_FFF_15}>{this.state.shopName}</Text>
+                        <Text style={PublicStyle.text_FFF_15}>{this.state.shopNum}</Text>
+                        <Text style={PublicStyle.text_FFF_13}>{this.state.shopPerson}</Text>
                     </View>
                 </View>
                 <ScrollableTabView

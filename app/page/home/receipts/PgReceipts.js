@@ -53,34 +53,34 @@ export default class PgReceipts extends Component {
                     renderItem={this._renderRow}
                 />
                 <View style={{ backgroundColor: "#fff" }}>
-                    <View style={{ flexDirection: 'row', backgroundColor: '#f1f1f1', height: 35, alignItems: 'center', justifyContent: 'center', }}>
+                    <View style={{ flexDirection: 'row', height: 45, alignItems: 'center', justifyContent: 'center', }}>
                         <View style={{ width: 25, height: 25, backgroundColor: '#666666', marginLeft: 15, marginRight: 15 }}>
                         </View>
                         <Text style={[ReceiptsStyle.text2, { flex: 1 }]}>共计  x行 x件商品</Text>
-                        <Button text='挂单' backgroundColor='#2b7889' width={60} height={27}
+                        <Button fontSize={20} text='挂单' backgroundColor='#2b7889' width={65} height={27}
                             onPress={() => {
                                 DialogBox.show('系統通知','此处内容可以自定义')
                             }}
                         />
-                        <Button  text='取单' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={60} height={27}
+                        <Button  fontSize={20} text='取单' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={65} height={27}
                             onPress={() => {
                                 TakeBillBox.show()
                             }}
                         />
 
-                        <Button text='删除' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={60} height={27}
+                        <Button fontSize={20} text='删除' style={{ marginLeft: 10 }} backgroundColor='#2b7889' width={65} height={27}
                             onPress={() => {
 
                             }}
                         />
-                        <Button  text='清空' style={{ marginLeft: 10, marginRight: 15 }} backgroundColor='#f19149'  width={60} height={27}
+                        <Button fontSize={20} text='清空' style={{ marginLeft: 10, marginRight: 15 }} backgroundColor='#f19149'  width={65} height={27}
                             onPress={() => {
 
                             }}
                         />
                     </View>
 
-                    <View style={{ flexDirection: 'row', backgroundColor: '#2b7888', alignItems: 'center' }}>
+                    <View style={ReceiptsStyle.ReceiptsStyle_view_2}>
                         <View>
                             <TextInput
                                 style={ReceiptsStyle.textIput1}
@@ -89,18 +89,18 @@ export default class PgReceipts extends Component {
                                 underlineColorAndroid='transparent'
                             />
                             <TouchableOpacity style={ReceiptsStyle.btn2}>
-                                <Text style={{ color: '#fff', fontSize: 23 }}>无码/称重</Text>
+                                <Text style={{ color: '#fff', fontSize: 33 }}>无码/称重</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={{ flex: 1 }}>
-                            <View style={{ width: 200, marginLeft: 15, marginTop: 10, marginBottom: 10, borderRadius: 6, backgroundColor: "#fff" }}>
+                            <View style={ReceiptsStyle.ReceiptsStyle_view_bottom}>
                                 <TextInput
                                     style={ReceiptsStyle.textIput2}
                                     placeholder="请输入会员手机号"
                                     placeholderTextColor="#dbdbdb"
                                     underlineColorAndroid='transparent'
                                 />
-                                <View style={{ flexDirection: 'row', height: 25 }}>
+                                <View style={{ flexDirection: 'row',flex:1}}>
                                     <View style={ReceiptsStyle.tab2}>
                                         <Text style={ReceiptsStyle.text2}>会员名称</Text>
                                     </View>
@@ -111,7 +111,7 @@ export default class PgReceipts extends Component {
                                         <Text style={ReceiptsStyle.text2}>市民网积分</Text>
                                     </View>
                                 </View>
-                                <View style={{ flexDirection: 'row', height: 25 }}>
+                                <View style={{ flexDirection: 'row',flex:1 }}>
                                     <View style={ReceiptsStyle.tab2}>
                                         <Text style={ReceiptsStyle.text2}></Text>
                                     </View>
@@ -125,8 +125,8 @@ export default class PgReceipts extends Component {
                             </View>
                         </View>
                         <TouchableOpacity style={ReceiptsStyle.btn3} onPress={() => this.props.navigation.push('PgSettle')}>
-                            <Text style={{ color: '#fff', fontSize: 20, marginLeft: 15 }}>收款{'\n'}<Text style={{ fontSize: 15, }}>[回车键]</Text></Text>
-                            <Text style={{ color: '#fff', fontSize: 30 }}>￥0.00</Text>
+                            <Text style={{ color: '#fff', fontSize: 46, marginLeft: 15 }}>收款{'\n'}<Text style={{ fontSize: 26 }}>[回车键]</Text></Text>
+                            <Text style={{ color: '#fff', fontSize: 55 }}>￥0.00</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -144,27 +144,27 @@ export default class PgReceipts extends Component {
      */
     _renderRow = ({item,index}) => {
         return (
-            <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
+            <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 39, width: this.deviceWidth }}>
                 <View style={[PublicStyle.tab_defalut_item, { flex: 1.5}]}>
-                    <Text>{item.k1}</Text>
+                    <Text style={PublicStyle.text_333333_16}>{item.k1}</Text>
                 </View>
                 <View style={[PublicStyle.tab_defalut_item, { flex: 2,borderLeftWidth:1}]}>
-                    <Text>{item.k2}</Text>
+                    <Text style={PublicStyle.text_333333_16}>{item.k2}</Text>
                 </View>
                 <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k3}</Text>
+                    <Text style={PublicStyle.text_333333_16}>{item.k3}</Text>
                 </View>
                 <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k4}</Text>
+                    <Text style={PublicStyle.text_333333_16}>{item.k4}</Text>
                 </View>
                 <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k5}</Text>
+                    <Text style={PublicStyle.text_333333_16}>{item.k5}</Text>
                 </View>
                 <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k6}</Text>
+                    <Text style={PublicStyle.text_333333_16}>{item.k6}</Text>
                 </View>
                 <View style={[PublicStyle.tab_defalut_item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k7}</Text>
+                    <Text style={PublicStyle.text_333333_16}>{item.k7}</Text>
                 </View>
             </View>
         )

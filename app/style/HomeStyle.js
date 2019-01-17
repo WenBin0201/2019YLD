@@ -9,32 +9,30 @@ export const HomeStyle = StyleSheet.create({
     },
     topCell: {
         backgroundColor: '#a3c6d4', 
-        height: 58, 
+        height: 87, 
         flexDirection: 'row', 
         alignItems: 'center' 
     },
     topCell_left:{
-        width: 65,
+        width: 98,
         borderColor:'#FFF',
-        height:58,
-        borderRightWidth:1,
+        height:87,
+        borderRightWidth:2,
         marginLeft: 15, 
         marginRight: 5 
     },
-    topcell_zs:{
-        alignItems: 'flex-start', 
-        marginLeft: 15, 
+    topcell_zs:{          
+        // marginLeft: 18, 
         flex: 1, 
-        justifyContent: 'center' 
     },
     tab_cell:{
-        width: 25, 
-        height: 25, 
+        width: 45, 
+        height: 45, 
         backgroundColor: '#666666', 
     },
     text: {
         color: COLOR_WHITE_COLOR, 
-        fontSize: 12
+        fontSize: 17
     }
 
 });

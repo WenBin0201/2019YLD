@@ -11,13 +11,25 @@ export const PublicStyle = StyleSheet.create({
         color: COLOR_WHITE_COLOR,
         fontSize: 12
     },
+    text_FFF_13: {
+        color: COLOR_WHITE_COLOR,
+        fontSize: 13
+    },
     text_FFF_14: {
         color: COLOR_WHITE_COLOR,
         fontSize: 14
     },
+    text_FFF_15: {
+        color: COLOR_WHITE_COLOR,
+        fontSize: 15
+    },
     text_FFF_16: {
         color: COLOR_WHITE_COLOR,
         fontSize: 16
+    },
+    text_FFF_17: {
+        color: COLOR_WHITE_COLOR,
+        fontSize: 17
     },
     text_FFF_20: {
         fontSize: 20,
@@ -33,6 +45,10 @@ export const PublicStyle = StyleSheet.create({
     },
     text_FFF_35: {
         fontSize: 35,
+        color: COLOR_WHITE_COLOR
+    },
+    text_FFF_52: {
+        fontSize: 52,
         color: COLOR_WHITE_COLOR
     },
 
@@ -84,6 +100,12 @@ export const PublicStyle = StyleSheet.create({
     text_2b7888_18:{
         fontSize: 18, 
         color: '#2b7888'
+
+    },
+
+    text_333333_16: {
+        fontSize: 16,
+        color: '#333333'
 
     },
 

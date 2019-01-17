@@ -11,12 +11,12 @@ export default class TabView extends Component {
 
     static defaultProps = {
         tabHeadBg: '#2b7888',//列表背景色
-        tabHeadHeight: 30, //列表头部高度
+        tabHeadHeight: 36, //列表头部高度
         tabHeadSeparatorLineColor: '#FFFFFF',//列表头部分割线颜色
         SeparatorLineColor: '#EAEAEA',//列表分割线颜色
         tabHeadTextColor: '#FFFFFF',//列表头部文字颜色
-        tabHeadTextFontSize: 16,//列表头部文字大小
-        tabMarginTop:8
+        tabHeadTextFontSize: 20,//列表头部文字大小
+        tabMarginTop:10
     }
 
     constructor(props) {
