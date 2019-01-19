@@ -11,7 +11,7 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
   },
   headerContainer:{
     flexDirection:'row',
-    marginLeft:11, 
+    height: global.RuKuRecordsSize*45,
     justifyContent: 'space-between',
     alignItems: 'center' 
   },
@@ -40,18 +40,23 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
   pickButton:{
     justifyContent: 'center',
     padding:3,
-    height:25,
+    height:31,
     width:75,
     backgroundColor:'#fff',
     borderWidth:1,
     borderColor:'#2b7889',
-    borderRadius:3,
+    borderRadius:5,
     margin:2
   },
   item: {
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: '#EAEAEA',
+  },
+  rowItem:{
+    flexDirection: 'row', 
+    backgroundColor: '#FFFFFF', 
+    height: 25,
   },
   footerContainer:{
     flexDirection:'row',
@@ -61,14 +66,38 @@ export const PgPurchaseRecordsStyle = StyleSheet.create({
      alignItems: 'center' 
   },
   searchInput:{
-    height: 25,
+    height: 31,
     fontSize:13, 
     borderColor: '#2b7889',
-    width:204, 
+    width:128, 
     borderWidth: 1,
     borderRadius:5,
     padding: 0,
-    paddingLeft:5
+    paddingLeft:5,
+    marginLeft:8
+  },
+  headerText:{
+    flexDirection:'row',
+    justifyContent: 'space-between', 
+    alignItems: 'center',
+    height:45
+  },
+  headerRow:{
+    flexDirection:'row',
+    flex:2,
+    height:30,
+    justifyContent: 'flex-start', 
+    alignItems: 'center'  
+  },
+  headerRowItem:{
+    flexDirection:'row',
+    height:40,
+    justifyContent: 'flex-start', 
+    alignItems: 'center'
+  },
+  headerRowItemText:{
+    color:'#2B7888',
+    fontSize:15
   }
 });
 module.exports = PgPurchaseRecordsStyle;

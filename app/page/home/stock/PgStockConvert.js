@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Text, View ,TouchableOpacity,TextInput,WebView} from 'react-native';
 import TabView from '../../../component/TabView/TabView'
 import PgStockConvertStyle from '../../../style/PgStockConvertStyle'
-import PgNewBNStyle from '../../../style/PgNewBNStyle'
+import BaseButton from '../../../component/BaseButton'
 /**
  * 库存转换
  */
@@ -42,10 +42,11 @@ export default class PgStockConvert extends Component {
      */
     webViewMethods(){
             return(
-                <View  style={{flex:1,marginTop:5}}>
+                <View  style={{flex:1,marginTop:5,backgroundColor:'#fff'}}>
                     <TabView
                     tabMarginTop={0}
-                    tabHeadTextFontSize={13}
+                    tabHeadTextFontSize={14}
+                    tabHeadHeight={32}
                     tabHeads={['序号', '大件商品名称', '大件商品条码', '小件商品条码','小件商品条码', '转换数量', '状态', '操作']}
                     tabRowWidth={[0.5, 2, 1.5, 2, 1.5, 1,1, 2.5]}
                     data={this.state.dataSource}
@@ -61,7 +62,7 @@ export default class PgStockConvert extends Component {
     footerView(){
         return(
             <View style={[PgStockConvertStyle.footerContainer]}>
-                <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+                <View style={[PgStockConvertStyle.footerContainerLeft]}>
                     <View><TextInput
                         placeholder='大件商品条码'
                         placeholderTextColor='#cccccc'
@@ -83,13 +84,13 @@ export default class PgStockConvert extends Component {
                     <View><TextInput
                         placeholder='数量'
                         placeholderTextColor='#cccccc'
-                        style={[PgStockConvertStyle.searchInput,{width:50}]}
+                        style={[PgStockConvertStyle.searchInput,{width:69,marginRight:8}]}
                         onChangeText={(text) => this.setState({text})}
                          value={this.state.text}
                         />
                     </View>
-                    <TouchableOpacity style={[PgStockConvertStyle.button]} ><Text style={{color:'#fff',fontSize:14}}>公示新增</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[PgStockConvertStyle.button,{backgroundColor:'#ec6941'}]} ><Text style={{color:'#fff'}}>公示检测</Text></TouchableOpacity> 
+                    <BaseButton  text='公示新增' />
+                    <BaseButton  text='公示检测' backgroundColor='#ec6941' />
                 </View>  
                 <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}>
                 <View><TextInput
@@ -100,7 +101,7 @@ export default class PgStockConvert extends Component {
                          value={this.state.text}
                         />
                     </View>
-                    <TouchableOpacity style={[PgStockConvertStyle.button,{backgroundColor:'#d63200'}]} ><Text style={{color:'#fff'}}>未页</Text></TouchableOpacity> 
+                    <BaseButton  text='公示检测' backgroundColor='#d63200' />
                 </View> 
             </View>
         )
@@ -114,7 +115,7 @@ export default class PgStockConvert extends Component {
      */
     _renderRow = ({item,index}) => {
         return (
-            <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
+            <View style={[PgStockConvertStyle.rowItem]}>
                 <View style={[PgStockConvertStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
                     <Text>{index+1}</Text>
                 </View>

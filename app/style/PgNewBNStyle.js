@@ -11,7 +11,7 @@ export const RuKuRecordsStyle = StyleSheet.create({
   },
   headerContainer:{
     flexDirection:'row',
-    height: 30,
+    height: global.RuKuRecordsSize*46,
     justifyContent: 'space-between',
     alignItems: 'center' 
   },
@@ -53,22 +53,62 @@ export const RuKuRecordsStyle = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#EAEAEA',
   },
+  rowItem:{
+    flexDirection: 'row', 
+    backgroundColor: '#FFFFFF', 
+    height: 29,
+  },
   footerContainer:{
     flexDirection:'row',
     width:'100%',
-    height:40,
+    height:60,
     justifyContent: 'space-between',
      alignItems: 'center' 
   },
+  footerContainerText:{
+    color:'#2B7888',
+    fontSize:20
+  },
   searchInput:{
-    height: 25,
+    height: global.RuKuRecordsSize*32,
     fontSize:13, 
     borderColor: '#2b7889',
-    width:204, 
+    width:192, 
     borderWidth: 1,
-    borderRadius:5,
+    borderRadius:global.RuKuRecordsSize*6,
     padding: 0,
-    paddingLeft:5
+    paddingLeft:5,
+    marginRight:10,
+    marginLeft:10
+  },
+  headerText:{
+    backgroundColor:'#dcdcdc',
+    flexDirection:'row',
+    justifyContent: 'space-between', 
+    alignItems: 'center',
+    height:70
+  },
+  headerRow:{
+    flexDirection:'row',
+    paddingLeft:10,
+    height:25,
+    justifyContent: 'flex-start', 
+    alignItems: 'center' 
+  },
+  headerRowItem:{
+    flexDirection:'row',
+    height:25,
+    justifyContent: 'flex-start', 
+    alignItems: 'center',
+    width:300 
+  },
+  headerRowItemTitle:{
+    color:'#666666',
+    fontSize:15
+  },
+  headerRowItemText:{
+    color:'#2B7888',
+    fontSize:15
   }
 });
 module.exports = RuKuRecordsStyle;
