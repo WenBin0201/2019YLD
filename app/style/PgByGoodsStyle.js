@@ -62,7 +62,8 @@ export const RuKuRecordsStyle = StyleSheet.create({
     borderRadius:global.RuKuRecordsSize*6,
     padding: 0,
     paddingLeft:5,
-    marginRight:10
+    marginRight:10,
+    marginLeft:10
   }
 });
 module.exports = RuKuRecordsStyle;

@@ -55,7 +55,7 @@ export default class PgByGoods extends Component {
                         {this._renderTypeSelect('三级分类', () => {
                         })}
                     <View><TextInput
-                        placeholder='请输入条码/拼音吗/自编码'
+                        placeholder='条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
                         style={[PgByGoodsStyle.searchInput]}
                         onChangeText={(text) => this.setState({text})}
