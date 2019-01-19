@@ -89,10 +89,10 @@ export default class PgCommodityManage extends Component {
         return (
             <TouchableOpacity style={CommManaStyle.CommManaStyle_to} onPress={onPress}>
                 <View style={PublicStyle.ajcjf}>
-                    <Text style={PublicStyle.text_9E9E9E_12}>{str}</Text>
+                    <Text style={PublicStyle.text_9E9E9E_18}>{str}</Text>
                 </View>
                 <View style={CommManaStyle.CommManaStyle_view2}>
-                    <Text style={PublicStyle.text_2B7888_12}>▼</Text>
+                    <Text style={PublicStyle.text_2B7888_18}>▼</Text>
                 </View>
             </TouchableOpacity>
 

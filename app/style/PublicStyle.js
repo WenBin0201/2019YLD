@@ -75,6 +75,11 @@ export const PublicStyle = StyleSheet.create({
         color: COLOR_SECOND_COLOR
 
     },
+    text_2B7888_18: {
+        fontSize: 18,
+        color: COLOR_SECOND_COLOR
+
+    },
     text_2B7888_16: {
         fontSize: 16,
         color: COLOR_SECOND_COLOR
@@ -86,6 +91,10 @@ export const PublicStyle = StyleSheet.create({
     },
     text_9E9E9E_12: {
         fontSize: 12,
+        color: COLOR_GRAY_9E9E9E
+    },
+    text_9E9E9E_18: {
+        fontSize: 18,
         color: COLOR_GRAY_9E9E9E
     },
     text_9E9E9E_14: {

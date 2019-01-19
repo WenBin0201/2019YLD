@@ -177,8 +177,7 @@ export default class PgRuKuRecords extends Component {
      */
     rightViewList(){
             return(
-                <ScrollView   horizontal={true} >
-                    <View style={{width:891}}>
+               
                     <TabView
                     tabHeadHeight={28}
                     tabHeadTextFontSize={13}
@@ -187,9 +186,7 @@ export default class PgRuKuRecords extends Component {
                     data={this.state.dataSource}
                     renderItem={this._renderRow}
                 />
-                </View>  
-                <View></View>
-                </ScrollView>
+        
              )
     }
     /**

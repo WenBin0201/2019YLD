@@ -8,15 +8,15 @@ const CommManaStyle = StyleSheet.create({
         backgroundColor: '#f1f1f1'
     },
     CommManaStyle_to: {
-        width: 80,
-        height: 30,
+        width: 105,
+        height: 39,
         backgroundColor: '#FFF',
         borderWidth: 1,
         borderColor: "#2b7889",
         flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 5,
-        marginLeft: 5
+        borderRadius: 6,
+        marginLeft: 8
     },
     CommManaStyle_view1: {
         height: 40,
@@ -27,10 +27,10 @@ const CommManaStyle = StyleSheet.create({
     },
     CommManaStyle_view2:{
         backgroundColor:'#e4e4e4',
-        width:20,
+        width:23,
         justifyContent:'center',
         alignItems:'center',
-        height:28,
+        height:37,
         borderBottomRightRadius:5,
         borderTopRightRadius:5
     },
