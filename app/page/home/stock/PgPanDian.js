@@ -4,6 +4,7 @@ import { WIDTH_RATIO } from '../../../constant/StaticDataDef'
 import styles from '../../../style/PgPanDianStyle'
 import Button from '../../../component/Button'
 import FormCell from '../../../component/FormCell'
+import PgPanDianHistory from './PgPanDianHistory'
 
 /**
  * 盘点
@@ -16,6 +17,15 @@ const listHeadItems: Array = require('./PgPanDianListHead')
 const widths = listHeadItems.map(({ text, width }) => width)
 
 export default class PgPanDian extends Component {
+
+    constructor(props) {
+        super(props)
+        this.panDianHomePage = null
+        this.panDianHistoryPage = null
+        this.state = {
+            showHistory: false
+        }
+    }
 
     _renderHeadButtons = () => {
         return (
@@ -49,6 +59,7 @@ export default class PgPanDian extends Component {
                     height={27 * WIDTH_RATIO}
                     fontSize={buttonTextSize}
                     onPress={() => {
+                        this.setState({ showHistory: true })
                     }}
                     backgroundColor={'rgb(235,97,0)'}/>
             </View>
@@ -132,12 +143,22 @@ export default class PgPanDian extends Component {
     }
 
     render() {
-        return (
-            <View style={styles.container}>
-                {this._renderHeadButtons()}
-                {this._renderContent()}
-                {this._renderBottomContent()}
-            </View>
-        )
+        const { showHistory } = this.state
+        if ( showHistory ){
+            if ( !this.panDianHistoryPage )
+                this.panDianHistoryPage = <PgPanDianHistory/>
+            return this.panDianHistoryPage
+        } else {
+            if ( !this.panDianHomePage )
+                this.panDianHomePage = (
+                    <View style={styles.container}>
+                        {this._renderHeadButtons()}
+                        {this._renderContent()}
+                        {this._renderBottomContent()}
+                    </View>
+                )
+            return this.panDianHomePage
+        }
+
     }
 }
