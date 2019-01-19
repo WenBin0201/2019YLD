@@ -53,7 +53,7 @@ export default class PgReceipts extends Component {
                     renderItem={this._renderRow}
                 />
                 <View style={{ backgroundColor: "#fff" }}>
-                    <View style={{ flexDirection: 'row', height: 45, alignItems: 'center', justifyContent: 'center', }}>
+                    <View style={{ flexDirection: 'row', height: 45, alignItems: 'center',backgroundColor:'#f1f1f1', justifyContent: 'center', }}>
                         <View style={{ width: 25, height: 25, backgroundColor: '#666666', marginLeft: 15, marginRight: 15 }}>
                         </View>
                         <Text style={[ReceiptsStyle.text2, { flex: 1 }]}>共计  x行 x件商品</Text>
