@@ -5,7 +5,9 @@ import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import PgByGoodsStyle from '../../../style/PgByGoodsStyle'
 import RuKuRecordsStyle from '../../../style/RuKuRecordsStyle'
 import Button from '../../../component/Button'
+import BaseButton from '../../../component/BaseButton'
 import CommManaStyle from '../../../style/CommManaStyle'
+import PublicStyle from '../../../style/PublicStyle'
 /**
  * 智能补货
  */
@@ -45,7 +47,13 @@ export default class PgByGoods extends Component {
     searchHeader(){
         return(
             <View style={[PgByGoodsStyle.headerContainer]}>
-                <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+                <View style={[PgByGoodsStyle.headerContainerLeft]}>
+                         {this._renderTypeSelect('一级分类', () => {
+                        })}
+                        {this._renderTypeSelect('二级分类', () => {
+                        })}
+                        {this._renderTypeSelect('三级分类', () => {
+                        })}
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
@@ -54,13 +62,29 @@ export default class PgByGoods extends Component {
                          value={this.state.text}
                         />
                     </View>
-                    <TouchableOpacity style={[PgByGoodsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:14}}>查询</Text></TouchableOpacity> 
+                    <BaseButton backgroundColor='#ec6941'   text='查询' onPress={() => {this.setState({buttonType:1}) }}/>
                 </View>  
-                <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}>
-                    <TouchableOpacity style={[PgByGoodsStyle.button,{width:124}]} ><Text style={{color:'#fff'}}>生成采购订单</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[PgByGoodsStyle.button,{backgroundColor:'#ec6941'}]} ><Text style={{color:'#fff'}}>导出EXCEL至邮箱</Text></TouchableOpacity> 
+                <View style={[PgByGoodsStyle.headerContainerRight]}>
+                    <BaseButton  text='生成采购订单' />
+                    <BaseButton  text='导出EXCEL至邮箱' backgroundColor='#ec6941'/>
                 </View>                   
             </View>
+        )
+    }
+     /**
+     * 下拉列表
+     */
+    _renderTypeSelect = (str, onPress) => {
+        return (
+            <TouchableOpacity style={CommManaStyle.CommManaStyle_to} onPress={onPress}>
+                <View style={PublicStyle.ajcjf}>
+                    <Text style={PublicStyle.text_9e9e9e_18}>{str}</Text>
+                </View>
+                <View style={CommManaStyle.CommManaStyle_view2}>
+                    <Text style={PublicStyle.text_2B7888_18}>▼</Text>
+                </View>
+            </TouchableOpacity>
+
         )
     }
      /**
@@ -83,24 +107,16 @@ export default class PgByGoods extends Component {
     }
     webViewMethods(){
             return(
-                <ScrollView   horizontal={true} >
-                <View  style={{width:1050}}>
                     <TabView
                     tabHeadHeight={30}
+                    tabMarginTop={2}
                     tabHeadTextFontSize={13}
                     tabHeads={['口','序号', '供货状态', '商品名称', '商品条码', '商品属性', '一级分类', '二级分类','规格','单位','现库存','进价','上限值','下限值','建议采购量','提交状态']}
                     tabRowWidth={[0.5,0.5, 1, 2, 1.5, 1, 1, 1,0.5,0.5,1,0.5,1,1,1,1]}
                     data={this.state.dataSource}
                     renderItem={this._renderRow}
                 />
-                </View>
-                </ScrollView>
              )
-    }
-    itemText(label,value){
-        return(
-            <View style={{flexDirection:'row',height:40,justifyContent: 'flex-start', alignItems: 'center',width:300 }}><Text>{label}</Text><Text>{value}</Text></View>
-        )
     }
     /**
      * 列表item
@@ -111,7 +127,7 @@ export default class PgByGoods extends Component {
      */
     _renderRow = ({item,index}) => {
         return (
-            <TouchableOpacity style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
+            <TouchableOpacity style={[PgByGoodsStyle.rowItem]}>
                 <View style={[PgByGoodsStyle.item, { flex: 0.5,borderLeftWidth:1}]}>
                     <Text>口</Text>
                 </View>
@@ -161,38 +177,6 @@ export default class PgByGoods extends Component {
                     <Text>{item.k14}</Text>
                 </View>
             </TouchableOpacity>
-        )
-    }
-
-    /**
-     * 列表item
-     * @param {*} rowD 
-     * @param {*} sectionID 
-     * @param {*} rowID 
-     * @param {*} highlightRow 
-     */
-    _renderTotalRow=({item,index}) => {
-        return (
-            <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
-                <View style={[ReceiptsStyle.item, { flex: 1}]}>
-                    <Text>{item.k1}</Text>
-                </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k2}</Text>
-                </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k3}</Text>
-                </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k4}</Text>
-                </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k5}</Text>
-                </View>
-                <View style={[ReceiptsStyle.item, { flex: 1,borderLeftWidth:1}]}>
-                    <Text>{item.k6}</Text>
-                </View>
-            </View>
         )
     }
 }

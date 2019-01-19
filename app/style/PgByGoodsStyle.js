@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import {COLOR_WHITE_COLOR,COLOR_3E8492 } from '../constant/ColorConstant';
+global.RuKuRecordsSize=1
 
 export const RuKuRecordsStyle = StyleSheet.create({
   container: {
@@ -11,23 +12,21 @@ export const RuKuRecordsStyle = StyleSheet.create({
   },
   headerContainer:{
     flexDirection:'row',
-    height: 30,
+    height: global.RuKuRecordsSize*55,
     justifyContent: 'space-between',
     alignItems: 'center' 
   },
-  button:{
-    justifyContent: 'center',
-    alignItems:'center',
-    height:25,
-    margin:2,
-    borderRadius:3,
-    backgroundColor:'#2B7888',
-    paddingLeft:15,
-    paddingRight:15
+  headerContainerLeft:{
+    flexDirection:'row',
+    flex: 1, 
+    justifyContent: 'flex-start', 
+    alignItems: 'center' 
   },
-  buttonText:{
-    color:'#fff',
-    fontSize:14
+  headerContainerRight:{
+    flexDirection:'row',
+    flex: 1, 
+    justifyContent: 'flex-end', 
+    alignItems: 'center' 
   },
   miniButton:{
     justifyContent: 'center',
@@ -37,21 +36,15 @@ export const RuKuRecordsStyle = StyleSheet.create({
     backgroundColor:'#ec6941',
     borderRadius:5
   },
-  pickButton:{
-    justifyContent: 'center',
-    padding:3,
-    height:25,
-    width:80,
-    backgroundColor:'#fff',
-    borderWidth:1,
-    borderColor:'#2b7889',
-    borderRadius:5,
-    margin:5
-  },
   item: {
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: '#EAEAEA',
+  },
+  rowItem:{
+    flexDirection: 'row', 
+    backgroundColor: '#FFFFFF', 
+    height: 45,
   },
   footerContainer:{
     flexDirection:'row',
@@ -61,14 +54,15 @@ export const RuKuRecordsStyle = StyleSheet.create({
      alignItems: 'center' 
   },
   searchInput:{
-    height: 25,
-    fontSize:13, 
+    height: global.RuKuRecordsSize*39,
+    fontSize:18, 
     borderColor: '#2b7889',
     width:204, 
     borderWidth: 1,
-    borderRadius:5,
+    borderRadius:global.RuKuRecordsSize*6,
     padding: 0,
-    paddingLeft:5
+    paddingLeft:5,
+    marginRight:10
   }
 });
 module.exports = RuKuRecordsStyle;

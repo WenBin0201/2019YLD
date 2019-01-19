@@ -210,7 +210,7 @@ export default class PgPurchaseRecords extends Component {
                     </View>
                 <View style={{flex:1,marginTop:5}}>
                 <TabView
-                tabHeadTextFontSize={12}
+                tabHeadTextFontSize={14}
                 tabHeads={['序号', '商品编码', '商品名称', '批发价', '需求量', '订购量', '确认量','零售指导价','金额','预计盈利']}
                 tabRowWidth={[0.5, 1.5, 1, 1, 1, 1, 1,1,1,1,1]}
                 data={this.state.dataSource}
