@@ -57,7 +57,14 @@ export const Login2Style = StyleSheet.create({
         marginLeft: 57, 
         fontSize: 18
     },
+    Login2Style_cb:{
+        width: 25, 
+        height: 25
+    },
 
+    Login2Style_left_35:{
+        marginLeft:35
+    },
     Login2Style_left_42:{
         marginLeft:42
     },
