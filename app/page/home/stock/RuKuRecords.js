@@ -5,6 +5,7 @@ import RuKuRecordsStyle from '../../../style/RuKuRecordsStyle'
 import Button from '../../../component/Button'
 import CommManaStyle from '../../../style/CommManaStyle'
 import { COLOR_SECOND_COLOR, COLOR_F19149, COLOR_DCDCDC } from '../../../constant/ColorConstant'
+import BaseButton from '../../../component/BaseButton'
 
 /**
  * 
@@ -57,9 +58,9 @@ export default class PgRuKuRecords extends Component {
             <View style={[RuKuRecordsStyle.container,{paddingLeft:5}]}>
                 {this.searchHeader()}
             <View style={{flexDirection:'row',flex:1}}>
-                <View style={{width:140,borderColor:'#a3c6d4',borderWidth:1}}>
+               
                     {this.leftViewList()}
-                </View>
+             
                 <View style={{flex:1,backgroundColor:'#fff',marginLeft:5}}>
                     {this.rightViewList()}
                 </View>
@@ -74,8 +75,8 @@ export default class PgRuKuRecords extends Component {
     searchHeader(){
         return(
             <View style={RuKuRecordsStyle.headerContainer}>
-                <View style={{flexDirection:'row',flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
-                    <View><Text style={{color:'#2B7888',fontSize:16,marginRight:11,}}>单品查询</Text></View>
+                <View style={[RuKuRecordsStyle.headerContainerLeft]}>
+                    <View><Text style={[RuKuRecordsStyle.headerTitle]}>单品查询</Text></View>
                     <View><TextInput
                         placeholder='请输入条码/拼音吗/自编码'
                         placeholderTextColor='#cccccc'
@@ -84,9 +85,9 @@ export default class PgRuKuRecords extends Component {
                          value={this.state.text}
                         />
                     </View>
-                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('startPick')}}><Text style={{color:(this.state.startTime)?'#646464':'#cccccc',fontSize:13}}>{(this.state.startTime)?this.state.startTime:'年/月/'}</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('endPick')}}><Text style={{color:(this.state.endTime)?'#646464':'#cccccc',fontSize:13}}>{(this.state.endTime)?this.state.endTime:'年/月/'}</Text></TouchableOpacity> 
-                    <TouchableOpacity style={[RuKuRecordsStyle.button,{backgroundColor:'#ec6941'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:14}}>查询</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('startPick')}}><Text style={{color:(this.state.startTime)?'#646464':'#cccccc',fontSize:15}}>{(this.state.startTime)?this.state.startTime:'年/月/'}</Text></TouchableOpacity> 
+                    <TouchableOpacity style={[RuKuRecordsStyle.pickButton]} onPress={() => {this.timeSelect('endPick')}}><Text style={{color:(this.state.endTime)?'#646464':'#cccccc',fontSize:15}}>{(this.state.endTime)?this.state.endTime:'年/月/'}</Text></TouchableOpacity> 
+                    <BaseButton  text='查询' backgroundColor='#ec6941'/>
                 </View>                   
             </View>
         )
@@ -115,7 +116,7 @@ export default class PgRuKuRecords extends Component {
      */
     leftViewList(){
         return(
-            <View style={{flex:1}}>
+            <View style={[RuKuRecordsStyle.leftContainer]}>
                 <FlatList
                     style={{ flex: 1 }}
                     data={this.state.dataList}
@@ -140,10 +141,10 @@ export default class PgRuKuRecords extends Component {
                             </View>
                     }
                 />
-                <View style={{flexDirection:'row',width:'100%',height:35,justifyContent: 'space-between', alignItems: 'center',backgroundColor:'#a3c6d4' }} >
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:12}}>上一页</Text></TouchableOpacity> 
+                <View style={RuKuRecordsStyle.minContainer} >
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} ><Text style={[RuKuRecordsStyle.minText]}>上一页</Text></TouchableOpacity> 
                         <TouchableOpacity style={[RuKuRecordsStyle.miniButton,{backgroundColor:'#fff'}]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#2b7889',fontSize:12}}>1/3</Text></TouchableOpacity> 
-                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} onPress={() => {this.setState({buttonType:1}) }}><Text style={{color:'#fff',fontSize:12}}>下一页</Text></TouchableOpacity> 
+                        <TouchableOpacity style={[RuKuRecordsStyle.miniButton]} ><Text style={[RuKuRecordsStyle.minText]}>下一页</Text></TouchableOpacity> 
                 </View>
             </View>
         )
@@ -179,8 +180,8 @@ export default class PgRuKuRecords extends Component {
             return(
                
                     <TabView
-                    tabHeadHeight={28}
-                    tabHeadTextFontSize={13}
+                    tabHeadHeight={32}
+                    tabHeadTextFontSize={14}
                     tabHeads={['序号', '操作时间', '商品名称', '商品条码', '规格', '进价', '结余存数','入库数','库存数','入库金额','供货商','业务员','联系电话']}
                     tabRowWidth={[1, 2, 2, 2, 1, 1, 1.5,1,1,1.5,2,1,2]}
                     data={this.state.dataSource}
@@ -221,7 +222,7 @@ export default class PgRuKuRecords extends Component {
      */
     _renderRow = ({item,index}) => {
         return (
-            <View style={{ flexDirection: 'row', backgroundColor: '#FFFFFF', height: 30, width: this.deviceWidth }}>
+            <View style={[RuKuRecordsStyle.rowItem]}>
                 <View style={[RuKuRecordsStyle.item, { flex: 1,borderLeftWidth:1}]}>
                     <Text>{index+1}</Text>
                 </View>

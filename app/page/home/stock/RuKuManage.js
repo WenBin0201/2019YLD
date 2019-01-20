@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { ScrollView, Text, View, FlatList, TextInput } from 'react-native'
 import FormCell from '../../../component/FormCell'
 import { COLOR_SECOND_COLOR } from '../../../constant/ColorConstant'
-import { WIDTH_RATIO } from '../../../constant/StaticDataDef'
 import styles from '../../../style/RukuManageStyles'
 import Button from '../../../component/Button'
 
@@ -15,8 +14,7 @@ const dataSource: Array = require('../../test/TestData_RuKuManage')  // 测试�
 const headItems: Array = require('./RuKuListHead')
 const widths = headItems.map(({ width }) => width)
 const bottomTextSize = 14
-const radio = 1.3
-const btnRadius = 8
+const widthRadio = 2
 
 export default class PgRuKuManage extends Component {
     constructor(props) {
@@ -31,7 +29,7 @@ export default class PgRuKuManage extends Component {
         return (
             <View style={styles.headContainer}>
                 {headItems.map(({ text, width }) =>
-                    <FormCell key={() => text} customStyle={{ width: width * WIDTH_RATIO }}>{text}</FormCell>
+                    <FormCell key={() => text} customStyle={{ width: width * widthRadio }}>{text}</FormCell>
                 )}
             </View>
         )
@@ -47,7 +45,7 @@ export default class PgRuKuManage extends Component {
         return (
             <View style={[ styles.headContainer, styles.listItemContainer ]}>
                 {values.map((text, index) =>
-                    <FormCell key={() => text} customStyle={{ width: widths[ index ] * WIDTH_RATIO }}>{text}</FormCell>
+                    <FormCell key={() => text} customStyle={{ width: widths[ index ] * widthRadio }}>{text}</FormCell>
                 )}
             </View>
         )

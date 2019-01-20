@@ -32,8 +32,8 @@ export const PgStockConvertStyle = StyleSheet.create({
   miniButton:{
     justifyContent: 'center',
     alignItems:'center',
-    height:23,
-    width:40,
+    height:24,
+    width:62,
     backgroundColor:'#ec6941',
     borderRadius:5
   },
@@ -53,6 +53,11 @@ export const PgStockConvertStyle = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#EAEAEA',
   },
+  rowItem:{
+    flexDirection: 'row', 
+    backgroundColor: '#FFFFFF', 
+    height: 29,
+  },
   bottomItem:{
     flexDirection:'row',
     justifyContent: 'space-around',
@@ -64,15 +69,22 @@ export const PgStockConvertStyle = StyleSheet.create({
   footerContainer:{
     flexDirection:'row',
     width:'100%',
-    height:40,
+    height:65,
     justifyContent: 'space-between',
-     alignItems: 'center' 
+    alignItems: 'center',
+    paddingBottom:10
+  },
+  footerContainerLeft:{
+    flexDirection:'row',
+    flex: 1, 
+    justifyContent: 'flex-start', 
+    alignItems: 'center' 
   },
   searchInput:{
-    height: 30,
-    fontSize:13, 
+    height: 39,
+    fontSize:15, 
     borderColor: '#2b7889',
-    width:100, 
+    width:152, 
     borderWidth: 1,
     borderRadius:5,
     padding: 0,

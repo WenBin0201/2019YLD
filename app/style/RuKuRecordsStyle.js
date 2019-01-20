@@ -11,36 +11,49 @@ export const RuKuRecordsStyle = StyleSheet.create({
     },
     headerContainer:{
       flexDirection:'row',
-      height: 30,
+      height: global.RuKuRecordsSize*55,
       justifyContent: 'space-between',
       alignItems: 'center' 
     },
-    button:{
-      justifyContent: 'center',
-    alignItems:'center',
-    height:25,
-    margin:2,
-    borderRadius:3,
-    backgroundColor:'#2B7888',
-    paddingLeft:15,
-    paddingRight:15
+    headerContainerLeft:{
+      flexDirection:'row',
+      flex: 1, 
+      justifyContent: 'flex-start', 
+      alignItems: 'center' 
     },
-    buttonText:{
-      color:'#fff',
-      fontSize:14
+    headerTitle:{
+      color:'#2B7888',
+      fontSize:20,
+    },
+    leftContainer:{
+      width:159,
+      borderColor:'#a3c6d4',
+      borderWidth:1
+    },
+    minContainer:{
+      flexDirection:'row',
+      width:'100%',
+      height:65,
+      justifyContent: 'space-between', 
+      alignItems: 'center',
+      backgroundColor:'#a3c6d4' 
     },
     miniButton:{
       justifyContent: 'center',
       alignItems:'center',
-      height:23,
-      width:40,
+      height:31,
+      width:51,
       backgroundColor:'#ec6941',
-      borderRadius:5
+      borderRadius:5,
+    },
+    minText:{
+      color:'#fff',
+      fontSize:13
     },
     pickButton:{
       justifyContent: 'center',
       padding:3,
-      height:25,
+      height:39,
       width:80,
       backgroundColor:'#fff',
       borderWidth:1,
@@ -60,15 +73,22 @@ export const RuKuRecordsStyle = StyleSheet.create({
       alignItems: 'center',
       borderColor: '#EAEAEA',
     },
-    searchInput:{
+    rowItem:{
+      flexDirection: 'row', 
+      backgroundColor: '#FFFFFF', 
       height: 25,
-      fontSize:13, 
+    },
+    searchInput:{
+      height: global.RuKuRecordsSize*39,
+      fontSize:15, 
       borderColor: '#2b7889',
       width:204, 
       borderWidth: 1,
-      borderRadius:5,
+      borderRadius:global.RuKuRecordsSize*6,
       padding: 0,
-      paddingLeft:5
+      paddingLeft:5,
+      marginRight:10,
+      marginLeft:10
     }
 });
 module.exports = RuKuRecordsStyle;

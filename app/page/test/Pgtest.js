@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, PixelRatio } from 'react-native'
 
 import Button from '../../component/Button'
 import CreateCommodityBox from '../../component/CreateCommodityModal/CreateCommodityBox'
 import DialogBox from '../../component/dialogbox/DialogBox'
+import PanDianDetailsBox from '../../component/PanDianDetailsModal/PanDianDetailsBox'
 import PanDianHelpBox from '../../component/PanDianHelpModal/PanDianHelpBox'
 import PurcahseInStorageBox from '../../component/PurcahseInStorageModal/PurcahseInStorageBox'
 import TakeBillBox from '../../component/takebill/TakeBillBox'
@@ -127,6 +128,15 @@ export default class Pgtest extends Component {
                 }}/>
                 <Button width={150} text='全库盘点' style={{ margin: 5 }} onPress={() => {
                     this._dialog18()
+                }}/>
+                <Button width={150} text='邮件导出' style={{ margin: 5 }} onPress={() => {
+                    this._dialog19()
+                }}/>
+                <Button width={150} text='邮件输入' style={{ margin: 5 }} onPress={() => {
+                    this._dialog20()
+                }}/>
+                <Button width={150} text='盘点信息详单' style={{ margin: 5 }} onPress={() => {
+                    PanDianDetailsBox.show()
                 }}/>
             </View>
         )
@@ -545,6 +555,73 @@ export default class Pgtest extends Component {
                 }
             ]
         }, null, true, false)
+    }
+
+    _dialog19() {
+        DialogBox.show('系统提示', [ '正在导出中，请稍后在您的邮箱中查看' ], {
+            buttons: [
+                {
+                    text: '关闭',
+                    backgroundColor: 'rgb(235,97,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, null, true, false)
+    }
+
+    _dialog20() {
+        const content = (
+            <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center', alignSelf: 'stretch' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 25 * WIDTH_RATIO }}>
+                    <Text style={{ color: COLOR_SECOND_COLOR, fontSize: 12 }}>邮箱：</Text>
+                    <TextInput
+                        style={{
+                            width: 150 * WIDTH_RATIO,
+                            height: 20 * WIDTH_RATIO,
+                            borderRadius: 4,
+                            borderColor: COLOR_SECOND_COLOR,
+                            borderWidth: 1 / PixelRatio.get(),
+                            padding: 0,
+                            textAlignVertical: 'center'
+                        }}
+                        underlineColorAndroid={'transparent'}
+                    />
+                </View>
+                <View style={{
+                    flexDirection: 'row',
+                    marginTop: 15 * WIDTH_RATIO,
+                    marginLeft: 25 * WIDTH_RATIO
+                }}>
+                    <Text style={{ color: COLOR_SECOND_COLOR, fontSize: 12 }}>提示：</Text>
+                    <Text style={{
+                        lineHeight: 20,
+                        color: COLOR_SECOND_COLOR,
+                        fontSize: 10
+                    }}>导出的报表将以Excel文件形式发送到您的邮箱，{'\n'}请填写您的常用邮箱，以确保顺利接受邮件</Text>
+                </View>
+            </View>
+        )
+
+        DialogBox.show('商品档案导出', null, {
+            buttons: [
+                {
+                    text: '关闭',
+                    backgroundColor: 'rgb(235,97,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                },
+                {
+                    text: '发送',
+                    backgroundColor: 'rgb(215,50,0)',
+                    onPress: () => {
+                        DialogBox.hide()
+                    }
+                }
+            ]
+        }, content, true, false)
     }
 
 }
