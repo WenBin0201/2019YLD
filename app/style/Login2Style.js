@@ -65,7 +65,7 @@ export const Login2Style = StyleSheet.create({
         marginLeft:47
     },
     Login2Style_top_33:{
-        marginLeft:33
+        marginTop:33
     },
 
 });
