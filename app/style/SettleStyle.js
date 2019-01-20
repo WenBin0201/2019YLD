@@ -23,50 +23,52 @@ export const SettleStyle = StyleSheet.create({
 
     settle_view_1: {
         flexDirection: 'row',
-        marginTop: 10,
-        width: 400,
-        height: 40,
+        marginTop: 15,
+        height: 59,
+        width:621,
         justifyContent: 'center',
         alignItems: 'center'
     },
     settle_icon: {
-        width: 30,
-        height: 30,
-        marginLeft: 10,
-        marginRight: 10,
+        width: 45,
+        height: 45,
+        marginRight: 15,
         backgroundColor: '#666666'
     },
     settle_input: {
-        flex: 1, marginLeft: 10,
-        borderColor: COLOR_SECOND_COLOR,
+        marginLeft: 15,
+        borderColor: '#3e8492',
+        flex:1,
+        height:58,
         alignItems: 'center',
         borderRadius: 5,
         borderWidth: 1,
+        marginRight:15,
         paddingTop: 0,
         paddingBottom: 0
     },
     settle_view_2: {
         flexDirection: 'row',
-        width: 400,
-        marginTop: 20
+        marginTop: 30,
+        width:621,
     },
     settle_view_3: {
-        flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        flex:1
     },
 
     settle_view_Ani4: {
-        width: 163,
-        height: 250,
+        width:247,
+        height: 397,
         borderColor: COLOR_SECOND_COLOR,
         position: 'absolute',
         top: 40,
         flexDirection: 'row'
     },
     settle_touchO_zk: {
-        width: 33,
-        height: 80,
+        width: 48,
+        height: 117,
         borderColor: COLOR_SECOND_COLOR,
         borderBottomRightRadius: 5,
         borderTopRightRadius: 5,
@@ -75,11 +77,11 @@ export const SettleStyle = StyleSheet.create({
         alignItems: 'center'
     },
     settle_touchO_jz: {
-        width: 160,
-        height: 48,
+        width: 227,
+        height: 72,
         borderColor: COLOR_SECOND_COLOR,
         position: 'absolute',
-        right: 35,
+        right: 45,
         top: 40,
         borderRadius: 5,
         backgroundColor: '#a3c6d4',

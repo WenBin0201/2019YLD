@@ -35,9 +35,9 @@ export default class LeftChageTabView extends Component {
                                 style={lctvStyle.lctv_btn}
                                 backgroundColor={this.state.currentPage == i ? COLOR_F19149 : COLOR_SECOND_COLOR}
                                 text={item}
-                                fontSize={16}
-                                height={52}
-                                width={142}
+                                fontSize={23}
+                                height={78}
+                                width={215}
                                 onPress={this._onChageTab.bind(this, i)}/>
                         )
                     })}
@@ -64,7 +64,7 @@ const lctvStyle = StyleSheet.create({
         paddingLeft: 2,
         paddingRight: 2,
         alignItems: 'center',
-        width: 146
+        width: 219
     },
     lctv_btn: {
         marginTop: 5

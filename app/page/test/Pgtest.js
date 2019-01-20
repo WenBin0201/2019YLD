@@ -203,9 +203,9 @@ export default class Pgtest extends Component {
     }
 
     _dialog5() {
-        let _v = <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', paddingBottom: 5 }}>
-            <Text style={{ color: '#e74c39', fontSize: 18 }}>支付失败！</Text>
-            <Text style={{ color: '#2b7889', fontSize: 14 }}>失败原因：拉卡拉系统返回值！</Text>
+        let _v = <View style={{ flex: 1, alignItems: 'center', paddingBottom: 5 }}>
+            <Text style={{ color: '#e74c39', fontSize: 20,marginTop:30}}>支付失败！</Text>
+            <Text style={{ color: '#2b7889', fontSize: 15,marginTop:30}}>失败原因：拉卡拉系统返回值！</Text>
         </View>
         DialogBox.show('系统提示', null, {
             buttons: [

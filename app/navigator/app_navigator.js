@@ -15,12 +15,14 @@ import ShiftRecord from '../page/login/ShiftRecord'
 import PgShift from '../page/login/PgShift' //交界班界面
 import PgForgetPwd from '../page/login/PgForgetPwd' //忘记密码界面
 import PasswordRetrieve from '../page/login/PasswordRetrieve'
+import PgLogin2 from '../page/login/PgLogin2'
 
 /**
  * 登录模块
  */
 const LoginStack = createStackNavigator(
     {
+        PgLogin2:PgLogin2,
         Pgtest: Pgtest,
         Login: Login,
         PgShift: PgShift,
@@ -55,8 +57,8 @@ const HomeStack = createStackNavigator(
 )
 
 export const AppNavigator = createSwitchNavigator({
+    LoginStack: LoginStack,
     HomeStack: HomeStack,
-    LoginStack: LoginStack
 })
 
 /**

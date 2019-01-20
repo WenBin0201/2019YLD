@@ -31,6 +31,10 @@ export const PublicStyle = StyleSheet.create({
         color: COLOR_WHITE_COLOR,
         fontSize: 17
     },
+    text_FFF_18: {
+        color: COLOR_WHITE_COLOR,
+        fontSize: 18
+    },
     text_FFF_20: {
         fontSize: 20,
         color: COLOR_WHITE_COLOR
@@ -47,11 +51,18 @@ export const PublicStyle = StyleSheet.create({
         fontSize: 35,
         color: COLOR_WHITE_COLOR
     },
+    text_FFF_45: {
+        fontSize: 45,
+        color: COLOR_WHITE_COLOR
+    },
     text_FFF_52: {
         fontSize: 52,
         color: COLOR_WHITE_COLOR
     },
-
+    text_FFF_53: {
+        fontSize: 53,
+        color: COLOR_WHITE_COLOR
+    },
     text_3E8492_16: {
         fontSize: 16,
         color: COLOR_3E8492
@@ -85,6 +96,14 @@ export const PublicStyle = StyleSheet.create({
         color: COLOR_SECOND_COLOR
 
     },
+    text_2B7888_20: {
+        fontSize: 20,
+        color: COLOR_SECOND_COLOR
+    },
+    text_2B7888_23: {
+        fontSize: 23,
+        color: COLOR_SECOND_COLOR
+    },
     text_9E9E9E_10: {
         fontSize: 10,
         color: COLOR_GRAY_9E9E9E
@@ -106,18 +125,17 @@ export const PublicStyle = StyleSheet.create({
         color: '#e74c39' 
 
     },
-    text_2b7888_18:{
-        fontSize: 18, 
-        color: '#2b7888'
-
-    },
 
     text_333333_16: {
         fontSize: 16,
         color: '#333333'
 
     },
+    text_aeaeae_15: {
+        fontSize: 16,
+        color: '#aeaeae'
 
+    },
     box_main: {
         backgroundColor: COLOR_WHITE_COLOR,
         position: 'absolute',
@@ -154,24 +172,24 @@ export const PublicStyle = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 65,
+        height: 92,
         backgroundColor: '#2b7888'
     },
     navigator_left: {
         position: 'absolute',
         left: 0,
-        width: 65,
-        height: 65,
+        width: 82,
+        height: 92,
         borderColor: '#165562',
-        borderRightWidth: 1,
+        borderRightWidth: 2,
         justifyContent: 'center',
         alignItems: 'center'
     },
     navigator_right_cancel: {
         position: 'absolute',
         right: 0,
-        width: 65,
-        height: 65,
+        width: 80,
+        height: 92,
         borderColor: '#ffffff',
         borderLeftWidth: 1,
         justifyContent: 'center',
@@ -185,8 +203,8 @@ export const PublicStyle = StyleSheet.create({
         paddingRight: 7,
     },
     navigator_icon: {
-        width: 73,
-        height: 45,
+        width:109,
+        height: 68,
     },
 
     view_top: {

@@ -6,9 +6,9 @@ const cashierInputBorderColor = COLOR_SECOND_COLOR
 const cashierTextSize = 16
 const cashierPadding = 15
 const listHeadPadding = 5
-const listHeadLeftAndRightMargin = 10
+const listHeadLeftAndRightMargin = 37
 const listHeadRedius = 8
-const listHeadTextSize = 14
+const listHeadTextSize = 15
 const listHeadTextColor = 'white'
 const listItemBorderColor = 'gray'
 const listItemPadding = 3
@@ -64,17 +64,18 @@ const styles = StyleSheet.create({
         padding: 0,
         paddingLeft:3,
         paddingRight:3,
-        height: 20,
+        height: 24,
         borderRadius: 4,
         borderWidth: 1 / PixelRatio.get(),
         borderColor: cashierInputBorderColor,
-        width: 140,
+        width: 192,
         marginLeft: 15
     },
     listHeadContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         width,
+        height:33,
         paddingLeft: listHeadLeftAndRightMargin,
         paddingRight: listHeadLeftAndRightMargin,
 

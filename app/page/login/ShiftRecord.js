@@ -4,6 +4,7 @@
 
 import React from 'react'
 import commonStyle from '../../style/CommonStyle'
+import PublicStyle from '../../style/PublicStyle'
 import { Image, View, Text, TouchableOpacity, TextInput, FlatList } from 'react-native'
 import styles from '../../style/ShiftRecordStyle'
 import Button from '../../component/Button'
@@ -30,18 +31,12 @@ class ShiftRecord extends React.Component {
      */
     _renderHead = () => {
         return (
-            <View style={[ commonStyle.logoFrame, styles.headContainer ]}>
-                <Image source={require('../../image/login/shiftRecord-text.png')} style={styles.headTextImage}
-                       resizeMode={'contain'}/>
-                <TouchableOpacity
-                    onPress={() => {
-                        this.props.navigation.pop()
-                    }}
-                    style={[ styles.headRightContainer ]}>
-                    <View style={styles.headRightDivision}/>
+            <View style={PublicStyle.navigator}>
+                <Text style={PublicStyle.text_FFF_53}>交接班记录</Text>
+                <TouchableOpacity onPress={() => { this.props.navigation.pop() }} style={PublicStyle.navigator_right_cancel}>
                     <Image source={require('../../image/login/shiftRecord-cross.png')}
-                           resizeMode={'contain'}
-                           style={styles.headRightCrossImage}/>
+                        resizeMode={'contain'}
+                        style={{ width: 35, height: 35 }} />
                 </TouchableOpacity>
             </View>
         )
@@ -56,22 +51,22 @@ class ShiftRecord extends React.Component {
         return (
             <View style={styles.cashierContainer}>
                 <View style={styles.cashierAccountContainer}>
-                    <Text style={styles.cashierLeftText}>收银员账号</Text>
+                    <Text style={PublicStyle.text_2B7888_20}>收银员账号</Text>
                     <TextInput
                         style={styles.cashierInput}
                         value={this.state.cashierAccount}
-                        onChangeText={text => this.setState({ cashierAccount: text })}/>
+                        onChangeText={text => this.setState({ cashierAccount: text })} />
                 </View>
                 <View style={styles.cashierAccountContainer}>
-                    <Text style={styles.cashierLeftText}>收银员密码</Text>
+                    <Text style={PublicStyle.text_2B7888_20}>收银员密码</Text>
                     <TextInput
                         style={styles.cashierInput}
                         underlineColorAndroid={'transparent'}
                         secureTextEntry={true}
                         value={this.state.cashierPassword}
-                        onChangeText={text => this.setState({ cashierPassword: text })}/>
+                        onChangeText={text => this.setState({ cashierPassword: text })} />
                 </View>
-                <Button text='查询' fontSize={16} color={'white'} width={50} onPress={this._doQuery}/>
+                <Button text='查询' fontSize={20} color={'white'} width={66} height={25} onPress={this._doQuery} />
             </View>
         )
     }
@@ -105,18 +100,18 @@ class ShiftRecord extends React.Component {
             ListFooterComponent={this._renderSeparator}
         />
 
-    _renderSeparator = () => ( <View style={styles.listItemSeparatorView}/> )
+    _renderSeparator = () => (<View style={styles.listItemSeparatorView} />)
 
     _renderListItem = ({ item = {} }, index) => {
         const { startTime, endTime, money = 0 } = item
         return (
-            <View style={[ styles.listHeadContainer, { backgroundColor: 'white' } ]}>
+            <View style={[styles.listHeadContainer, { backgroundColor: 'white' }]}>
                 <Text
-                    style={[ styles.listHeadLeftText, styles.listItemExtraStyle ]}>{startTime}</Text>
+                    style={[styles.listHeadLeftText, styles.listItemExtraStyle]}>{startTime}</Text>
                 <Text
-                    style={[ styles.listHeadMiddleText, styles.listItemExtraStyle ]}>{endTime}</Text>
+                    style={[styles.listHeadMiddleText, styles.listItemExtraStyle]}>{endTime}</Text>
                 <Text
-                    style={[ styles.listHeadRightText, styles.listItemExtraStyle ]}>{money}</Text>
+                    style={[styles.listHeadRightText, styles.listItemExtraStyle]}>{money}</Text>
             </View>
         )
     }

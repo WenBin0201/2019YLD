@@ -50,17 +50,17 @@ export default class DialogBoxContainer extends Component {
 
 
         return (
-            <View style={{ width: 350, height: 200, backgroundColor: '#FFFFFF' }}>
+            <View style={{ width: 425, height: 256, backgroundColor: '#FFFFFF' }}>
                 {this.props.showTitle == true ?
-                    <View style={{ height: 30, backgroundColor: '#2b7888', alignItems: 'center', justifyContent: 'center' }}>
-                        <Text style={{ color: '#FFF', fontSize: 16 }}>{this.props.title}</Text>
+                    <View style={{ height: 43, backgroundColor: '#2b7888', alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ color: '#FFF', fontSize: 25 }}>{this.props.title}</Text>
                         {this.props.showCancelBtn == true ?
                             <TouchableOpacity onPress={() => {
                                 this.props.destroy();
-                            }} style={{ position: 'absolute', right: 0, height: 30, width: 35, borderColor: '#ffffff', borderLeftWidth: 1, alignItems: 'center', justifyContent: 'center' }}>
+                            }} style={{ position: 'absolute', right: 0, height: 43, width: 39, borderColor: '#ffffff', borderLeftWidth: 2, alignItems: 'center', justifyContent: 'center' }}>
                                 <Image source={require('../../image/login/shiftRecord-cross.png')}
                                     resizeMode={'contain'}
-                                    style={{width:20,height:20}} />
+                                    style={{width:25,height:25}} />
                             </TouchableOpacity>
                             : null}
                     </View>
@@ -71,7 +71,7 @@ export default class DialogBoxContainer extends Component {
                     {this.props.mixedView ? this.props.mixedView : null}
                 </View>
                 {this.props.buttons && Array.isArray(this.props.buttons) && this.props.buttons.length > 0 ?
-                    <View style={{ alignItems: 'center', paddingBottom: 10, flexDirection: 'row', justifyContent: 'center' }}>
+                    <View style={{ alignItems: 'center', paddingBottom: 20, flexDirection: 'row', justifyContent: 'center' }}>
                         {this.props.buttons.map((item, i) => {
                             return (
                                 <TouchableOpacity key={i} onPress={item.onPress} style={{ height: 30, marginLeft: i == 0 ? 0 : 25, width: 70, backgroundColor: item.backgroundColor ? item.backgroundColor : '#2b788', borderRadius: 3, alignItems: 'center', justifyContent: 'center' }}>
