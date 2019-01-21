@@ -7,7 +7,7 @@ export const TIP_CONFIRM_DELETE = '确认删除吗,删除后不可恢复?'
 //默认的APP图片
 export const DEFAULT_APP_LOGO = '/res/common/img/app_logo.png'
 
-export const WIDTH_RATIO = 1.3
+export const WIDTH_RATIO = 1.5
 
 export const RED_POINT_SIZE = 5
 
