@@ -199,7 +199,7 @@ export default class PgSalesDoc extends Component {
                 tabHeadHeight={32}
                 tabMarginTop={2}
                 tabHeadTextFontSize={14}
-                tabHeads={['序号', '商品编码', '商品名称', '批发价', '需求量', '订购量', '确认量','零售指导价','金额','预计盈利','支付状态']}
+                tabHeads={['选择', '商品名称', '条码', '规格', '单位', '零售价', '数量','退货数量','总金额','支付方式','支付状态']}
                 tabRowWidth={[0.5, 3, 2, 1, 1, 1, 1,1,1,1,1,1]}
                 data={this.state.dataSource}
                 renderItem={this._renderRow}
