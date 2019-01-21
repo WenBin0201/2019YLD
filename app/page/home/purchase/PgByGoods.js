@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View ,TouchableOpacity,TextInput,ScrollView} from 'react-native';
 import TabView from '../../../component/TabView/TabView'
-import ReceiptsStyle from '../../../style/ReceiptsStyle'
 import PgByGoodsStyle from '../../../style/PgByGoodsStyle'
-import RuKuRecordsStyle from '../../../style/RuKuRecordsStyle'
 import Button from '../../../component/Button'
 import BaseButton from '../../../component/BaseButton'
 import CommManaStyle from '../../../style/CommManaStyle'
