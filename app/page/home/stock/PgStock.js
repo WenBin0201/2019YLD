@@ -33,12 +33,12 @@ export default class PgStock extends Component {
                     }}
                     scrollWithoutAnimation={true}
                     locked={true}>
-                    <PgPanDian navigation={this.props.navigation}/>
                     <PgCommodityManager navigation={this.props.navigation}/>
                     <PgCargoManager navigation={this.props.navigation}/>
                     <RuKuManager navigation={this.props.navigation}/>
                     <RuKuRecords navigation={this.props.navigation}/>
                     <PgStockConvert navigation={this.props.navigation}/>
+                    <PgPanDian navigation={this.props.navigation}/>
                     <PgChangeRecords navigation={this.props.navigation}/>
                 </ScrollableTabView>
 
