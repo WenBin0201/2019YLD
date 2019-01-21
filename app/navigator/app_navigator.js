@@ -57,8 +57,9 @@ const HomeStack = createStackNavigator(
 )
 
 export const AppNavigator = createSwitchNavigator({
-    LoginStack: LoginStack,
     HomeStack: HomeStack,
+    LoginStack: LoginStack,
+
 })
 
 /**
